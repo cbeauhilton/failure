@@ -1,0 +1,354 @@
+MPN
+
+11q-
+12p-
+13q-
+17p-
+20q- 
+5q-
+7q-
+AML-Transformation?
+1= yes
+APC
+APC result
+ASXL1
+ASXL1 result
+ASXL2
+ASXL2 result
+ATM
+ATM result
+ATRX
+ATRX result
+Age
+BCOR
+BCOR result
+BCORL1
+BCORL1 result
+BCR-ABL1
+BRAF
+BRAF result
+BRCC3
+BRCC3 result
+Baso PB %
+Baso PB Abs
+Blasts % (BM)
+Blasts % (PB)
+CALR
+CALR VAF
+CALR result
+CALR type: type1=1; type2=2, other=0
+CBL
+CBL result
+CDH23
+CDH23 result
+CDKN2A
+CDKN2A result
+CEBPA
+CEBPA result
+CREBBP
+CREBBP result
+CSF3R
+CSF3R result
+CSNK1A1
+CSNK1A1 result
+CTCF
+CTCF result
+CUX1
+CUX1 result
+Codone 
+Codone .1
+Codone .10
+Codone .11
+Codone .12
+Codone .13
+Codone .14
+Codone .15
+Codone .16
+Codone .17
+Codone .18
+Codone .19
+Codone .2
+Codone .20
+Codone .21
+Codone .22
+Codone .23
+Codone .24
+Codone .25
+Codone .26
+Codone .27
+Codone .28
+Codone .29
+Codone .3
+Codone .30
+Codone .31
+Codone .32
+Codone .33
+Codone .34
+Codone .35
+Codone .36
+Codone .37
+Codone .38
+Codone .39
+Codone .4
+Codone .40
+Codone .41
+Codone .42
+Codone .43
+Codone .44
+Codone .45
+Codone .46
+Codone .47
+Codone .48
+Codone .49
+Codone .5
+Codone .50
+Codone .51
+Codone .52
+Codone .53
+Codone .54
+Codone .55
+Codone .56
+Codone .57
+Codone .58
+Codone .59
+Codone .6
+Codone .60
+Codone .61
+Codone .62
+Codone .63
+Codone .64
+Codone .65
+Codone .66
+Codone .67
+Codone .68
+Codone .69
+Codone .7
+Codone .70
+Codone .71
+Codone .72
+Codone .73
+Codone .8
+Codone .9
+DDX41
+DDX41 result
+DDX54
+DDX54 result
+DHX29
+DHX29 result
+DNMT1
+DNMT1 result
+DNMT3A
+DNMT3A result
+Date Last FU
+Date of Death
+Date of Diagnosis
+Date of s-AML Diagnosis
+EP300
+EP300 result
+ETNK1
+ETNK1 result
+ETV6
+ETV6 result
+EZH2
+EZH2 result
+Entity
+Eos PB %
+Eos PB Abs
+FANCL
+FANCL result
+FBXW7
+FBXW7 result
+FLT3
+FLT3 result
+Female=1; male=2
+GATA1
+GATA1 result
+GATA2
+GATA2 result
+GNAS
+GNAS result
+GNB1
+GNB1 result
+Hb
+IDH1
+IDH1 result
+IDH2
+IDH2 result
+JAK2
+JAK2 result
+KDM5A
+KDM5A result
+KDM6A
+KDM6A result
+KIT
+KIT result
+KMT2D
+KMT2D result
+KRAS
+KRAS result
+Lymph PB %
+Lymph PB Abs
+MLL_ID
+MPL
+MPL result
+MRN
+MYC
+MYC result
+Material for Morphology
+Mono PB %
+Mono PB Abs
+NF1
+NF1 result
+NOTCH1
+NOTCH1 result
+NPM1
+NPM1 result
+NRAS
+NRAS result
+NSD1
+NSD1 result
+Neutros PB %
+Neutros PB Abs
+OS [days]
+Overall survival (days)
+PHF6
+PHF6 result
+PIGA
+PIGA result
+PLT
+PPM1D
+PPM1D result
+PRPF8
+PRPF8 result
+PTPN11
+PTPN11 result
+RAD21
+RAD21 result
+RB1
+RB1 result
+RUNX1
+RUNX1 result
+SETBP1
+SETBP1 result
+SF1
+SF1 result
+SF3A1
+SF3A1 result
+SF3B1
+SF3B1 result
+SH2B3
+SH2B3 result
+SMC1A
+SMC1A result
+SMC3
+SMC3 result
+SRSF2
+SRSF2 result
+STAG2
+STAG2 result
+SUZ12
+SUZ12 result
+Sampling date
+TET2
+TET2 result
+TP53
+TP53 result
+U2AF1
+U2AF1 result
+U2AF2
+U2AF2 result
+Unnamed: 44
+Unnamed: 45
+Unnamed: 46
+Unnamed: 47
+VAF
+VAF.1
+VAF.10
+VAF.11
+VAF.12
+VAF.13
+VAF.14
+VAF.15
+VAF.16
+VAF.17
+VAF.18
+VAF.19
+VAF.2
+VAF.20
+VAF.21
+VAF.22
+VAF.23
+VAF.24
+VAF.25
+VAF.26
+VAF.27
+VAF.28
+VAF.29
+VAF.3
+VAF.30
+VAF.31
+VAF.32
+VAF.33
+VAF.34
+VAF.35
+VAF.36
+VAF.37
+VAF.38
+VAF.39
+VAF.4
+VAF.40
+VAF.41
+VAF.42
+VAF.43
+VAF.44
+VAF.45
+VAF.46
+VAF.47
+VAF.48
+VAF.49
+VAF.5
+VAF.50
+VAF.51
+VAF.52
+VAF.53
+VAF.54
+VAF.55
+VAF.56
+VAF.57
+VAF.58
+VAF.59
+VAF.6
+VAF.60
+VAF.61
+VAF.62
+VAF.63
+VAF.64
+VAF.65
+VAF.66
+VAF.67
+VAF.68
+VAF.69
+VAF.7
+VAF.70
+VAF.71
+VAF.72
+VAF.73
+VAF.8
+VAF.9
+WBC
+WT1
+WT1 result
+ZBTB7A
+ZBTB7A result
+ZRSR2 result
+ZRZS2
+alive=0; dead=1
+codone
+complex
+death = 1
+gain 1q
+karyotype
+normal karyotype yes=1
+other
+tri8
+tri9p

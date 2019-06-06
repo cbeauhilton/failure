@@ -1,0 +1,91 @@
+CMML
+
+abs bas
+abs eos
+abs lym
+abs mono
+abs neut
+age
+allo bmt
+amc
+aml
+anc at dx
+asxl1
+bas %
+bcor
+braf
+cbl
+cdkn2a
+cebpa
+cux1
+date of aml
+date of bmt
+date of diagnosis or sampling
+date of last contact or death
+diagnosis
+dnmt3a
+ecog ps
+eos %
+etv6
+ezh2
+fab category
+ferritin over 1000
+flt3-itd
+flt3-tkd
+gata2
+gender
+hgb
+id
+idh1
+idh2
+institution
+jak2
+karyo by ipss
+karyo cpss
+karyotype at diagnosis
+kdm5a
+kdm6a
+kit
+kras
+ldh at dx
+luc7l2
+lym %
+lymphoctes at dx
+med12
+mll
+mono %
+monocytes at dx
+neut %
+nf1
+npm1
+nras
+number of cytopenias
+percent bm blasts
+percent circulating blasts
+percent circulating imc
+phf6
+plt
+plt tx
+prpf40
+prpf40b
+prpf8
+pten
+ptpn11
+race
+rad21
+runx1
+sf1
+sf3b1
+smc3
+splenomegaly
+srsf2
+stag2
+tet2
+tp53
+tx rbc
+u2af1
+u2af2
+vital status
+wbc
+wt1
+zrsr2

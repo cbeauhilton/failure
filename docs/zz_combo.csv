@@ -1,0 +1,94 @@
+,CCF,CMML,MDS,MPN
+0,abs bas,abs bas,abs bas,abs bas
+1,abs eos,abs eos,abs eos,abs eos
+2,abs lym,abs lym,abs lym,abs lym
+3,abs mono,abs mono,abs mono,abs mono
+4,abs neut,abs neut,abs neut,abs neut
+5,age,age,afs,age
+6,apc,allo bmt,age,apc
+7,asxl1,amc,aml,asxl1
+8,bas %,aml,asxl1,asxl2
+9,bcor,anc at dx,bas %,atm
+10,bcorl1,asxl1,bcor,atrx
+11,c7orf55,bas %,bcorl1,bas %
+12,cbl,bcor,bmbper,bcor
+13,ccdc42b,braf,bmt,bcorl1
+14,cdh23,cbl,cbl,braf
+15,cebpa,cdkn2a,cebpa,brcc3
+16,cftr,cebpa,complex,calr
+17,csf1r,cux1,cytoipssr,cbl
+18,cux1,date of aml,dead,cdh23
+19,ddx41,date of bmt,del(17),cdkn2a
+20,ddx54,date of diagnosis or sampling,del(20),cebpa
+21,dhx29,date of last contact or death,del(5),crebbp
+22,diagnosis,diagnosis,del(7),csf3r
+23,dnmt3a,dnmt3a,del(y),csnk1a1
+24,eed,ecog ps,diagnosis,ctcf
+25,eos %,eos %,dnmt3a,cux1
+26,erbb4,etv6,eos %,ddx41
+27,etv6,ezh2,etv6,ddx54
+28,ezh2,fab category,ezh2,dhx29
+29,flt3,ferritin over 1000,flt3,diagnosis
+30,gata2,flt3-itd,gata2,dnmt1
+31,gender,flt3-tkd,gender,dnmt3a
+32,gli1,gata2,gnb1,eos %
+33,gli2,gender,hgb,ep300
+34,gnb1,hgb,id,etnk1
+35,gpr98,id,idh1,etv6
+36,hgb,idh1,idh2,ezh2
+37,id,idh2,jak2,fancl
+38,idh1,institution,kdm6a,fbxw7
+39,idh2,jak2,kit,flt3
+40,irf4,karyo by ipss,kras,gata1
+41,jak2,karyo cpss,luc7l2,gata2
+42,jak3,karyotype at diagnosis,lym %,gender
+43,kdm6a,kdm5a,mds etiology,gnas
+44,kit,kdm6a,med12,gnb1
+45,kras,kit,mono %,hgb
+46,lym %,kras,mpl,id
+47,mch,ldh at dx,neut %,idh1
+48,mchc,luc7l2,nf1,idh2
+49,mcv,lym %,normal,jak2
+50,mecom,lymphoctes at dx,notch1,kdm5a
+51,med12,med12,npm1,kdm6a
+52,megakaryocytes,mll,nras,kit
+53,mll,mono %,os,kmt2d
+54,mono %,monocytes at dx,phf6,kras
+55,mpv,neut %,plts,lym %
+56,neut %,nf1,prpf40b,mono %
+57,nf1,npm1,prpf8,mpl
+58,npm1,nras,ptpn11,myc
+59,nras,number of cytopenias,rad21,neut %
+60,ogt,percent bm blasts,runx1,nf1
+61,percent bm blasts,percent circulating blasts,sf3b1,notch1
+62,phf6,percent circulating imc,smc3,npm1
+63,plt,phf6,srsf2,nras
+64,prpf8,plt,stag2,nsd1
+65,ptch1,plt tx,tet2,percent bm blasts
+66,ptpn11,prpf40,tp53,phf6
+67,rad21,prpf40b,trisomy 8,piga
+68,rdw,prpf8,u2af1,plt
+69,rnf25,pten,u2af2,ppm1d
+70,runx1,ptpn11,wbc,prpf8
+71,setbp1,race,wt1,ptpn11
+72,sf3b1,rad21,zrsr2,rad21
+73,simc1,runx1,,rb1
+74,smc3,sf1,,runx1
+75,splenomegaly,sf3b1,,setbp1
+76,srsf2,smc3,,sf1
+77,stag2,splenomegaly,,sf3a1
+78,stat3,srsf2,,sf3b1
+79,suz12,stag2,,sh2b3
+80,tet2,tet2,,smc1a
+81,tp53,tp53,,smc3
+82,u2af1,tx rbc,,srsf2
+83,u2af2,u2af1,,stag2
+84,wbc,u2af2,,suz12
+85,wt1,vital status,,tet2
+86,zrsr2,wbc,,tp53
+87,,wt1,,u2af1
+88,,zrsr2,,u2af2
+89,,,,wbc
+90,,,,wt1
+91,,,,zbtb7a
+92,,,,zrsr2

@@ -1,0 +1,356 @@
+CCF
+
+abs bas
+abs eos
+abs lym
+abs mono
+abs neut
+age
+apc
+asxl1
+bas %
+bcor
+bcorl1
+c7orf55
+cbl
+ccdc42b
+cdh23
+cebpa
+cftr
+csf1r
+cux1
+ddx41
+ddx54
+dhx29
+diagnosis
+dnmt3a
+eed
+eos %
+erbb4
+etv6
+ezh2
+flt3
+gata2
+gender
+gli1
+gli2
+gnb1
+gpr98
+hgb
+id
+idh1
+idh2
+irf4
+jak2
+jak3
+kdm6a
+kit
+kras
+lym %
+mch
+mchc
+mcv
+mecom
+med12
+megakaryocytes
+mll
+mono %
+mpv
+neut %
+nf1
+npm1
+nras
+ogt
+percent bm blasts
+phf6
+plt
+prpf8
+ptch1
+ptpn11
+rad21
+rdw
+rnf25
+runx1
+setbp1
+sf3b1
+simc1
+smc3
+splenomegaly
+srsf2
+stag2
+stat3
+suz12
+tet2
+tp53
+u2af1
+u2af2
+wbc
+wt1
+zrsr2
+
+
+CMML
+
+abs bas
+abs eos
+abs lym
+abs mono
+abs neut
+age
+allo bmt
+amc
+aml
+anc at dx
+asxl1
+bas %
+bcor
+braf
+cbl
+cdkn2a
+cebpa
+cux1
+date of aml
+date of bmt
+date of diagnosis or sampling
+date of last contact or death
+diagnosis
+dnmt3a
+ecog ps
+eos %
+etv6
+ezh2
+fab category
+ferritin over 1000
+flt3-itd
+flt3-tkd
+gata2
+gender
+hgb
+id
+idh1
+idh2
+institution
+jak2
+karyo by ipss
+karyo cpss
+karyotype at diagnosis
+kdm5a
+kdm6a
+kit
+kras
+ldh at dx
+luc7l2
+lym %
+lymphoctes at dx
+med12
+mll
+mono %
+monocytes at dx
+neut %
+nf1
+npm1
+nras
+number of cytopenias
+percent bm blasts
+percent circulating blasts
+percent circulating imc
+phf6
+plt
+plt tx
+prpf40
+prpf40b
+prpf8
+pten
+ptpn11
+race
+rad21
+runx1
+sf1
+sf3b1
+smc3
+splenomegaly
+srsf2
+stag2
+tet2
+tp53
+tx rbc
+u2af1
+u2af2
+vital status
+wbc
+wt1
+zrsr2
+
+
+MDS
+
+abs bas
+abs eos
+abs lym
+abs mono
+abs neut
+afs
+age
+aml
+asxl1
+bas %
+bcor
+bcorl1
+bmbper
+bmt
+cbl
+cebpa
+complex
+cytoipssr
+dead
+del(17)
+del(20)
+del(5)
+del(7)
+del(y)
+diagnosis
+dnmt3a
+eos %
+etv6
+ezh2
+flt3
+gata2
+gender
+gnb1
+hgb
+id
+idh1
+idh2
+jak2
+kdm6a
+kit
+kras
+luc7l2
+lym %
+mds etiology
+med12
+mono %
+mpl
+neut %
+nf1
+normal
+notch1
+npm1
+nras
+os
+phf6
+plts
+prpf40b
+prpf8
+ptpn11
+rad21
+runx1
+sf3b1
+smc3
+srsf2
+stag2
+tet2
+tp53
+trisomy 8
+u2af1
+u2af2
+wbc
+wt1
+zrsr2
+
+
+MPN
+
+abs bas
+abs eos
+abs lym
+abs mono
+abs neut
+age
+apc
+asxl1
+asxl2
+atm
+atrx
+bas %
+bcor
+bcorl1
+braf
+brcc3
+calr
+cbl
+cdh23
+cdkn2a
+cebpa
+crebbp
+csf3r
+csnk1a1
+ctcf
+cux1
+ddx41
+ddx54
+dhx29
+diagnosis
+dnmt1
+dnmt3a
+eos %
+ep300
+etnk1
+etv6
+ezh2
+fancl
+fbxw7
+flt3
+gata1
+gata2
+gender
+gnas
+gnb1
+hgb
+id
+idh1
+idh2
+jak2
+kdm5a
+kdm6a
+kit
+kmt2d
+kras
+lym %
+mono %
+mpl
+myc
+neut %
+nf1
+notch1
+npm1
+nras
+nsd1
+percent bm blasts
+phf6
+piga
+plt
+ppm1d
+prpf8
+ptpn11
+rad21
+rb1
+runx1
+setbp1
+sf1
+sf3a1
+sf3b1
+sh2b3
+smc1a
+smc3
+srsf2
+stag2
+suz12
+tet2
+tp53
+u2af1
+u2af2
+wbc
+wt1
+zbtb7a
+zrsr2

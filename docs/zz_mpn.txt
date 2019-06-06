@@ -1,0 +1,95 @@
+MPN
+
+abs bas
+abs eos
+abs lym
+abs mono
+abs neut
+age
+apc
+asxl1
+asxl2
+atm
+atrx
+bas %
+bcor
+bcorl1
+braf
+brcc3
+calr
+cbl
+cdh23
+cdkn2a
+cebpa
+crebbp
+csf3r
+csnk1a1
+ctcf
+cux1
+ddx41
+ddx54
+dhx29
+diagnosis
+dnmt1
+dnmt3a
+eos %
+ep300
+etnk1
+etv6
+ezh2
+fancl
+fbxw7
+flt3
+gata1
+gata2
+gender
+gnas
+gnb1
+hgb
+id
+idh1
+idh2
+jak2
+kdm5a
+kdm6a
+kit
+kmt2d
+kras
+lym %
+mono %
+mpl
+myc
+neut %
+nf1
+notch1
+npm1
+nras
+nsd1
+percent bm blasts
+phf6
+piga
+plt
+ppm1d
+prpf8
+ptpn11
+rad21
+rb1
+runx1
+setbp1
+sf1
+sf3a1
+sf3b1
+sh2b3
+smc1a
+smc3
+srsf2
+stag2
+suz12
+tet2
+tp53
+u2af1
+u2af2
+wbc
+wt1
+zbtb7a
+zrsr2

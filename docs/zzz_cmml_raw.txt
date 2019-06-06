@@ -1,0 +1,456 @@
+CMML
+
+ circulating IMC (%)
+# cytopenia
+AA_CHANGE
+AA_CHANGE.1
+AA_CHANGE.10
+AA_CHANGE.11
+AA_CHANGE.12
+AA_CHANGE.13
+AA_CHANGE.14
+AA_CHANGE.15
+AA_CHANGE.16
+AA_CHANGE.17
+AA_CHANGE.18
+AA_CHANGE.19
+AA_CHANGE.2
+AA_CHANGE.20
+AA_CHANGE.21
+AA_CHANGE.22
+AA_CHANGE.23
+AA_CHANGE.24
+AA_CHANGE.25
+AA_CHANGE.26
+AA_CHANGE.27
+AA_CHANGE.28
+AA_CHANGE.29
+AA_CHANGE.3
+AA_CHANGE.30
+AA_CHANGE.31
+AA_CHANGE.32
+AA_CHANGE.33
+AA_CHANGE.34
+AA_CHANGE.35
+AA_CHANGE.36
+AA_CHANGE.37
+AA_CHANGE.38
+AA_CHANGE.39
+AA_CHANGE.4
+AA_CHANGE.40
+AA_CHANGE.41
+AA_CHANGE.42
+AA_CHANGE.43
+AA_CHANGE.44
+AA_CHANGE.5
+AA_CHANGE.6
+AA_CHANGE.7
+AA_CHANGE.8
+AA_CHANGE.9
+AMC
+AML
+ANC  at Dx
+ASXL1
+Abs Eos 
+Abs Neut
+Abs bas 
+Abs lym  
+Abs mono
+Age at Dx
+Allo BMT
+BCOR
+BM ring sidroblasts
+BRAF
+Bas %
+Blast% BMBx
+CBL
+CDKN2A
+CDNA_CHANGE
+CDNA_CHANGE.1
+CDNA_CHANGE.10
+CDNA_CHANGE.11
+CDNA_CHANGE.12
+CDNA_CHANGE.13
+CDNA_CHANGE.14
+CDNA_CHANGE.15
+CDNA_CHANGE.16
+CDNA_CHANGE.17
+CDNA_CHANGE.18
+CDNA_CHANGE.19
+CDNA_CHANGE.2
+CDNA_CHANGE.20
+CDNA_CHANGE.21
+CDNA_CHANGE.22
+CDNA_CHANGE.23
+CDNA_CHANGE.24
+CDNA_CHANGE.25
+CDNA_CHANGE.26
+CDNA_CHANGE.27
+CDNA_CHANGE.28
+CDNA_CHANGE.29
+CDNA_CHANGE.3
+CDNA_CHANGE.30
+CDNA_CHANGE.31
+CDNA_CHANGE.32
+CDNA_CHANGE.33
+CDNA_CHANGE.34
+CDNA_CHANGE.35
+CDNA_CHANGE.36
+CDNA_CHANGE.37
+CDNA_CHANGE.38
+CDNA_CHANGE.39
+CDNA_CHANGE.4
+CDNA_CHANGE.40
+CDNA_CHANGE.41
+CDNA_CHANGE.42
+CDNA_CHANGE.43
+CDNA_CHANGE.44
+CDNA_CHANGE.5
+CDNA_CHANGE.6
+CDNA_CHANGE.7
+CDNA_CHANGE.8
+CDNA_CHANGE.9
+CEBPA
+CHR
+CHR.1
+CHR.10
+CHR.11
+CHR.12
+CHR.13
+CHR.14
+CHR.15
+CHR.16
+CHR.17
+CHR.18
+CHR.19
+CHR.2
+CHR.20
+CHR.21
+CHR.22
+CHR.23
+CHR.24
+CHR.25
+CHR.26
+CHR.27
+CHR.28
+CHR.29
+CHR.3
+CHR.30
+CHR.31
+CHR.32
+CHR.33
+CHR.34
+CHR.35
+CHR.36
+CHR.37
+CHR.38
+CHR.39
+CHR.4
+CHR.40
+CHR.41
+CHR.42
+CHR.43
+CHR.44
+CHR.5
+CHR.6
+CHR.7
+CHR.8
+CHR.9
+CONSEQUENCE
+CONSEQUENCE.1
+CONSEQUENCE.10
+CONSEQUENCE.11
+CONSEQUENCE.12
+CONSEQUENCE.13
+CONSEQUENCE.14
+CONSEQUENCE.15
+CONSEQUENCE.16
+CONSEQUENCE.17
+CONSEQUENCE.18
+CONSEQUENCE.19
+CONSEQUENCE.2
+CONSEQUENCE.20
+CONSEQUENCE.21
+CONSEQUENCE.22
+CONSEQUENCE.23
+CONSEQUENCE.24
+CONSEQUENCE.25
+CONSEQUENCE.26
+CONSEQUENCE.27
+CONSEQUENCE.28
+CONSEQUENCE.29
+CONSEQUENCE.3
+CONSEQUENCE.30
+CONSEQUENCE.31
+CONSEQUENCE.32
+CONSEQUENCE.33
+CONSEQUENCE.34
+CONSEQUENCE.35
+CONSEQUENCE.36
+CONSEQUENCE.37
+CONSEQUENCE.38
+CONSEQUENCE.39
+CONSEQUENCE.4
+CONSEQUENCE.40
+CONSEQUENCE.41
+CONSEQUENCE.42
+CONSEQUENCE.43
+CONSEQUENCE.44
+CONSEQUENCE.5
+CONSEQUENCE.6
+CONSEQUENCE.7
+CONSEQUENCE.8
+CONSEQUENCE.9
+CUX1
+Cellularity %
+Cellularitycat
+DNMT3A
+Date of AML
+Date of BMT
+Date of Diagnosis/Sampling
+Double of singe mutation
+ECOG PS
+ETV6
+EZH2
+Eos %
+FAB Category
+FLT3-ITD
+FLT3-TKD
+Ferritin >1000
+GATA2
+GENDER
+HgB at Dx
+IDH1
+IDH2
+Institution
+JAK2
+KDM5A
+KDM6A
+KIT
+KRAS
+Karyotype at Diagnosis
+LDH  at Dx
+LUC7L2
+Lym %
+Lymphoctes  at Dx
+MED12
+MLL
+Mono %
+Monocytes at Dx
+NF1
+NPM1
+NRAS
+Neut %
+PHF6
+PLT TX 
+PRPF40
+PRPF40B
+PRPF8
+PTEN
+PTPN11
+PatientID
+Position end
+Position end.1
+Position end.10
+Position end.11
+Position end.12
+Position end.13
+Position end.14
+Position end.15
+Position end.16
+Position end.17
+Position end.18
+Position end.19
+Position end.2
+Position end.20
+Position end.21
+Position end.22
+Position end.23
+Position end.24
+Position end.25
+Position end.26
+Position end.27
+Position end.28
+Position end.29
+Position end.3
+Position end.30
+Position end.31
+Position end.32
+Position end.33
+Position end.34
+Position end.35
+Position end.36
+Position end.37
+Position end.38
+Position end.39
+Position end.4
+Position end.40
+Position end.41
+Position end.42
+Position end.43
+Position end.44
+Position end.5
+Position end.6
+Position end.7
+Position end.8
+Position end.9
+Position start
+Position start.1
+Position start.10
+Position start.11
+Position start.12
+Position start.13
+Position start.14
+Position start.15
+Position start.16
+Position start.17
+Position start.18
+Position start.19
+Position start.2
+Position start.20
+Position start.21
+Position start.22
+Position start.23
+Position start.24
+Position start.25
+Position start.26
+Position start.27
+Position start.28
+Position start.29
+Position start.3
+Position start.30
+Position start.31
+Position start.32
+Position start.33
+Position start.34
+Position start.35
+Position start.36
+Position start.37
+Position start.38
+Position start.39
+Position start.4
+Position start.40
+Position start.41
+Position start.42
+Position start.43
+Position start.44
+Position start.5
+Position start.6
+Position start.7
+Position start.8
+Position start.9
+RACE
+RAD21
+RUNX1
+Result
+Result.1
+Result.10
+Result.11
+Result.12
+Result.13
+Result.14
+Result.15
+Result.16
+Result.17
+Result.18
+Result.19
+Result.2
+Result.20
+Result.21
+Result.22
+Result.23
+Result.24
+Result.25
+Result.26
+Result.27
+Result.28
+Result.29
+Result.3
+Result.30
+Result.31
+Result.32
+Result.33
+Result.34
+Result.35
+Result.36
+Result.37
+Result.38
+Result.39
+Result.4
+Result.40
+Result.41
+Result.42
+Result.43
+Result.44
+Result.5
+Result.6
+Result.7
+Result.8
+Result.9
+Reticulin Fibrosis
+SF1
+SF3B1
+SMC3
+SRSF2
+STAG2
+Splenomegaly
+TET2
+TP53
+Tx RBC
+U2AF1
+U2AF2
+VAF
+VAF.1
+VAF.10
+VAF.11
+VAF.12
+VAF.13
+VAF.14
+VAF.15
+VAF.16
+VAF.17
+VAF.18
+VAF.19
+VAF.2
+VAF.20
+VAF.21
+VAF.22
+VAF.23
+VAF.24
+VAF.25
+VAF.26
+VAF.27
+VAF.28
+VAF.29
+VAF.3
+VAF.30
+VAF.31
+VAF.32
+VAF.33
+VAF.34
+VAF.35
+VAF.36
+VAF.37
+VAF.38
+VAF.39
+VAF.4
+VAF.40
+VAF.41
+VAF.42
+VAF.43
+VAF.44
+VAF.5
+VAF.6
+VAF.7
+VAF.8
+VAF.9
+Vital Status
+WBC  at Dx
+WHO Category
+WT1
+ZRSR2
+circulating blasts (%)
+date of last contact/death
+karyo CPSS
+karyo by IPSS
+platelets  at Dx
