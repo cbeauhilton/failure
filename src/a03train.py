@@ -1,8 +1,10 @@
 import os
+import traceback
 import warnings
 from itertools import cycle
 
 import h5py
+import jsonpickle
 import lightgbm as lgb
 import matplotlib.pyplot as plt
 import numpy as np
@@ -10,7 +12,7 @@ import pandas as pd
 from scipy import interp
 from sklearn import datasets, svm
 from sklearn.exceptions import UndefinedMetricWarning
-from sklearn.metrics import auc, roc_curve
+from sklearn.metrics import auc, classification_report, roc_curve
 from sklearn.model_selection import (StratifiedKFold, cross_val_predict,
                                      train_test_split)
 from sklearn.multiclass import OneVsRestClassifier
@@ -77,13 +79,61 @@ clf = lgb.LGBMClassifier(
     verbose=params["verbose"],
 )
 
-# clf.fit(
-#     X_train,
-#     y_train,
-#     eval_set=[(X_test, y_test)],
-#     # eval_metric="logloss",
-#     early_stopping_rounds=early_stopping_rounds,
-# )
+clf.fit(
+    X_train,
+    y_train,
+    eval_set=[(X_test, y_test)],
+    # eval_metric="logloss",
+    early_stopping_rounds=early_stopping_rounds,
+)
+
+
+def lgbm_save_model_to_h5():
+    """
+    To retrieve pickled model, use something like:
+    `pkl_model = metricsgen.save_model_to_pickle()`
+
+    then: 
+
+    `with open(pkl_model, "rb") as fin:
+            gbm_model = pickle.load(fin)` 
+    """
+
+    print("Dumping model with pickle...")
+    print("JSONpickling the model...")
+    frozen = jsonpickle.encode(clf)
+    print("Saving clf to .h5 file...")
+    h5_file = "test.h5"
+    with h5py.File(h5_file, 'a') as f:
+        try:
+            f.create_dataset('clf', data=frozen)
+        except Exception as exc:
+            print(traceback.format_exc())
+            print(exc)
+            try:
+                del f["clf"]
+                f.create_dataset('clf', data=frozen)
+                print("Successfully deleted old clf and saved new one!")
+            except:
+                print("Old clf persists...")
+    print(h5_file)
+
+lgbm_save_model_to_h5()
+
+
+def lgbm_save_feature_importance_plot():
+    print("Plotting feature importances...")
+    
+    ax = lgb.plot_importance(
+        clf, figsize=(5, 20), importance_type="gain", precision=2
+    )
+    plt.savefig((config.METRIC_FIGS_DIR/"feature_importance.pdf"), dpi=1200, transparent=False, bbox_inches="tight" )
+    plt.close()
+
+lgbm_save_feature_importance_plot()
+
+
+print(classification_report(y, clf.predict(X)))
 
 y_score = cross_val_predict(clf, X, y, cv=10, method="predict_proba")
 
