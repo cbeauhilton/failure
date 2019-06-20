@@ -1,5 +1,6 @@
 import csv
 import os
+import random
 import traceback
 import warnings
 from itertools import cycle
@@ -29,6 +30,13 @@ from sklearn.preprocessing import StandardScaler, label_binarize
 from sklearn.utils.multiclass import type_of_target
 
 from cbh import config
+from cbh.dumb import get_xkcd_colors
+
+colorz = get_xkcd_colors()
+colors = cycle(colorz['hex'])
+
+# print(colorz['hex'])
+# print(colorz['names'])
 
 # resources
 # https://github.com/javaidnabi31/Multi-class-with-imbalanced-dataset-classification/blob/master/20-news-group-classification.ipynb
@@ -76,7 +84,12 @@ clf = lgb.LGBMClassifier(**params)
 base_fpr = np.linspace(0, 1, 101)
 plt.style.use("ggplot")
 plt.figure(figsize=(12, 8))
+
 colors = ["darksalmon", "gold", "royalblue", "mediumseagreen", "violet"]
+
+# random_colors = random.sample(beau_colors, 20)
+colors = cycle(colorz['hex'])
+# print(colors)
 
 fpr = dict()
 tpr = dict()
@@ -118,6 +131,7 @@ for i, (train, test) in enumerate(kf):
     print(f"\nFold {i}")
     model = clf.fit(X.iloc[train], y.iloc[train])
     y_score = model.predict_proba(X.iloc[test])
+    print(y_score)
     y_pred = model.predict(X.iloc[test])
 
     # Generate dataframes
@@ -155,7 +169,7 @@ for i, (train, test) in enumerate(kf):
     print("Number of predictions remaining:", len(y) - sum(b))
 
 
-    # Plot confusion matrix for last iteration
+    # Plot final confusion matrix on last iteration
     if i == (n_splits-1):
         fig, ax = plt.subplots(figsize=(10, 10))
         sns.heatmap(
@@ -296,270 +310,276 @@ n_classes = y.shape[1]
 # plt.show()
 
 
-clf.fit(
-    X_train,
-    y_train,
-    eval_set=[(X_test, y_test)],
-    # eval_metric="logloss",
-    early_stopping_rounds=early_stopping_rounds,
-)
+# clf.fit(
+#     X_train,
+#     y_train,
+#     eval_set=[(X_test, y_test)],
+#     # eval_metric="logloss",
+#     early_stopping_rounds=early_stopping_rounds,
+# )
 
 
-def lgbm_save_model_to_h5():
-    """
-    To retrieve pickled model, use something like:
-    `pkl_model = metricsgen.save_model_to_pickle()`
+# def lgbm_save_model_to_h5():
+#     """
+#     To retrieve pickled model, use something like:
+#     `pkl_model = metricsgen.save_model_to_pickle()`
 
-    then: 
+#     then: 
 
-    `with open(pkl_model, "rb") as fin:
-            gbm_model = pickle.load(fin)` 
-    """
+#     `with open(pkl_model, "rb") as fin:
+#             gbm_model = pickle.load(fin)` 
+#     """
 
-    print("Dumping model with pickle...")
-    print("JSONpickling the model...")
-    frozen = jsonpickle.encode(clf)
-    print("Saving clf to .h5 file...")
-    h5_file = "test.h5"
-    with h5py.File(h5_file, "a") as f:
-        try:
-            f.create_dataset("clf", data=frozen)
-        except Exception as exc:
-            print(traceback.format_exc())
-            print(exc)
-            try:
-                del f["clf"]
-                f.create_dataset("clf", data=frozen)
-                print("Successfully deleted old clf and saved new one!")
-            except:
-                print("Old clf persists...")
-    print(h5_file)
-
-
-lgbm_save_model_to_h5()
+#     print("Dumping model with pickle...")
+#     print("JSONpickling the model...")
+#     frozen = jsonpickle.encode(clf)
+#     print("Saving clf to .h5 file...")
+#     h5_file = "test.h5"
+#     with h5py.File(h5_file, "a") as f:
+#         try:
+#             f.create_dataset("clf", data=frozen)
+#         except Exception as exc:
+#             print(traceback.format_exc())
+#             print(exc)
+#             try:
+#                 del f["clf"]
+#                 f.create_dataset("clf", data=frozen)
+#                 print("Successfully deleted old clf and saved new one!")
+#             except:
+#                 print("Old clf persists...")
+#     print(h5_file)
 
 
-def lgbm_save_feature_importance_plot():
-    print("Plotting feature importances...")
-
-    ax = lgb.plot_importance(clf, figsize=(5, 20), importance_type="gain", precision=2)
-    plt.savefig(
-        (config.METRIC_FIGS_DIR / "feature_importance.pdf"),
-        dpi=1200,
-        transparent=False,
-        bbox_inches="tight",
-    )
-    plt.close()
+# lgbm_save_model_to_h5()
 
 
-lgbm_save_feature_importance_plot()
+# def lgbm_save_feature_importance_plot():
+#     print("Plotting feature importances...")
+
+#     ax = lgb.plot_importance(clf, figsize=(5, 20), importance_type="gain", precision=2)
+#     plt.savefig(
+#         (config.METRIC_FIGS_DIR / "feature_importance.pdf"),
+#         dpi=1200,
+#         transparent=False,
+#         bbox_inches="tight",
+#     )
+#     plt.close()
 
 
-print(classification_report(y_test, clf.predict(X_test)))
+# lgbm_save_feature_importance_plot()
 
 
-y = label_binarize(y, classes=[0, 1, 2])
-n_classes = 3
-
-# shuffle and split training and test sets
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.33, random_state=0
-)
-
-# clf
-clf = OneVsRestClassifier(LinearSVC(random_state=0))
-y_score = clf.fit(X_train, y_train, method="predict_proba")
-
-# Compute ROC curve and ROC area for each class
-fpr = dict()
-tpr = dict()
-roc_auc = dict()
-for i in range(n_classes):
-    fpr[i], tpr[i], _ = roc_curve(y_test[:, i], y_score[:, i])
-    roc_auc[i] = auc(fpr[i], tpr[i])
-
-# Plot of a ROC curve for a specific class
-for i in range(n_classes):
-    plt.figure()
-    plt.plot(fpr[i], tpr[i], label="ROC curve (area = %0.2f)" % roc_auc[i])
-    plt.plot([0, 1], [0, 1], "k--")
-    plt.xlim([0.0, 1.0])
-    plt.ylim([0.0, 1.05])
-    plt.xlabel("False Positive Rate")
-    plt.ylabel("True Positive Rate")
-    plt.title("Receiver operating characteristic example")
-    plt.legend(loc="lower right")
-    plt.show()
+# print(classification_report(y_test, clf.predict(X_test)))
 
 
-y_score = cross_val_predict(clf, X, y, cv=10, method="predict_proba")
+# y = label_binarize(y, classes=[0, 1, 2])
+# n_classes = 3
 
-# reversefactor = dict(zip(range(5),definitions))
-# y_test = np.vectorize(reversefactor.get)(y_test)
-# y_pred = np.vectorize(reversefactor.get)(y_pred)
+# # shuffle and split training and test sets
+# X_train, X_test, y_train, y_test = train_test_split(
+#     X, y, test_size=0.33, random_state=0
+# )
 
-fpr = dict()
-tpr = dict()
-roc_auc = dict()
-lw = 2
-for i in range(n_classes):
-    fpr[i], tpr[i], _ = roc_curve(y_bin[:, i], y_score[:, i])
-    roc_auc[i] = auc(fpr[i], tpr[i])
-colors = cycle(["blue", "red", "green", "aqua", "darkorange", "cornflowerblue"])
-for i, color in zip(range(n_classes), colors):
-    target = "Missing"
-    if i == 0:
-        target = "MDS"
-    if i == 1:
-        target = "CMML"
-    if i == 2:
-        target = "PMF"
-    if i == 3:
-        target = "ET"
-    if i == 4:
-        target = "PV"
-    plt.plot(
-        fpr[i],
-        tpr[i],
-        color=color,
-        lw=lw,
-        label=f"ROC curve for {target} (area = {roc_auc[i]:0.2f})",
-    )
-plt.plot([0, 1], [0, 1], "k--", lw=lw)
-plt.xlim([-0.05, 1.0])
-plt.ylim([0.0, 1.05])
-plt.xlabel("False Positive Rate")
-plt.ylabel("True Positive Rate")
-plt.title("")
-plt.legend(loc="lower right")
-plt.savefig(config.METRIC_FIGS_DIR / "multiclassROC0.pdf")
-plt.close()
+# # clf
+# clf = OneVsRestClassifier(LinearSVC(random_state=0))
+# y_score = clf.fit(X_train, y_train, method="predict_proba")
 
-# Compute micro-average ROC curve and ROC area
-fpr["micro"], tpr["micro"], _ = roc_curve(y_bin.ravel(), y_score.ravel())
-roc_auc["micro"] = auc(fpr["micro"], tpr["micro"])
+# # Compute ROC curve and ROC area for each class
+# fpr = dict()
+# tpr = dict()
+# roc_auc = dict()
+# for i in range(n_classes):
+#     fpr[i], tpr[i], _ = roc_curve(y_test[:, i], y_score[:, i])
+#     roc_auc[i] = auc(fpr[i], tpr[i])
+
+# # Plot of a ROC curve for a specific class
+# for i in range(n_classes):
+#     plt.figure()
+#     plt.plot(fpr[i], tpr[i], label="ROC curve (area = %0.2f)" % roc_auc[i])
+#     plt.plot([0, 1], [0, 1], "k--")
+#     plt.xlim([0.0, 1.0])
+#     plt.ylim([0.0, 1.05])
+#     plt.xlabel("False Positive Rate")
+#     plt.ylabel("True Positive Rate")
+#     plt.title("Receiver operating characteristic example")
+#     plt.legend(loc="lower right")
+#     plt.show()
 
 
-# Compute macro-average ROC curve and ROC area
-# First aggregate all false positive rates
-all_fpr = np.unique(np.concatenate([fpr[i] for i in range(n_classes)]))
+# y_score = cross_val_predict(clf, X, y, cv=10, method="predict_proba")
 
-# Then interpolate all ROC curves at this points
-mean_tpr = np.zeros_like(all_fpr)
-for i in range(n_classes):
-    mean_tpr += interp(all_fpr, fpr[i], tpr[i])
+# # reversefactor = dict(zip(range(5),definitions))
+# # y_test = np.vectorize(reversefactor.get)(y_test)
+# # y_pred = np.vectorize(reversefactor.get)(y_pred)
 
-# Finally average it and compute AUC
-mean_tpr /= n_classes
+# fpr = dict()
+# tpr = dict()
+# roc_auc = dict()
+# lw = 2
+# for i in range(n_classes):
+#     fpr[i], tpr[i], _ = roc_curve(y_bin[:, i], y_score[:, i])
+#     roc_auc[i] = auc(fpr[i], tpr[i])
 
-fpr["macro"] = all_fpr
-tpr["macro"] = mean_tpr
-roc_auc["macro"] = auc(fpr["macro"], tpr["macro"])
+# colors = cycle(["blue", "red", "green", "aqua", "darkorange", "cornflowerblue"])
+# # random_colors = random.sample(beau_colors, 20)
+# colors = cycle(colorz['hex'])
 
-# Plot all ROC curves
-plt.figure()
-plt.plot(
-    fpr["micro"],
-    tpr["micro"],
-    label="micro-average ROC curve (area = {0:0.2f})" "".format(roc_auc["micro"]),
-    color="deeppink",
-    linestyle=":",
-    linewidth=4,
-)
+# for i, color in zip(range(n_classes), colors):
+#     target = "Missing"
+#     if i == 0:
+#         target = "MDS"
+#     if i == 1:
+#         target = "CMML"
+#     if i == 2:
+#         target = "PMF"
+#     if i == 3:
+#         target = "ET"
+#     if i == 4:
+#         target = "PV"
+#     plt.plot(
+#         fpr[i],
+#         tpr[i],
+#         color=color,
+#         lw=lw,
+#         label=f"ROC curve for {target} (area = {roc_auc[i]:0.2f})",
+#     )
+# plt.plot([0, 1], [0, 1], "k--", lw=lw)
+# plt.xlim([-0.05, 1.0])
+# plt.ylim([0.0, 1.05])
+# plt.xlabel("False Positive Rate")
+# plt.ylabel("True Positive Rate")
+# plt.title("")
+# plt.legend(loc="lower right")
+# plt.savefig(config.METRIC_FIGS_DIR / "ROC_multiclass_0.pdf")
+# plt.close()
 
-plt.plot(
-    fpr["macro"],
-    tpr["macro"],
-    label="macro-average ROC curve (area = {0:0.2f})" "".format(roc_auc["macro"]),
-    color="navy",
-    linestyle=":",
-    linewidth=4,
-)
-for i, color in zip(range(n_classes), colors):
-    plt.plot(
-        fpr[i],
-        tpr[i],
-        color=color,
-        lw=lw,
-        label="ROC curve of class {0} (area = {1:0.2f})" "".format(i, roc_auc[i]),
-    )
-
-plt.plot([0, 1], [0, 1], "k--", lw=lw)
-plt.xlim([0.0, 1.0])
-plt.ylim([0.0, 1.05])
-plt.xlabel("False Positive Rate")
-plt.ylabel("True Positive Rate")
-plt.title("")
-plt.legend(loc="lower right")
-plt.savefig(config.METRIC_FIGS_DIR / "multiclassROC1.pdf")
-plt.close()
+# # Compute micro-average ROC curve and ROC area
+# fpr["micro"], tpr["micro"], _ = roc_curve(y_bin.ravel(), y_score.ravel())
+# roc_auc["micro"] = auc(fpr["micro"], tpr["micro"])
 
 
-for i in range(n_classes):
-    fpr[i], tpr[i], _ = roc_curve(y_bin[:, i], y_score[:, i])
-    roc_auc[i] = auc(fpr[i], tpr[i])
+# # Compute macro-average ROC curve and ROC area
+# # First aggregate all false positive rates
+# all_fpr = np.unique(np.concatenate([fpr[i] for i in range(n_classes)]))
 
-# For each class
-precision = dict()
-recall = dict()
-average_precision = dict()
-for i in range(n_classes):
-    precision[i], recall[i], _ = precision_recall_curve(y_bin[:, i], y_score[:, i])
-    average_precision[i] = average_precision_score(y_bin[:, i], y_score[:, i])
+# # Then interpolate all ROC curves at this points
+# mean_tpr = np.zeros_like(all_fpr)
+# for i in range(n_classes):
+#     mean_tpr += interp(all_fpr, fpr[i], tpr[i])
 
-# A "micro-average": quantifying score on all classes jointly
-precision["micro"], recall["micro"], _ = precision_recall_curve(
-    y_bin.ravel(), y_score.ravel()
-)
-average_precision["micro"] = average_precision_score(y_bin, y_score, average="micro")
-print(
-    "Average precision score, micro-averaged over all classes: {0:0.2f}".format(
-        average_precision["micro"]
-    )
-)
+# # Finally average it and compute AUC
+# mean_tpr /= n_classes
 
+# fpr["macro"] = all_fpr
+# tpr["macro"] = mean_tpr
+# roc_auc["macro"] = auc(fpr["macro"], tpr["macro"])
 
-# setup plot details
-colors = cycle(["navy", "turquoise", "darkorange", "cornflowerblue", "teal"])
+# # Plot all ROC curves
+# plt.figure()
+# plt.plot(
+#     fpr["micro"],
+#     tpr["micro"],
+#     label="micro-average ROC curve (area = {0:0.2f})" "".format(roc_auc["micro"]),
+#     color="deeppink",
+#     linestyle=":",
+#     linewidth=4,
+# )
 
-plt.figure(figsize=(7, 8))
-f_scores = np.linspace(0.2, 0.8, num=4)
-lines = []
-labels = []
-for f_score in f_scores:
-    x = np.linspace(0.01, 1)
-    y = f_score * x / (2 * x - f_score)
-    l, = plt.plot(x[y >= 0], y[y >= 0], color="gray", alpha=0.2)
-    plt.annotate("f1={0:0.1f}".format(f_score), xy=(0.9, y[45] + 0.02))
+# plt.plot(
+#     fpr["macro"],
+#     tpr["macro"],
+#     label="macro-average ROC curve (area = {0:0.2f})" "".format(roc_auc["macro"]),
+#     color="navy",
+#     linestyle=":",
+#     linewidth=4,
+# )
+# for i, color in zip(range(n_classes), colors):
+#     plt.plot(
+#         fpr[i],
+#         tpr[i],
+#         color=color,
+#         lw=lw,
+#         label="ROC curve of class {0} (area = {1:0.2f})" "".format(i, roc_auc[i]),
+#     )
 
-lines.append(l)
-labels.append("iso-f1 curves")
-l, = plt.plot(recall["micro"], precision["micro"], color="gold", lw=2)
-lines.append(l)
-labels.append(
-    "micro-average Precision-recall (area = {0:0.2f})"
-    "".format(average_precision["micro"])
-)
-
-for i, color in zip(range(n_classes), colors):
-    l, = plt.plot(recall[i], precision[i], color=color, lw=2)
-    lines.append(l)
-    labels.append(
-        "Precision-recall for class {0} (area = {1:0.2f})"
-        "".format(i, average_precision[i])
-    )
-
-fig = plt.gcf()
-fig.subplots_adjust(bottom=0.25)
-plt.xlim([0.0, 1.0])
-plt.ylim([0.0, 1.05])
-plt.xlabel("Recall")
-plt.ylabel("Precision")
-plt.title("Extension of Precision-Recall curve to multi-class")
-plt.legend(lines, labels, loc=(0, -0.38), prop=dict(size=14))
+# plt.plot([0, 1], [0, 1], "k--", lw=lw)
+# plt.xlim([0.0, 1.0])
+# plt.ylim([0.0, 1.05])
+# plt.xlabel("False Positive Rate")
+# plt.ylabel("True Positive Rate")
+# plt.title("")
+# plt.legend(loc="lower right")
+# plt.savefig(config.METRIC_FIGS_DIR / "ROC_multiclass_1.pdf")
+# plt.close()
 
 
-plt.show()
+# for i in range(n_classes):
+#     fpr[i], tpr[i], _ = roc_curve(y_bin[:, i], y_score[:, i])
+#     roc_auc[i] = auc(fpr[i], tpr[i])
+
+# # For each class
+# precision = dict()
+# recall = dict()
+# average_precision = dict()
+# for i in range(n_classes):
+#     precision[i], recall[i], _ = precision_recall_curve(y_bin[:, i], y_score[:, i])
+#     average_precision[i] = average_precision_score(y_bin[:, i], y_score[:, i])
+
+# # A "micro-average": quantifying score on all classes jointly
+# precision["micro"], recall["micro"], _ = precision_recall_curve(
+#     y_bin.ravel(), y_score.ravel()
+# )
+# average_precision["micro"] = average_precision_score(y_bin, y_score, average="micro")
+# print(
+#     "Average precision score, micro-averaged over all classes: {0:0.2f}".format(
+#         average_precision["micro"]
+#     )
+# )
+
+
+# # setup plot details
+# colors = cycle(["navy", "turquoise", "darkorange", "cornflowerblue", "teal"])
+# # random_colors = random.sample(beau_colors, 20)
+# colors = cycle(colorz['hex'])
+
+# plt.figure(figsize=(7, 8))
+# f_scores = np.linspace(0.2, 0.8, num=4)
+# lines = []
+# labels = []
+# for f_score in f_scores:
+#     x = np.linspace(0.01, 1)
+#     y = f_score * x / (2 * x - f_score)
+#     l, = plt.plot(x[y >= 0], y[y >= 0], color="gray", alpha=0.2)
+#     plt.annotate("f1={0:0.1f}".format(f_score), xy=(0.9, y[45] + 0.02))
+
+# lines.append(l)
+# labels.append("iso-f1 curves")
+# l, = plt.plot(recall["micro"], precision["micro"], color="gold", lw=2)
+# lines.append(l)
+# labels.append(
+#     "micro-average Precision-recall (area = {0:0.2f})"
+#     "".format(average_precision["micro"])
+# )
+
+# for i, color in zip(range(n_classes), colors):
+#     l, = plt.plot(recall[i], precision[i], color=color, lw=2)
+#     lines.append(l)
+#     labels.append(
+#         "Precision-recall for class {0} (area = {1:0.2f})"
+#         "".format(i, average_precision[i])
+#     )
+
+# fig = plt.gcf()
+# fig.subplots_adjust(bottom=0.25)
+# plt.xlim([0.0, 1.0])
+# plt.ylim([0.0, 1.05])
+# plt.xlabel("Recall")
+# plt.ylabel("Precision")
+# plt.title("Extension of Precision-Recall curve to multi-class")
+# plt.legend(lines, labels, loc=(0, -0.38), prop=dict(size=14))
+
+
+# plt.show()
 
 
 #####################################################################

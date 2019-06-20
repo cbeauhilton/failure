@@ -1,5 +1,6 @@
 import csv
 import os
+import random
 import traceback
 import warnings
 from itertools import cycle
@@ -29,6 +30,14 @@ from sklearn.preprocessing import StandardScaler, label_binarize
 from sklearn.utils.multiclass import type_of_target
 
 from cbh import config
+from cbh.colors_rando import *
+from cbh.dumb import get_xkcd_colors
+
+colorz = get_xkcd_colors()
+colors = cycle(colorz['hex'])
+# random_colors = random.sample(beau_colors, 20)
+# colors = cycle(random_colors)
+# print(colors)
 
 # Load data
 data = pd.read_hdf(config.RAW_DATA_FILE_H5, key="data")
@@ -55,15 +64,15 @@ mean_fpr = np.linspace(0, 1, 100)
 misclassified_df = pd.read_csv(config.METRIC_FIGS_DIR / "misclassified.csv")
 
 roc_data = pd.read_csv(config.METRIC_FIGS_DIR / "roc_curve_data.csv")
-roc_data = roc_data.replace('nan', np.nan)
+roc_data = roc_data.replace("nan", np.nan)
 # print(roc_data.head(100))
 
 for classname in classes:
     # select the columns with the appropriate classname
     df2 = roc_data.filter(regex=classname)
-    fprs = df2.filter(regex='fpr')
-    tprss = df2.filter(regex='tpr')
-    aucss = df2.filter(regex='auc')
+    fprs = df2.filter(regex="fpr")
+    tprss = df2.filter(regex="tpr")
+    aucss = df2.filter(regex="auc")
     i = 0
     for fold_num in range(n_classes):
         fpr = fprs.filter(regex=f"{fold_num}_{classname}")
@@ -80,52 +89,61 @@ for classname in classes:
         tpr = tpr[0, :]
 
         roc_auc = aucss.filter(regex=f"{fold_num}_{classname}")
-        roc_auc = roc_auc.dropna()
-        roc_auc = roc_auc[roc_auc.columns[0:3]].values.T
-        roc_auc = roc_auc[0, :]
+        roc_auc = roc_auc.iloc[0][0]
+        # print(type(roc_auc))
+
         tprs.append(interp(mean_fpr, fpr, tpr))
         # print(type(tprs))
         tprs[-1][0] = 0.0
-        roc_auc = pd.DataFrame(roc_auc)
-        roc_auc = roc_auc.iloc[0][0]
-        print(type(roc_auc))
-        # print(roc_auc.iloc[0][0])
+
         aucs.append(roc_auc)
-        plt.plot(fpr, tpr, lw=1, alpha=0.3,
-                label='ROC fold %d (AUC = %0.2f)' % (i, roc_auc))
+        plt.plot(
+            fpr, tpr, lw=1, alpha=0.3, label="ROC fold %d (AUC = %0.2f)" % (i, roc_auc)
+        )
 
         i += 1
-    plt.plot([0, 1], [0, 1], linestyle='--', lw=2, color='r',
-            label='Chance', alpha=.8)
+    plt.plot([0, 1], [0, 1], linestyle="--", lw=2, color="r", label="Chance", alpha=0.8)
     print("\n")
     # print(type(tprs))
     mean_tpr = np.mean(tprs, axis=0)
     mean_tpr[-1] = 1.0
     mean_auc = auc(mean_fpr, mean_tpr)
     std_auc = np.std(aucs)
-    plt.plot(mean_fpr, mean_tpr, color='b',
-            label=r'Mean ROC (AUC = %0.2f $\pm$ %0.2f)' % (mean_auc, std_auc),
-            lw=2, alpha=.8)
+    plt.plot(
+        mean_fpr,
+        mean_tpr,
+        color="b",
+        label=r"Mean ROC (AUC = %0.2f $\pm$ %0.2f)" % (mean_auc, std_auc),
+        lw=2,
+        alpha=0.8,
+    )
 
     std_tpr = np.std(tprs, axis=0)
     tprs_upper = np.minimum(mean_tpr + std_tpr, 1)
     tprs_lower = np.maximum(mean_tpr - std_tpr, 0)
-    plt.fill_between(mean_fpr, tprs_lower, tprs_upper, color='grey', alpha=.2,
-                    label=r'$\pm$ 1 std. dev.')
+    plt.fill_between(
+        mean_fpr,
+        tprs_lower,
+        tprs_upper,
+        color="grey",
+        alpha=0.2,
+        label=r"$\pm$ 1 std. dev.",
+    )
 
     plt.xlim([-0.05, 1.05])
     plt.ylim([-0.05, 1.05])
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title('Receiver operating characteristic example')
+    plt.xlabel("False Positive Rate")
+    plt.ylabel("True Positive Rate")
+    plt.title("")
     plt.legend(loc="lower right")
-    plt.show()
-
-
-
-    
-
-
+    plt.savefig(
+        (config.METRIC_FIGS_DIR / f"ROC_{classname}.pdf"),
+        dpi=1200,
+        transparent=False,
+        bbox_inches="tight",
+    )
+    plt.close()
+#     plt.show()
 
 
 # fpr[j], tpr[j], _ = roc_curve(y_true[test][:, j], y_score[:, j])
@@ -133,36 +151,6 @@ for classname in classes:
 # fpr_save = {f"{i}_{classes[j]}_fpr": fpr[j]}
 # tpr_save = {f"{i}_{classes[j]}_tpr": tpr[j]}
 # auc_save = {f"{i}_{classes[j]}_auc": [roc_auc[j]]}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # # y_train_bin = label_binarize(y_train, classes=["mds", "cmml", "pmf", "et", "pv"])
@@ -250,10 +238,10 @@ for classname in classes:
 #     To retrieve pickled model, use something like:
 #     `pkl_model = metricsgen.save_model_to_pickle()`
 
-#     then: 
+#     then:
 
 #     `with open(pkl_model, "rb") as fin:
-#             gbm_model = pickle.load(fin)` 
+#             gbm_model = pickle.load(fin)`
 #     """
 
 #     print("Dumping model with pickle...")
@@ -561,8 +549,8 @@ for classname in classes:
 # # Nested CV with parameter optimization
 # # nested_score = cross_val_score(clf, X=X, y=y, cv=outer_cv, scoring=make_scorer(classification_report_with_accuracy_score))
 
-# # Average values in classification report for all folds in a K-fold Cross-validation  
-# # print(classification_report(originalclass, predictedclass)) 
+# # Average values in classification report for all folds in a K-fold Cross-validation
+# # print(classification_report(originalclass, predictedclass))
 
 # # scores = []
 # # for k, (train, test) in enumerate(kf):

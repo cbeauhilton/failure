@@ -1,3 +1,9 @@
+*.docx
+
+*.run.xml
+*.synctex.gz
+*.bcf
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

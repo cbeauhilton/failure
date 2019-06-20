@@ -19,6 +19,7 @@ METRIC_FIGS_DIR = FIGURES_DIR / "metrics/"
 TABLES_DIR = PROJECT_DIR / "reports/tables/"
 
 TEXT_DIR = PROJECT_DIR / "reports/text/pygen/"
+TEX_SECTIONS_DIR = PROJECT_DIR / "reports/text/sections/"
 TEX_TABLE_DIR = PROJECT_DIR / "reports/text/tables/"
 DOCS_DIR = PROJECT_DIR / "docs/"
 ########################### files ###########################
@@ -62,8 +63,8 @@ PARAMS_LGBM = {
     # "num_leaves": 99,
     # "num_rounds": 10_000_000,
     # "objective": "binary",
-    # "objective": "multiclass",
-    "objective": "multiclassova",
+    "objective": "multiclass",
+    # "objective": "multiclassova",
     "predict_contrib": True,
     "random_state": SEED,
     # "reg_alpha": 0.5926734167821595,
