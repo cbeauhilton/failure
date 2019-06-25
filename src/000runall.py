@@ -1,3 +1,5 @@
+import cowsay
+
 ###############################################################################
 #     ____  ________  ____
 #    / __ \/ ___/ _ \/ __ \
@@ -25,7 +27,7 @@
 
 # import a03train
 # import a04metrics
-import a05shap
+# import a05shap
 import a06forceplotmerge
 
 ###############################################################################
@@ -49,3 +51,9 @@ import b05table01
 import b05table02
 
 import c00eda
+
+
+
+print("#" * 80)
+cowsay.tux("finis")
+print("#" * 80)

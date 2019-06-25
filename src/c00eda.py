@@ -11,6 +11,7 @@ import pandas as pd
 from pandas_summary import DataFrameSummary
 from scipy import stats
 from tableone import TableOne
+import cowsay
 
 from cbh import config
 from cbh.exhandler import exhandler
@@ -372,6 +373,7 @@ except Exception as ex:
     exhandler(ex)
 
 
-print("")
-print("#" * 80, "\n"*2, "fin", "\n"*2, "#" * 80)
+print("#" * 80)
+cowsay.tux("fin")
+print("#" * 80)
 
