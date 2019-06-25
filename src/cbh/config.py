@@ -47,7 +47,7 @@ RAW_H5_KEY = "raw"
 # CATEGORICAL_IMPUTER_FILL_VALUE = "missing"
 # ONE_HOT_ENCODER = 1
 SEED = 42
-
+N_FORCE_PLOTS = 15
 
 PARAMS_LGBM = {
     # "boosting_type": "gbdt",

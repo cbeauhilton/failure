@@ -172,6 +172,7 @@ if not os.path.exists(config.TEX_SECTIONS_DIR):
 
 # ...and save.
 with open(out_text_file, "w") as text_file:
+    print("\n")
     print(out_text_file)
     print(combined, file=text_file)
 

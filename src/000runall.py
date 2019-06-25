@@ -25,6 +25,8 @@
 
 # import a03train
 # import a04metrics
+import a05shap
+import a06forceplotmerge
 
 ###############################################################################
 #                                __
@@ -40,5 +42,10 @@ import b00abstractconf
 import b01abstractmanu
 import b02methods
 import b03results
-# import b04table01
-# import b05table02
+import b04figure01
+import b04figure02
+import b04figure03
+import b05table01
+import b05table02
+
+import c00eda

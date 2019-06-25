@@ -85,25 +85,17 @@ base_fpr = np.linspace(0, 1, 101)
 plt.style.use("ggplot")
 plt.figure(figsize=(12, 8))
 
-colors = ["darksalmon", "gold", "royalblue", "mediumseagreen", "violet"]
-
-# random_colors = random.sample(beau_colors, 20)
-colors = cycle(colorz['hex'])
-# print(colors)
-
 fpr = dict()
 tpr = dict()
 roc_auc = dict()
 
-# Variables for average classification report
+
+
+
+
+# Start with empty lists for average classification report
 originalclass = []
 predictedclass = []
-
-# Make empty confusion matrix and dataframe to keep track of misclassified samples
-conf_mats = np.zeros(shape=(len(classes), len(classes)))
-misclassified_df = pd.DataFrame()
-roc_curve_data = pd.DataFrame() #{"00": np.arange(30)}
-
 
 def classification_report_with_accuracy_score(y_true, y_pred):
     originalclass.extend(y_true)
@@ -111,19 +103,25 @@ def classification_report_with_accuracy_score(y_true, y_pred):
     report = classification_report(originalclass, predictedclass, output_dict=True)
     report_df = pd.DataFrame(report).transpose()
     report_df.to_csv(config.METRIC_FIGS_DIR / "classification_report.csv")
-    # print(report_df.head(100))
-    # print(classification_report(originalclass, predictedclass))  # print classification report
-    return accuracy_score(y_true, y_pred) # return accuracy score
+    return accuracy_score(y_true, y_pred)
 
 scores = cross_val_score(clf, X=X, y=y, cv=k, \
                scoring=make_scorer(classification_report_with_accuracy_score))
 
+# append to classification report
 with open(config.METRIC_FIGS_DIR / "classification_report.csv",'a') as file:
     for i in range(n_splits):
         writer = csv.writer(file, delimiter=',')
         writer.writerow([f"Score for fold {i}",  f"{scores[i]}"])
-    writer.writerow([f"Mean accuracy with standard deviation",  f"{np.mean(scores):.3f}", f"+/-", f"{np.std(scores):.3f}"])
+    writer.writerow([f"Mean accuracy with standard deviation",  f"{np.mean(scores):.3f} +/- {np.std(scores):.3f}"])
 
+
+# Initialize confusion matrix with zeros ...
+conf_mats = np.zeros(shape=(len(classes), len(classes)))
+# and empty dataframe to keep track of misclassified samples ...
+misclassified_df = pd.DataFrame()
+# and another for the roc curve data.
+roc_curve_data = pd.DataFrame()
 
 # Fit the model for each fold
 # the "i" and "enumerate" give you the index for each loop of train and test
@@ -131,7 +129,7 @@ for i, (train, test) in enumerate(kf):
     print(f"\nFold {i}")
     model = clf.fit(X.iloc[train], y.iloc[train])
     y_score = model.predict_proba(X.iloc[test])
-    print(y_score)
+    # print(y_score)
     y_pred = model.predict(X.iloc[test])
 
     # Generate dataframes
@@ -141,7 +139,7 @@ for i, (train, test) in enumerate(kf):
     predictions = pd.DataFrame(
         {
             "Success": successes,
-            "Predictions": y_pred,
+            "Prediction": y_pred,
             "Actual": actual,
             "Sample Number": actual.index,
             "Iteration": i,
@@ -195,8 +193,8 @@ for i, (train, test) in enumerate(kf):
     for j in range(n_classes):
         # print(classes[j])
         fpr[j], tpr[j], _ = roc_curve(y_true[test][:, j], y_score[:, j])
-        print(fpr[j])
-        print(type(fpr[j]))
+        # print(fpr[j])
+        # print(type(fpr[j]))
         roc_auc[j] = auc(fpr[j], tpr[j])
         fpr_save = {f"{i}_{classes[j]}_fpr": fpr[j]}
         tpr_save = {f"{i}_{classes[j]}_tpr": tpr[j]}
@@ -217,36 +215,36 @@ for i, (train, test) in enumerate(kf):
 
 
 # Save combined dataframes
-misclassified_df.to_csv(config.METRIC_FIGS_DIR / "misclassified.csv")
+misclassified_df.to_csv(config.METRIC_FIGS_DIR / "misclassified_cv.csv")
 roc_curve_data.to_csv(config.METRIC_FIGS_DIR / "roc_curve_data.csv")
 
-roc_data = pd.read_csv(config.METRIC_FIGS_DIR / "roc_curve_data.csv")
-print(roc_data.head(100))
+# roc_data = pd.read_csv(config.METRIC_FIGS_DIR / "roc_curve_data.csv")
+# print(roc_data.head(100))
 
-for classname in classes:
-    # select the columns with the appropriate classname
-    df2 = roc_data.filter(regex=classname)
-    fprs = df2.filter(regex='fpr')
-    tprs = df2.filter(regex='tpr')
-    aucs = df2.filter(regex='auc')
-    print(fprs.head(100))
-    # print(df2.head(100))
-
-
-fpr[j], tpr[j], _ = roc_curve(y_true[test][:, j], y_score[:, j])
-roc_auc[j] = auc(fpr[j], tpr[j])
-fpr_save = {f"{i}_{classes[j]}_fpr": fpr[j]}
-tpr_save = {f"{i}_{classes[j]}_tpr": tpr[j]}
-auc_save = {f"{i}_{classes[j]}_auc": [roc_auc[j]]}
-
-# y_train_bin = label_binarize(y_train, classes=["mds", "cmml", "pmf", "et", "pv"])
-# y_test_bin = label_binarize(y_test, classes=["mds", "cmml", "pmf", "et", "pv"])
+# for classname in classes:
+#     # select the columns with the appropriate classname
+#     df2 = roc_data.filter(regex=classname)
+#     fprs = df2.filter(regex='fpr')
+#     tprs = df2.filter(regex='tpr')
+#     aucs = df2.filter(regex='auc')
+#     print(fprs.head(100))
+#     # print(df2.head(100))
 
 
-i = 0
-y = label_binarize(y, classes=["mds", "cmml", "pmf", "et", "pv"])
-print(type_of_target(y))
-n_classes = y.shape[1]
+# fpr[j], tpr[j], _ = roc_curve(y_true[test][:, j], y_score[:, j])
+# roc_auc[j] = auc(fpr[j], tpr[j])
+# fpr_save = {f"{i}_{classes[j]}_fpr": fpr[j]}
+# tpr_save = {f"{i}_{classes[j]}_tpr": tpr[j]}
+# auc_save = {f"{i}_{classes[j]}_auc": [roc_auc[j]]}
+
+# # y_train_bin = label_binarize(y_train, classes=["mds", "cmml", "pmf", "et", "pv"])
+# # y_test_bin = label_binarize(y_test, classes=["mds", "cmml", "pmf", "et", "pv"])
+
+
+# i = 0
+# y = label_binarize(y, classes=["mds", "cmml", "pmf", "et", "pv"])
+# print(type_of_target(y))
+# n_classes = y.shape[1]
 
 # for train, test in k.split(X, y):
 #     # y.iloc[test] = label_binarize(y.iloc[test], classes =["mds", "cmml", "pmf", "et", "pv"])

@@ -150,7 +150,7 @@ quantitative understanding of the complex interplay among genotype, clinical var
 
 
 combined = study_cohort + task_1 + task_2 + task_3
-print(combined)
+# print(combined)
 
 # txt for copy-pasta, spot-checking
 out_text_file = config.TEXT_DIR / "03_results.txt"
@@ -170,6 +170,7 @@ if not os.path.exists(config.TEXT_DIR):
 
 # ...and save.
 with open(out_text_file, "w") as text_file:
+    print("\n")
     print(out_text_file)
     print(combined, file=text_file)
 

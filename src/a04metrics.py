@@ -61,7 +61,7 @@ tprs = []
 aucs = []
 mean_fpr = np.linspace(0, 1, 100)
 # print(mean_fpr)
-misclassified_df = pd.read_csv(config.METRIC_FIGS_DIR / "misclassified.csv")
+misclassified_df = pd.read_csv(config.METRIC_FIGS_DIR / "misclassified_cv.csv")
 
 roc_data = pd.read_csv(config.METRIC_FIGS_DIR / "roc_curve_data.csv")
 roc_data = roc_data.replace("nan", np.nan)

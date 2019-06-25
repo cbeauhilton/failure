@@ -162,6 +162,16 @@ data = data.drop(cats, axis=1)
 # Join the encoded df
 data = data.join(one_hot)
 
+# drop any columns that are completely blank
+with_na = len(list(data))
+data = data.dropna(axis=1, how='all')
+without_na = len(list(data))
+any_dropped = with_na - without_na
+if any_dropped >0:
+    print(f"Dropped {any_dropped} empty columns.")
+
+data = data.reset_index(drop=True)
+
 # print(list(data))
 data.to_hdf(config.RAW_DATA_FILE_H5, key="data", mode="a", format="table")
 
