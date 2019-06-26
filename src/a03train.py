@@ -103,6 +103,7 @@ def classification_report_with_accuracy_score(y_true, y_pred):
     report = classification_report(originalclass, predictedclass, output_dict=True)
     report_df = pd.DataFrame(report).transpose()
     report_df.to_csv(config.METRIC_FIGS_DIR / "classification_report.csv")
+    report_df.to_csv(config.TABLES_DIR / "classification_report.csv")
     return accuracy_score(y_true, y_pred)
 
 scores = cross_val_score(clf, X=X, y=y, cv=k, \
@@ -216,6 +217,7 @@ for i, (train, test) in enumerate(kf):
 
 # Save combined dataframes
 misclassified_df.to_csv(config.METRIC_FIGS_DIR / "misclassified_cv.csv")
+misclassified_df.to_csv(config.TABLES_DIR / "misclassified_cv.csv")
 roc_curve_data.to_csv(config.METRIC_FIGS_DIR / "roc_curve_data.csv")
 
 # roc_data = pd.read_csv(config.METRIC_FIGS_DIR / "roc_curve_data.csv")

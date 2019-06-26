@@ -1,6 +1,6 @@
 ################################################################################
  
-2019-06-25 10:25:05.144282
+2019-06-26 07:46:33.768566
  
 Error on line 253:
  Empty 'DataFrame': no numeric data to plot
@@ -26,7 +26,7 @@ TypeError: Empty 'DataFrame': no numeric data to plot
  
 ################################################################################
  
-2019-06-25 10:25:14.969945
+2019-06-26 07:46:42.324897
  
 Error on line 296:
  ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''

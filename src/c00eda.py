@@ -374,6 +374,6 @@ except Exception as ex:
 
 
 print("#" * 80)
-cowsay.tux("fin")
+cowsay.cow("fin")
 print("#" * 80)
 

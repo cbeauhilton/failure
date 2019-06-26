@@ -185,6 +185,56 @@ a, *b, c = mutation_num_sent
 mutation_num_sent = a + ', ' + ', '.join(b) + " and " + c + '.'
 # print(mutation_num_sent)
 
+###############################################################################
+#          _____ __
+#    ____ / ___// /_  ____ _____
+#   / __ \\__ \/ __ \/ __ `/ __ \
+#  / / / /__/ / / / / /_/ / /_/ /
+# /_/ /_/____/_/ /_/\__,_/ .___/
+#                       /_/
+###############################################################################
+
+
+shap_vars = pd.read_csv(config.TABLES_DIR / "shap_df_pretty.csv")
+
+nShaps = 20
+shap_dict = {}
+shap_class_clause_0 = f"These variables included: "
+shap_class_clause_3 = f";"
+
+for classname in classes:
+    classname = classname.upper()
+    shap_dict[f"{classname}_abbr"] = list(shap_vars[f"{classname}_abbr"][:nShaps])
+    shap_dict[f"{classname}_full"] = list(shap_vars[f"{classname}"][:nShaps])
+    
+    shap_class_clause_1 = f"({classname}) "
+    shap_class_clause_2 = shap_dict[f'{classname}_abbr']
+    shap_class_clause_2 = ', '.join(shap_class_clause_2)
+    shap_dict[f"{classname}_clause"] = shap_class_clause_1 + shap_class_clause_2 + shap_class_clause_3
+    # print(shap_dict[f"{classname}_clause"])
+
+
+shap_clauses = dict([(key, value) for key, value in shap_dict.items() if "_clause" in key])
+shap_paragraph = []
+for k,v in shap_clauses.items():
+    sent = v
+    shap_paragraph.append(''.join(sent))
+
+shap_paragraph = ' '.join(shap_paragraph)
+shap_paragraph = shap_paragraph[:-1]
+# shap_paragraph = shap_paragraph + '.'
+# print(shap_paragraph)
+
+
+###############################################################################
+#                         __     __
+#    ____ ___  ____  ____/ /__  / /
+#   / __ `__ \/ __ \/ __  / _ \/ /
+#  / / / / / / /_/ / /_/ /  __/ /
+# /_/ /_/ /_/\____/\__,_/\___/_/
+###############################################################################
+
+# model_performance = f"{}"
 
 ###############################################################################
 #                                  __        ________
@@ -215,43 +265,72 @@ hgb_clause = f'and hemoglobin (Hgb)  {percentile_dict["hgb_median"]:.2f} (range,
 # \__/\____/\__,_/\____/
 ###############################################################################
 
+#
 
-# important_vars_shap = f"{}"
-shap_vars = pd.read_csv(config.TABLES_DIR / "shap_df_pretty.csv")
-print(shap_vars.head())
-
-nShaps = 20
-shap_dict = {}
-shap_class_clause_0 = f"These variables included: "
-shap_class_clause_3 = f";"
-
-for classname in classes:
-    classname = classname.upper()
-    shap_dict[f"{classname}_abbr"] = list(shap_vars[f"{classname}_abbr"][:nShaps])
-    shap_dict[f"{classname}_full"] = list(shap_vars[f"{classname}"][:nShaps])
-    
-    shap_class_clause_1 = f"({classname}) "
-    shap_class_clause_2 = shap_dict[f'{classname}_abbr']
-    shap_class_clause_2 = ', '.join(shap_class_clause_2)
-    shap_dict[f"{classname}_clause"] = shap_class_clause_1 + shap_class_clause_2 + shap_class_clause_3
-    print(shap_dict[f"{classname}_clause"])
-
-# print(shap_dict)
-#20
-
-# model_performance = f"{}"
 
 
 ###############################################################################
-#                     __           _ __
-#    ____ ___  ____ _/ /_____     (_) /_   _________
-#   / __ `__ \/ __ `/ //_/ _ \   / / __/  / ___/ __ \
-#  / / / / / / /_/ / ,< /  __/  / / /_   (__  ) /_/ /
-# /_/ /_/ /_/\__,_/_/|_|\___/  /_/\__/  /____/\____/
-###############################################################################   
+#     __               __                                    __
+#    / /_  ____ ______/ /______ __________  __  ______  ____/ /
+#   / __ \/ __ `/ ___/ //_/ __ `/ ___/ __ \/ / / / __ \/ __  /
+#  / /_/ / /_/ / /__/ ,< / /_/ / /  / /_/ / /_/ / / / / /_/ /
+# /_.___/\__,_/\___/_/|_|\__, /_/   \____/\__,_/_/ /_/\__,_/
+#                       /____/
+###############################################################################
 
 
-study_cohort = f"""
+background = f"""
+Background
+
+Myelodysplastic syndromes (MDS) and chronic myelomonocytic leukemia (CMML) \
+are mainly diagnosed based on morphological changes in the bone marrow. \
+The diagnosis can be challenging in patients (pts) with pancytopenia with minimal dysplasia, \
+and is subject to inter-observer variability. \
+Somatic mutations can be identified in either disease but no genes, \
+in isolation or in combination, are specific for disease phenotype.
+
+We developed a geno-clinical model that uses mutational data, peripheral blood values, and clinical variables \
+to predict an MDS vs. CMML diagnosis in pts who presented with cytopenias, in the absence of bone marrow biopsy results.
+
+"""
+
+###############################################################################
+#                    __  __              __
+#    ____ ___  ___  / /_/ /_  ____  ____/ /____
+#   / __ `__ \/ _ \/ __/ __ \/ __ \/ __  / ___/
+#  / / / / / /  __/ /_/ / / / /_/ / /_/ (__  )
+# /_/ /_/ /_/\___/\__/_/ /_/\____/\__,_/____/
+###############################################################################  
+
+methods = f"""
+Methods
+
+We combined genomic and clinical data from 1897 pts \
+treated at our institution (593) and the Munich Leukemia Laboratory (1304). \
+Pts were diagnosed with MDS or CMML according to 2008 WHO criteria. \
+Diagnosis of MDS and CMML was confirmed by independent hematopathologists that were not associated with the study. \
+A genomic panel of 40 genes commonly mutated in myeloid malignancies was included. \
+The initial cohort was randomly (computer generated) divided into \
+learner (80%) and validation (20%) cohorts. \
+Multiple machine learning algorithms were applied to predict the phenotype. \
+Feature extraction algorithms were used to extract genomic/clinical variables \
+that impacted the algorithm decision and to visualize the impact of each variable on phenotype. \
+Prediction performance was evaluated according to \
+the area under the curve of the receiver operator characteristic (ROC-AUC) and confusion/accuracy matrices.
+
+"""
+
+###############################################################################
+#                          ____
+#    ________  _______  __/ / /______
+#   / ___/ _ \/ ___/ / / / / __/ ___/
+#  / /  /  __(__  ) /_/ / / /_(__  )
+# /_/   \___/____/\__,_/_/\__/____/
+###############################################################################
+
+results = f"""
+Results
+
 {count_sent}{age_sent}{gender_sent}{wbc_clause}{amc_clause}{alc_clause}{anc_clause}{hgb_clause}
 
 {gene_percent_paragraph}
@@ -263,10 +342,7 @@ A set of {len(list(df))} genomic/clinical variables were evaluated \
 and several feature extraction algorithms were used to identify the \
 variables that have the most significant impact on the algorithm's decision. \
 These variables included: \
-AMC, ALC, TET2, ANC, ASXL1, SF3B1, Hgb, \
-number of mutations/sample, AEC, age, Plt, splenomegaly, \
-RUNX1, NRAS, CBL, U2AF1, STAG2, DNMT3A, \
-TP53, EZH2, SRSF2, and ZRSR2 (Figure 1).
+{shap_paragraph} (Figure 1).
 
 When applying the model to the validation cohort, \
 the ROC-AUC was .98 with an accuracy of 94%, \
@@ -295,8 +371,8 @@ the accuracy of the model dropped dramatically (77%, ROC-AUC .85).
 ###############################################################################
 
 
-task_3 = f"""
-Task 3
+conclusions = f"""
+Conclusions
 
 We propose a novel approach using interpretable, \
 individualized modeling to predict MDS vs. CMML phenotypes \
@@ -309,6 +385,19 @@ quantitative understanding of the complex interplay among genotype, clinical var
 """
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ###############################################################################
 #    _________ __   _____
 #   / ___/ __ `/ | / / _ \
@@ -316,8 +405,20 @@ quantitative understanding of the complex interplay among genotype, clinical var
 # /____/\__,_/ |___/\___/
 ###############################################################################
 
+abstract = background + methods + results + conclusions
 
-combined = study_cohort + task_3
+chars_no_spaces = len(''.join(abstract.split()))
+curr_char = f"% Number of characters in abstract: {chars_no_spaces}. \n"
+ASH_limit = "% ASH character limit is 3800. \n"
+
+if chars_no_spaces > 3800:
+    editing = f"% You are over by {chars_no_spaces - 3800} non-whitespace characters.\n"
+elif chars_no_spaces < 3800:
+    editing = f"% You are under by {3800 - chars_no_spaces} non-whitespace characters.\n"
+else:
+    editing = f"% Nailed it. 3800 = {chars_no_spaces}.\n"
+
+combined = curr_char + ASH_limit + editing + "\n" + abstract #+ task_3
 # print(combined)
 
 # txt for copy-pasta, spot-checking
@@ -398,3 +499,8 @@ with open(out_file_latex, "w") as file:
 
 # The median total number of mutations/sample \
 # was 2 (range 0-27) for all pts, 2 (range 0-8) for CMML, and 2 (range 0-27) for MDS.
+
+# AMC, ALC, TET2, ANC, ASXL1, SF3B1, Hgb, \
+# number of mutations/sample, AEC, age, Plt, splenomegaly, \
+# RUNX1, NRAS, CBL, U2AF1, STAG2, DNMT3A, \
+# TP53, EZH2, SRSF2, and ZRSR2 
