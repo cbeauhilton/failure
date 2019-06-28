@@ -9,6 +9,7 @@ pd.options.mode.chained_assignment = None  # default='warn'
 print("Loading", os.path.basename(__file__))
 ### read in data ###
 cmml = pd.read_excel(config.RAW_MLL_CMML_FILE)
+cmml["dataset_id"] = "cmml"
 
 col_list = sorted(list(cmml))
 txt_file = "zzz_cmml_raw.txt"
@@ -34,6 +35,7 @@ cmml.rename(
         "date of diagnosis/sampling": "date of diagnosis or sampling",
         "date of last contact/death": "date of last contact or death",
         "# cytopenia": "number of cytopenias",
+        "flt3-tkd": "flt3"
     },
     inplace=True,
 )
@@ -99,11 +101,17 @@ cmml["plt"] = cmml["plt"] / 1000
 for col in ["gender", "diagnosis", "id"]:
     cmml[col] = cmml[col].astype("category")
 
+final_genes = config.FINAL_GENES
 
+for col in final_genes:
+    cmml[col] = cmml[col].replace(1, "positive")
+    cmml[col] = cmml[col].replace(0, "negative")
+    cmml[col] = cmml[col].replace(np.nan, "negative")
+# print(cmml[final_genes].head(20))   
 # print(cmml.head(10))
 
 col_list = sorted(list(cmml))
-txt_file = "zz_cmml.txt"
+txt_file = "xx_cmml.txt"
 
 with open(config.DOCS_DIR/txt_file, "w") as f:
     f.write("CMML\n\n")

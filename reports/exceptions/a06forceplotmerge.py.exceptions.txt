@@ -1,0 +1,3320 @@
+################################################################################
+ 
+2019-06-28 07:20:08.923149
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.925101
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.928030
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.929981
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.931944
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.933885
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.935837
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.938765
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.940718
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.942670
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.944620
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.946574
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.949511
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.951454
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.953406
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.956332
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.959260
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.963166
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.965118
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:08.967069
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.258925
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.264780
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.270637
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.276494
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.280397
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.283325
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.287229
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.291133
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.296023
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.299917
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.308701
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.312604
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.316509
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.319437
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.322365
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.327245
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.337006
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.340909
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.345789
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:20:36.350679
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.598910
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.604767
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.611607
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.618454
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.624289
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.628191
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.632095
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.637950
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.641855
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.645758
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.649662
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.655528
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.660397
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.667230
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.671133
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.675038
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.678952
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.682845
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.686749
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:21:16.689677
+ 
+Error on line 107:
+ stat: embedded null character in path
+ 
+Traceback (most recent call last):
+  File "c:/Users/hiltonc/Desktop/failure/src/a06forceplotmerge.py", line 107, in <module>
+    if not os.path.exists(dest):
+  File "C:\Miniconda3\envs\ml01\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+ValueError: stat: embedded null character in path
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.059207
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.065061
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.069941
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.074822
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.077749
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.080678
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.083606
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.086533
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.090437
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.093365
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.096294
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.099222
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.101173
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.104101
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.107035
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.109958
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.112885
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.114837
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.117765
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:22:05.120695
+ 
+Error on line 112:
+ name 'shutil' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 112, in <module>
+    shutil.copy(file_name, dest)
+NameError: name 'shutil' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:13.928984
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:13.941650
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:13.955313
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:13.969003
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:13.982641
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:13.995329
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:14.007041
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:14.019728
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:14.032417
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:14.045104
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:14.057792
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:14.070480
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:14.083167
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:14.098814
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:14.114401
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:14.129063
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:14.145662
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:14.162250
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:14.180767
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:47:14.195408
+ 
+Error on line 119:
+ 'str' object has no attribute 'getPage'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 119, in <module>
+    file_sz = file.getPage(0).mediaBox
+AttributeError: 'str' object has no attribute 'getPage'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:30.699117
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:30.721586
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:30.742059
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:30.762580
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:30.783053
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:30.804525
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:30.825995
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:30.846492
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:30.873843
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:30.897250
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:30.918715
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:30.942141
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:30.963613
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:30.984109
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:31.005581
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:31.027053
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:31.047549
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:31.068045
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:31.088541
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:50:31.110019
+ 
+Error on line 163:
+ name 'new_pdf' is not defined
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 163, in <module>
+    page.mergePage(new_pdf.getPage(0))
+NameError: name 'new_pdf' is not defined
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.055922
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.079318
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.102743
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.127142
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.152518
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.175942
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.205221
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.232548
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.261829
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.289157
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.324293
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.352596
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.385781
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.416036
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.439460
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.463860
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.495092
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.531204
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.555604
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:58:54.579028
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.407380
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.431780
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.457157
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.481555
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.505957
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.532334
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.561588
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.596723
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.623074
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.648452
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.674804
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.699204
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.728484
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.750932
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.776308
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.802694
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.827092
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.854411
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.878788
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:59:09.902212
+ 
+Error on line 169:
+ unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 169, in <module>
+    page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i * 0.9 - ht_corr, tx=tx)
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.222103
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.241630
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.263102
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.282625
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.302111
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.322608
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.342152
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.362641
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.386047
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.406543
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.427040
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.450463
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.471935
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.495359
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.517808
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.537358
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.558798
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.581271
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.601744
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:03.623215
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / 2, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.432037
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.454485
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.474003
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.493524
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.514029
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.534539
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.554035
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.574532
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.595028
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.619428
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.640900
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.662372
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.683871
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.704364
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.726788
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.746320
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.766835
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.789269
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.809748
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:04:40.829268
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(file0_wd / decimal.Decimal(2) - 40, word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.465530
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.487978
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.508459
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.528010
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.549476
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.570957
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.591443
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.610970
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.634376
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.654859
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.676355
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.697803
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.719276
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.739771
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.761243
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.781773
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.801291
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.821767
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.842252
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:05:15.861806
+ 
+Error on line 154:
+ unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\a06forceplotmerge.py", line 154, in <module>
+    can.drawCentredString(decimal.Decimal(file0_wd) / decimal.Decimal(2), word_ty, f"True diagnosis: {true_dx.upper()}")
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\reportlab\pdfgen\canvas.py", line 1602, in drawCentredString
+    t = self.beginText(x - 0.5*width, y, direction=direction)
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+
+################################################################################
+ 

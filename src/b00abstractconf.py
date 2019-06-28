@@ -7,7 +7,8 @@ import operator
 import re
 
 df = pd.read_hdf(config.RAW_DATA_FILE_H5, key="data")
-
+y = pd.read_hdf(config.RAW_DATA_FILE_H5, key="y")
+# X = pd.read_hdf(config.RAW_DATA_FILE_H5, key="X")
 
 ###############################################################################
 #        ___
@@ -18,8 +19,16 @@ df = pd.read_hdf(config.RAW_DATA_FILE_H5, key="data")
 #              /____/
 ###############################################################################
 
+df['institution'] = np.where(df['id'].str.contains("mll_", case=False, na=False), 'MLL', 'CCF')
+# print(df[['institution', "id"]])
+institutions = np.unique(df["institution"])
+# print(institutions)
+friends = {}
+for place in institutions:
+    friends[place] = len(df[df["institution"] == place])
 
-y = df["diagnosis"].copy()
+# print(friends)
+
 classes = np.unique(y) # retrieve all class names
 CLASSES = [x.upper() for x in classes] # make uppercase version
 Classes = [x.title() for x in classes] # make titlecase version
@@ -43,12 +52,12 @@ a, *b, c = sorted_class_sizes
 
 count_clause_1 = []
 for i in b:
-    sent = f"{class_sizes[i]} pts had {i.upper()}, "
+    sent = f"{class_sizes[i]} had {i.upper()}, "
     count_clause_1.append(sent)
 
 count_clause_0 = f"Of {class_sizes[a]} pts included, "
 count_clause_1 = ''.join(count_clause_1)
-count_clause_2 = f"and {class_sizes[c]} pts had {c.upper()}."
+count_clause_2 = f"and {class_sizes[c]} had {c.upper()}."
 # print(count_clause_0) ; print(count_clause_1) ; print(count_clause_2)
 count_sent = count_clause_0 + count_clause_1 + count_clause_2
 # print(count_sent)
@@ -170,14 +179,14 @@ gene_percent_paragraph = ' '.join(gene_percent_paragraph)
 
 mutation_num_sent = []
 
-mutation_num_clause_0 = f"The median total number of mutations/sample was {mutations_per_sample['cohort_median']} (range {mutations_per_sample['cohort_min']}-{mutations_per_sample['cohort_max']}) for all pts" 
+mutation_num_clause_0 = f"The median total number of mutations/sample was {mutations_per_sample['cohort_median']:.0f} (range {mutations_per_sample['cohort_min']}-{mutations_per_sample['cohort_max']}) for all pts" 
 mutation_num_sent.append(mutation_num_clause_0)
 
 for classname in classes:
     mini = mutations_per_sample[f"{classname}_min"]
     medi = mutations_per_sample[f"{classname}_median"]
     maxi = mutations_per_sample[f"{classname}_max"]
-    clause = f"{medi} (range {mini}-{maxi}) for {classname.upper()}"
+    clause = f"{medi:.0f} (range {mini}-{maxi}) for {classname.upper()}"
     mutation_num_sent.append(clause)
 
 a, *b, c = mutation_num_sent
@@ -301,15 +310,15 @@ to predict an MDS vs. CMML diagnosis in pts who presented with cytopenias, in th
 #  / / / / / /  __/ /_/ / / / /_/ / /_/ (__  )
 # /_/ /_/ /_/\___/\__/_/ /_/\____/\__,_/____/
 ###############################################################################  
-
+# {CLASSES[0]} 
 methods = f"""
 Methods
 
-We combined genomic and clinical data from 1897 pts \
-treated at our institution (593) and the Munich Leukemia Laboratory (1304). \
-Pts were diagnosed with MDS or CMML according to 2008 WHO criteria. \
-Diagnosis of MDS and CMML was confirmed by independent hematopathologists that were not associated with the study. \
-A genomic panel of 40 genes commonly mutated in myeloid malignancies was included. \
+We combined genomic and clinical data from {len(df)} pts \
+treated at our institution ({friends["CCF"]}) and the Munich Leukemia Laboratory ({friends["MLL"]}). \
+Pts were diagnosed with {", ".join(CLASSES[:-1])} and {CLASSES[-1]} according to 2008 WHO criteria. \
+Diagnosis was confirmed by independent hematopathologists not associated with the study. \
+A genomic panel of {len(gene_cols)} genes commonly mutated in myeloid malignancies was included. \
 The initial cohort was randomly (computer generated) divided into \
 learner (80%) and validation (20%) cohorts. \
 Multiple machine learning algorithms were applied to predict the phenotype. \
@@ -393,7 +402,12 @@ quantitative understanding of the complex interplay among genotype, clinical var
 # /____/\__,_/ |___/\___/
 ###############################################################################
 
+
+
+
 abstract = background + methods + results + conclusions
+
+abstract = re.sub('MDS_MPN', 'MDS/MPN', abstract)
 
 chars_no_spaces = len(''.join(abstract.split()))
 curr_char = f"Number of characters in abstract: {chars_no_spaces}. \n"

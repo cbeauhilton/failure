@@ -1,4 +1,4 @@
-MPN
+CCF
 
 abs bas
 abs eos
@@ -8,82 +8,78 @@ abs neut
 age
 apc
 asxl1
-asxl2
-atm
-atrx
 bas %
 bcor
 bcorl1
-braf
-brcc3
-calr
+c7orf55
 cbl
+ccdc42b
 cdh23
-cdkn2a
 cebpa
-crebbp
-csf3r
-csnk1a1
-ctcf
+cftr
+csf1r
 cux1
+dataset_id
 ddx41
 ddx54
 dhx29
 diagnosis
-dnmt1
 dnmt3a
+eed
 eos %
-ep300
-etnk1
+erbb4
 etv6
 ezh2
-fancl
-fbxw7
 flt3
-gata1
 gata2
 gender
-gnas
+gli1
+gli2
 gnb1
+gpr98
 hgb
 id
 idh1
 idh2
+irf4
 jak2
-kdm5a
+jak3
 kdm6a
 kit
-kmt2d
 kras
 lym %
+mch
+mchc
+mcv
+mecom
+med12
+megakaryocytes
+mll
 mono %
-mpl
-myc
+mpv
 neut %
 nf1
-notch1
 npm1
 nras
-nsd1
+ogt
 percent bm blasts
 phf6
-piga
 plt
-ppm1d
 prpf8
+ptch1
 ptpn11
 rad21
-rb1
+rdw
+rnf25
 runx1
 setbp1
-sf1
-sf3a1
 sf3b1
-sh2b3
-smc1a
+simc1
 smc3
+splenomegaly
 srsf2
 stag2
+stat3
 suz12
 tet2
 tp53
@@ -91,5 +87,4 @@ u2af1
 u2af2
 wbc
 wt1
-zbtb7a
 zrsr2

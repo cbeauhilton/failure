@@ -17,6 +17,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import shap
+from fancyimpute import KNN, BiScaler, NuclearNormMinimization, SoftImpute
 from imblearn.over_sampling import SMOTE
 from PyPDF2 import PdfFileReader, PdfFileWriter
 from scipy import interp
@@ -38,6 +39,7 @@ from sklearn.utils.multiclass import type_of_target
 from cbh import config
 from cbh.dumb import get_xkcd_colors
 from cbh.exhandler import exhandler
+from cbh.fancyimpute import SoftImputeDf
 
 colorz = get_xkcd_colors()
 colors = cycle(colorz["hex"])
@@ -48,16 +50,10 @@ print("Loading", os.path.basename(__file__))
 
 # Load data
 data = pd.read_hdf(config.RAW_DATA_FILE_H5, key="data")
+y = pd.read_hdf(config.RAW_DATA_FILE_H5, key="y")
+X = pd.read_hdf(config.RAW_DATA_FILE_H5, key="X")
+X = X.round(2)
 
-# Grab indices to make new identifiers
-data = data.reset_index(drop=True)
-data = data.round(2)
-data['pt_num'] = data.index
-data['pt_num'] = data['pt_num'].astype('category')
-
-# Define labels and features
-y = data["diagnosis"].copy()
-X = data.drop(["diagnosis", "id"], axis=1).copy()
 classes = np.unique(y) # retrieve all class names
 CLASSES = [x.upper() for x in classes] # make uppercase version
 # print(CLASSES)
@@ -69,6 +65,10 @@ X_train, X_test, y_train, y_test = train_test_split(
 params = config.PARAMS_LGBM
 clf = lgb.LGBMClassifier(**params)
 early_stopping_rounds = 500
+cats = list(X.select_dtypes(include='category'))
+# print(cats)
+X_train = SoftImputeDf().fit_transform(X_train)
+X_train[cats] = X_train[cats].astype('category')
 model = clf.fit(
     X_train,
     y_train,
@@ -159,6 +159,7 @@ dirs = ["shap_summary", "shap_dependence", "force_plots"]
 for folder in dirs:
     try:
         shutil.rmtree(config.FIGURES_DIR/f"shap_images/{folder}")
+        time.sleep(3)
     except OSError as e:
         # pass
         print ("%s - %s." % (e.filename, e.strerror))
@@ -197,11 +198,25 @@ for i, classname in enumerate(CLASSES):
         )
         plt.close()
     except Exception as ex:
-            exhandler(ex)
+            exhandler(ex, module=os.path.basename(__file__))
 
+    try:
+        print(f"{classname} compact dot summary...")
+        shap.summary_plot(shap_values[i], X, show=False, plot_type="compact_dot")
+        plt.title(f"{classname.upper()}")
+        plt.savefig(
+            config.FIGURES_DIR / f"shap_images/shap_summary/shap_summary_compact_dot_{classname}_{i}.pdf",
+            bbox_inches="tight",
+        )
+        plt.close()
+
+    except Exception as ex:
+            exhandler(ex, module=os.path.basename(__file__))
+
+    print(f"Dependence plots for {classname}...")
     for col in list(X):
         try:
-            print(f"Dependence plot for {col} for {classname}...")
+            # print(f"Dependence plot for {col} for {classname}...")
             shap.dependence_plot(f"{col}", shap_values[i], X, show=False)
             plt.tight_layout()
             if not os.path.exists(config.FIGURES_DIR / f"shap_images/shap_dependence/{classname}"):
@@ -209,7 +224,7 @@ for i, classname in enumerate(CLASSES):
             plt.savefig(config.FIGURES_DIR / f"shap_images/shap_dependence/{classname}/shap_dependence_{classname}_{col}.pdf", transparent=True)
             plt.close()
         except Exception as ex:
-            exhandler(ex)
+            exhandler(ex, module=os.path.basename(__file__))
         
     print(f"{classname} force plots...")
     for pt_num in pt_nums:
@@ -239,7 +254,7 @@ for i, classname in enumerate(CLASSES):
             )
             plt.close()
         except Exception as ex:
-            exhandler(ex)
+            exhandler(ex, module=os.path.basename(__file__))
 
 
 imp_cols = pd.read_csv(config.TABLES_DIR / "shap_df.csv")
@@ -248,7 +263,7 @@ di = dict(zip(prettycols.ugly, prettycols.pretty_full))
 pretty_imp_cols = pd.DataFrame()
 for classname in CLASSES:
     pretty_imp_cols[f'{classname}'] = imp_cols[f'{classname}'].map(di).fillna(imp_cols[f'{classname}'])
-print(pretty_imp_cols.head())
+# print(pretty_imp_cols.head())
 
 pretty_imp_cols.to_csv(config.TABLES_DIR / "shap_df_pretty.csv")
 

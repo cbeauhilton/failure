@@ -13,18 +13,19 @@ tqdm.pandas()
 
 ### read in data ###
 mpn = pd.read_excel(config.RAW_AHED_MPN_FILE)
+mpn["dataset_id"] = "mpn"
 
 col_list = sorted(list(mpn))
 txt_file = "zzz_mpn_raw.txt"
 
-with open(config.DOCS_DIR/txt_file, "w") as f:
+with open(config.DOCS_DIR / txt_file, "w") as f:
     f.write("MPN\n\n")
     for item in col_list:
         f.write("%s\n" % item)
 
 mpn.rename(
     index=str,
-    columns={"Female=1; male=2": "gender", "Entity": "diagnosis", "Age": "age"},
+    columns={"Female=1; male=2": "gender", "Entity": "diagnosis", "Age": "age", },
     inplace=True,
 )
 
@@ -43,8 +44,8 @@ mpn["mll_id"].fillna(mpn["MRN"], inplace=True)
 mpn["id"] = mpn["mll_id"]
 mpn.drop(["mll_id", "MLL_ID", "MRN"], axis=1, inplace=True)
 
-
-mpn["age"].replace(regex=True, inplace=True, to_replace=r"\D", value=r"")
+# convert age to numeric
+mpn.age = pd.to_numeric(mpn.age, errors="coerce")
 
 # clean up the column names and data en masse
 dataframes = [mpn]
@@ -83,6 +84,7 @@ keep_cols = [
     "csnk1a1 result",
     "ctcf result",
     "cux1 result",
+    "dataset_id",
     "ddx41 result",
     "ddx54 result",
     "dhx29 result",
@@ -291,7 +293,7 @@ mpn = mpn.apply(
     .str.replace("postivie", "positive")
     .str.replace("postitive", "positive")
     .str.replace("negativ", "negative")
-    .str.replace("negativee", "negative") 
+    .str.replace("negativee", "negative")
     .str.replace("kmt2a", "positive")
     if (x.dtype == "object")
     else x
@@ -301,29 +303,39 @@ mpn = mpn.apply(
 # for col in genes:
 #     print(mpn[col].value_counts())
 
-for col in ["age"]:
-    mpn[col] = pd.to_numeric(mpn[col])
+# for col in ["age"]:
+#     mpn[col] = pd.to_numeric(mpn[col])
 
 for col in ["id", "gender"]:
     mpn[col] = mpn[col].astype("category")
 
-for col in genes:
-    mpn[col] = mpn[col].astype("category")
+# for col in genes:
+    # mpn[col] = mpn[col].astype("category")
 
 # for col in ["date last fu"]:
 #     mpn[col] = pd.to_datetime(mpn[col])
 # for col in ["date of diagnosis"]:
 #     mpn.drop([col], axis=1, inplace=True)
 
-mpn['abs lym'] = mpn['abs lym']/1000
-mpn['abs mono'] = mpn['abs mono']/1000
-mpn['abs eos'] = mpn['abs eos']/1000
-mpn['abs bas'] = mpn['abs bas']/1000
+mpn["abs lym"] = mpn["abs lym"] / 1000
+mpn["abs mono"] = mpn["abs mono"] / 1000
+mpn["abs eos"] = mpn["abs eos"] / 1000
+mpn["abs bas"] = mpn["abs bas"] / 1000
+mpn["abs neut"] = mpn["abs neut"] / 1000
+mpn["wbc"] = mpn["wbc"] / 1000
+mpn["plt"] = mpn["plt"] / 1000
+
+final_genes = config.FINAL_GENES
+for col in final_genes:
+    mpn[col] = mpn[col].replace(1, "positive")
+    mpn[col] = mpn[col].replace(0, "negative")
+    mpn[col] = mpn[col].replace(np.nan, "negative")
+# print(mpn[final_genes].head(20)) 
 
 col_list = sorted(list(mpn))
-txt_file = "zz_mpn.txt"
+txt_file = "xx_mpn.txt"
 # print(col_list)
-with open(config.DOCS_DIR/txt_file, "w") as f:
+with open(config.DOCS_DIR / txt_file, "w") as f:
     f.write("MPN\n\n")
     for item in col_list:
         f.write("%s\n" % item)

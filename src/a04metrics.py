@@ -1,4 +1,5 @@
 import csv
+import json
 import os
 import random
 import traceback
@@ -41,11 +42,11 @@ colors = cycle(colorz['hex'])
 
 # Load data
 data = pd.read_hdf(config.RAW_DATA_FILE_H5, key="data")
+y = pd.read_hdf(config.RAW_DATA_FILE_H5, key="y")
+X = pd.read_hdf(config.RAW_DATA_FILE_H5, key="X")
 # print(list(data))
 
 # Define labels and features, and binarize labels for AUC/PR curves
-y = data["diagnosis"].copy()
-X = data.drop(["diagnosis", "id"], axis=1).copy()
 # print(X.head())
 # print(y.head())
 classes = np.unique(y)
@@ -67,14 +68,17 @@ roc_data = pd.read_csv(config.METRIC_FIGS_DIR / "roc_curve_data.csv")
 roc_data = roc_data.replace("nan", np.nan)
 # print(roc_data.head(100))
 
+
+with open(config.TABLES_DIR/'perf_dict.json', 'r') as f:
+    perf_dict = json.load(f)
+
 for classname in classes:
     # select the columns with the appropriate classname
     df2 = roc_data.filter(regex=classname)
     fprs = df2.filter(regex="fpr")
     tprss = df2.filter(regex="tpr")
     aucss = df2.filter(regex="auc")
-    i = 0
-    for fold_num in range(n_classes):
+    for i, fold_num in enumerate(range(n_classes)):
         fpr = fprs.filter(regex=f"{fold_num}_{classname}")
         fpr = fpr.dropna()
         fpr = fpr[fpr.columns[0:3]].values.T
@@ -98,17 +102,20 @@ for classname in classes:
 
         aucs.append(roc_auc)
         plt.plot(
-            fpr, tpr, lw=1, alpha=0.3, label="ROC fold %d (AUC = %0.2f)" % (i, roc_auc)
+            fpr, tpr, lw=1, alpha=0.3, #label="ROC fold %d (AUC = %0.2f)" % (i, roc_auc)
         )
 
-        i += 1
     plt.plot([0, 1], [0, 1], linestyle="--", lw=2, color="r", label="Chance", alpha=0.8)
-    print("\n")
+    # print("\n")
     # print(type(tprs))
     mean_tpr = np.mean(tprs, axis=0)
     mean_tpr[-1] = 1.0
     mean_auc = auc(mean_fpr, mean_tpr)
     std_auc = np.std(aucs)
+    # perf_dict[f"{classname}"] = {}
+    perf_dict[f"{classname}"]['auc'] = mean_auc
+    perf_dict[f"{classname}"]['auc_std'] = std_auc
+ 
     plt.plot(
         mean_fpr,
         mean_tpr,
@@ -145,6 +152,10 @@ for classname in classes:
     plt.close()
 #     plt.show()
 
+print(perf_dict)
+
+with open(config.TABLES_DIR/'perf_dict.json', 'w') as f:
+    json.dump(perf_dict, f)
 
 # fpr[j], tpr[j], _ = roc_curve(y_true[test][:, j], y_score[:, j])
 # roc_auc[j] = auc(fpr[j], tpr[j])

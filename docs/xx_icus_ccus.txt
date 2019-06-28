@@ -1,0 +1,46 @@
+ICUS_CCUS
+
+abs bas
+abs eos
+abs lym
+abs mono
+abs neut
+age
+anc
+asxl1
+bas %
+bcor
+calr
+cbl
+dataset_id
+diagnosis
+dnmt3a
+eos %
+etv6
+ezh2
+flt3
+gata2
+gender
+hgb
+id
+idh1
+idh2
+jak2
+kit
+kras
+lym %
+mono %
+mpl
+neut %
+npm1
+nras
+plt
+runx1
+setbp1
+sf3b1
+srsf2
+tet2
+tp53
+u2af1
+wbc
+zrsr2

@@ -1,10 +1,12 @@
 import csv
+import json
 import os
 import random
 import traceback
 import warnings
 from itertools import cycle
 
+import cowsay
 import h5py
 import jsonpickle
 import lightgbm as lgb
@@ -12,6 +14,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
+from fancyimpute import KNN, BiScaler, NuclearNormMinimization, SoftImpute
 from imblearn.over_sampling import SMOTE
 from scipy import interp
 from sklearn import datasets, svm
@@ -19,8 +22,11 @@ from sklearn.datasets import make_classification
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.exceptions import UndefinedMetricWarning
 from sklearn.metrics import (accuracy_score, auc, average_precision_score,
-                             classification_report, confusion_matrix,
-                             make_scorer, precision_recall_curve, roc_curve)
+                             brier_score_loss, classification_report,
+                             confusion_matrix, f1_score, make_scorer,
+                             precision_recall_curve,
+                             precision_recall_fscore_support, precision_score,
+                             recall_score, roc_curve)
 from sklearn.model_selection import (
     KFold, StratifiedKFold, cross_val_predict, cross_val_score,
     train_test_split)
@@ -31,6 +37,7 @@ from sklearn.utils.multiclass import type_of_target
 
 from cbh import config
 from cbh.dumb import get_xkcd_colors
+from cbh.fancyimpute import SoftImputeDf
 
 colorz = get_xkcd_colors()
 colors = cycle(colorz['hex'])
@@ -57,11 +64,14 @@ print("Loading", os.path.basename(__file__))
 
 # Load data
 data = pd.read_hdf(config.RAW_DATA_FILE_H5, key="data")
+y = pd.read_hdf(config.RAW_DATA_FILE_H5, key="y")
+X = pd.read_hdf(config.RAW_DATA_FILE_H5, key="X")
 # print(list(data))
 
 # Define labels and features, and binarize labels for AUC/PR curves
-y = data["diagnosis"].copy()
-X = data.drop(["diagnosis", "id"], axis=1).copy()
+# y = data["diagnosis"].copy()
+# X = data.drop(["diagnosis", "id"], axis=1).copy()
+
 # print(X.head())
 # print(y.head())
 classes = np.unique(y)
@@ -88,34 +98,67 @@ plt.figure(figsize=(12, 8))
 fpr = dict()
 tpr = dict()
 roc_auc = dict()
-
-
-
-
+precision = dict()
+recall = dict()
+average_precision = dict()
 
 # Start with empty lists for average classification report
 originalclass = []
 predictedclass = []
 
-def classification_report_with_accuracy_score(y_true, y_pred):
-    originalclass.extend(y_true)
-    predictedclass.extend(y_pred)
-    report = classification_report(originalclass, predictedclass, output_dict=True)
-    report_df = pd.DataFrame(report).transpose()
-    report_df.to_csv(config.METRIC_FIGS_DIR / "classification_report.csv")
-    report_df.to_csv(config.TABLES_DIR / "classification_report.csv")
-    return accuracy_score(y_true, y_pred)
+acc_scores = {}
+ef1_scores = {}
+pre_scores = {}
+rec_scores = {}
 
-scores = cross_val_score(clf, X=X, y=y, cv=k, \
-               scoring=make_scorer(classification_report_with_accuracy_score))
 
-# append to classification report
-with open(config.METRIC_FIGS_DIR / "classification_report.csv",'a') as file:
-    for i in range(n_splits):
-        writer = csv.writer(file, delimiter=',')
-        writer.writerow([f"Score for fold {i}",  f"{scores[i]}"])
-    writer.writerow([f"Mean accuracy with standard deviation",  f"{np.mean(scores):.3f} +/- {np.std(scores):.3f}"])
+from sklearn.model_selection import cross_validate
+# from sklearn.datasets import  load_iris
+# from sklearn.svm import SVC
 
+
+# scoring = {'acc': 'accuracy',
+#            'prec_macro': 'precision_macro',
+#            'rec_micro': 'recall_macro'}
+# scores = cross_validate(clf, X=X, y=y, scoring=scoring,
+#                          cv=k, return_train_score=True)
+# print(scores.keys())
+# print(scores['test_acc']) 
+
+# def classification_report_with_accuracy_score(y_true, y_pred):
+#     originalclass.extend(y_true)
+#     predictedclass.extend(y_pred)
+#     report = classification_report(originalclass, predictedclass, output_dict=True)
+#     # print(report)
+#     with open(config.TABLES_DIR/'perf_dict.json', 'w') as f:
+#         json.dump(report, f)
+#     report_df = pd.DataFrame(report).transpose()
+#     report_df.to_csv(config.METRIC_FIGS_DIR / "classification_report.csv")
+#     report_df.to_csv(config.TABLES_DIR / "classification_report.csv")
+#     acc_score = accuracy_score(y_true, y_pred)
+#     ef1_score = f1_score(y_true, y_pred, average="macro")
+#     # ef1_scores[f"{k}"]
+#     pre_score = precision_score(y_true, y_pred, average="macro")
+#     rec_score = recall_score(y_true, y_pred, average="macro")
+#     return acc_score
+
+# scores = cross_val_score(clf, X=X, y=y, cv=k, \
+#                scoring=make_scorer(classification_report_with_accuracy_score))
+
+# # print(ef1_score)
+
+# # append to classification report
+# with open(config.METRIC_FIGS_DIR / "classification_report.csv",'a') as file:
+#     for i in range(n_splits):
+#         writer = csv.writer(file, delimiter=',')
+#         writer.writerow([f"Score for fold {i}",  f"{scores[i]}"])
+#     writer.writerow([f"Mean accuracy with standard deviation",  f"{np.mean(scores):.3f} +/- {np.std(scores):.3f}"])
+
+# with open(config.TABLES_DIR / "classification_report.csv",'a') as file:
+#     for i in range(n_splits):
+#         writer = csv.writer(file, delimiter=',')
+#         writer.writerow([f"Score for fold {i}",  f"{scores[i]}"])
+#     writer.writerow([f"Mean accuracy with standard deviation",  f"{np.mean(scores):.3f} +/- {np.std(scores):.3f}"])
 
 # Initialize confusion matrix with zeros ...
 conf_mats = np.zeros(shape=(len(classes), len(classes)))
@@ -124,10 +167,34 @@ misclassified_df = pd.DataFrame()
 # and another for the roc curve data.
 roc_curve_data = pd.DataFrame()
 
+# with open(config.TABLES_DIR/'perf_dict.json', 'r') as f:
+#     perf_dict = json.load(f)
+
+n_splits = 10
+report = {}
+for k in range(n_splits):
+    report[k] = {}
+    for classname in classes:
+        report[k][classname] = {}
+        report[k][classname]["brier_score"] = {}
+        report[k][classname]["z_labels"] = {}
+        report[k][classname]["z_preds"] = {}
+        report[k][classname]["z_scores"] = {}
+        report[k][classname]["z_precision"] = {}
+        report[k][classname]["z_recall"] = {}
+        report[k][classname]["z_avg_precision"] = {}
+        report[k]["z_classification_reports"] = {}
+
+# print(report)
+
 # Fit the model for each fold
 # the "i" and "enumerate" give you the index for each loop of train and test
+print("Training...")
 for i, (train, test) in enumerate(kf):
-    print(f"\nFold {i}")
+    # print(f"\nFold {i}")
+    # print(f"Imputing for fold {i}...")
+    X.iloc[train] = SoftImputeDf().fit_transform_cv(X.iloc[train])
+    # print("Fitting model...")
     model = clf.fit(X.iloc[train], y.iloc[train])
     y_score = model.predict_proba(X.iloc[test])
     # print(y_score)
@@ -165,7 +232,7 @@ for i, (train, test) in enumerate(kf):
     conf_mats = conf_mats + conf_mat
     conf_mats = conf_mats.astype(int)
     b = sum(conf_mats)
-    print("Number of predictions remaining:", len(y) - sum(b))
+    # print("Number of predictions remaining:", len(y) - sum(b))
 
 
     # Plot final confusion matrix on last iteration
@@ -175,6 +242,7 @@ for i, (train, test) in enumerate(kf):
             conf_mats,
             annot=True,
             fmt="d",
+            cbar=False,
             xticklabels=[x.upper() for x in classes],
             yticklabels=[x.upper() for x in classes],
         )  # upper case the class names
@@ -190,7 +258,7 @@ for i, (train, test) in enumerate(kf):
         plt.close()
 
 
-    # Compute ROC curve and ROC area for each class PER FOLD
+    # Compute metrics for each class PER FOLD
     for j in range(n_classes):
         # print(classes[j])
         fpr[j], tpr[j], _ = roc_curve(y_true[test][:, j], y_score[:, j])
@@ -206,6 +274,35 @@ for i, (train, test) in enumerate(kf):
         auc_df = pd.DataFrame(auc_save)
         new = pd.concat([fpr_df, tpr_df, auc_df], axis=1) 
         roc_curve_data = pd.concat([roc_curve_data, new], axis=1)
+
+        precision[j], recall[j], _ = precision_recall_curve(y_true[test][:, j], y_score[:, j])
+        average_precision[j] = average_precision_score(y_true[test][:, j], y_score[:, j])
+
+        # Brier score losses
+        brier_score = brier_score_loss(y_true[test][:, j], y_score[:, j])
+        
+        report[i][classes[j]]["brier_score"] = brier_score.round(10)
+        report[i][classes[j]]["z_precision"] = brier_score.round(10)
+        report[i][classes[j]]["z_recall"] = brier_score.round(10)
+        report[i][classes[j]]["z_avg_precision"] = brier_score.round(10)
+        report[i][classes[j]]["z_labels"] = y_true[test][:, j]
+        report[i][classes[j]]["z_scores"] = y_score[:, j]
+        # report[i][classes[j]]["z_preds"] = y_pred[:, j]
+
+    report[i]["z_classification_reports"] = classification_report(actual, y_pred, output_dict=True)
+    print(report)
+    
+    # print(report)
+    # pre_score = precision_score(actual, y_pred, average='macro')
+    # print(pre_score)
+        # Classification report
+        # print(precision_recall_fscore_support(y_true[test], y_pred, average='macro'))
+        # print(f1_score(actual, y_pred, average="macro"))
+        # print(precision_score(actual, y_pred, average="macro"))
+        # print(recall_score(actual, y_pred, average="macro"))  
+
+        # print(perf_dict)
+        # print(brier_score)
         # roc_curve_data = roc_curve_data.reset_index(drop=True)
         # print(roc_curve_data.head(100))
         # print(fpr_df.head(100))
@@ -219,6 +316,14 @@ for i, (train, test) in enumerate(kf):
 misclassified_df.to_csv(config.METRIC_FIGS_DIR / "misclassified_cv.csv")
 misclassified_df.to_csv(config.TABLES_DIR / "misclassified_cv.csv")
 roc_curve_data.to_csv(config.METRIC_FIGS_DIR / "roc_curve_data.csv")
+
+print(report)
+with open(config.TABLES_DIR/'perf_dict.json', 'w') as f:
+    json.dump(report, f)
+
+print("#" * 80)
+cowsay.daemon("training complete")
+print("#" * 80)
 
 # roc_data = pd.read_csv(config.METRIC_FIGS_DIR / "roc_curve_data.csv")
 # print(roc_data.head(100))

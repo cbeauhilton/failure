@@ -7,7 +7,8 @@ import operator
 import re
 
 df = pd.read_hdf(config.RAW_DATA_FILE_H5, key="data")
-
+y = pd.read_hdf(config.RAW_DATA_FILE_H5, key="y")
+# X = pd.read_hdf(config.RAW_DATA_FILE_H5, key="X")
 
 ###############################################################################
 #        ___
@@ -19,7 +20,6 @@ df = pd.read_hdf(config.RAW_DATA_FILE_H5, key="data")
 ###############################################################################
 
 
-y = df["diagnosis"].copy()
 classes = np.unique(y) # retrieve all class names
 CLASSES = [x.upper() for x in classes] # make uppercase version
 Classes = [x.title() for x in classes] # make titlecase version

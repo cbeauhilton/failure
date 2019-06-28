@@ -3,6 +3,7 @@ import shutil
 import sys
 import traceback  # for error handling
 
+import missingno as msno
 import matplotlib.pylab as pl
 import matplotlib.pyplot as plt
 import modality
@@ -18,15 +19,17 @@ from cbh.exhandler import exhandler
 
 
 data = pd.read_hdf(config.RAW_DATA_FILE_H5, key="data")
+X = pd.read_hdf(config.RAW_DATA_FILE_H5, key="X")
+y = pd.read_hdf(config.RAW_DATA_FILE_H5, key="y")
+# X = pd.read_hdf(config.RAW_DATA_FILE_H5, key="X")
 
-
-df = data.copy()
+df = X.copy()
 df = df[df.columns.drop(list(df.filter(regex="_vus")))]
 # df = df[df.columns.drop(list(df.filter(regex="_negative")))]
 # df = df[df.columns.drop(list(df.filter(regex="_positive")))]
 df = df[df.columns.drop(list(df.filter(regex="_nan")))]
 df = df.dropna(axis=1, how="all")
-df = df.drop(["id"], axis=1)
+df = df.drop(["pt_num"], axis=1)
 df["diagnosis"] = data["diagnosis"].astype("category")
 
 
@@ -47,10 +50,37 @@ try:
 except OSError:
     pass
 
+
+if not os.path.exists("missingness"):
+    os.makedirs("missingness")
+
+fig = plt.Figure()
+msno.matrix(df)
+fig = plt.gcf()
+fig.savefig('missingness/missing_matrix.pdf', format='pdf', bbox_inches='tight')
+plt.close()
+
+fig = plt.Figure()
+msno.bar(df)
+fig = plt.gcf()
+fig.savefig('missingness/missing_bar.pdf', format='pdf', bbox_inches='tight')
+plt.close()
+
+fig = plt.Figure()
+msno.heatmap(df)
+fig = plt.gcf()
+fig.savefig('missingness/missing_heatmap.pdf', format='pdf', bbox_inches='tight')
+plt.close()
+
+fig = plt.Figure()
+msno.dendrogram(df)
+fig = plt.gcf()
+fig.savefig('missingness/missing_dendrogram.pdf', format='pdf', bbox_inches='tight')
+plt.close()
+
+
 if not os.path.exists("data_summaries"):
     os.makedirs("data_summaries")
-
-
 data_describe = pd.DataFrame(df.describe(include="all"))
 data_describe.to_csv("data_summaries/data_describe.csv")
 
@@ -93,7 +123,9 @@ for x in list(df):
 
     except:
         # print(f"Could not determine normality for {x} \n")
-        print("")
+        # print("")
+        pass
+        
 nonnormal = list(set(nonnormal) & set(columns))
 
 labels = {}
@@ -175,13 +207,14 @@ try:
             table_with_overall["Overall"] = overall
             table_with_overall.to_csv(f"tables_one/tableone_{groupby}.csv")
         except Exception as ex:
-            exhandler(ex)
+            exhandler(ex, module=os.path.basename(__file__))
+
 
     # print(nongrouped)
 #   print(mytable)
 
 except Exception as ex:
-    exhandler(ex)
+    exhandler(ex, module=os.path.basename(__file__))
 
 
 plt.style.use("fivethirtyeight")
@@ -210,7 +243,7 @@ for col in list(df.select_dtypes(include=[np.number]).columns.values):
         plt.close()
     except Exception as ex:
         print(f"No histogram made for {col}")
-        exhandler(ex)
+        exhandler(ex, module=os.path.basename(__file__))
 
 
 # Pull out and plot possibly multimodal values
@@ -237,7 +270,7 @@ for x in list(df):
     #       print(f"p={p} \n")
 
     except Exception as ex:
-        exhandler(ex)
+        exhandler(ex, module=os.path.basename(__file__))
 #     print(f"Could not determine modality for {x} \n")
 #     print("")
 
@@ -257,7 +290,7 @@ for feature in multimodal:
         #     plt.show()
         plt.close()
     except Exception as ex:
-        exhandler(ex)
+        exhandler(ex, module=os.path.basename(__file__))
 #     print(f"Could not make modality plot for {feature} \n")
 
 try:
@@ -268,7 +301,7 @@ try:
     #     plt.show()
     plt.close()
 except Exception as ex:
-    exhandler(ex)
+    exhandler(ex, module=os.path.basename(__file__))
 
 
 # Make empty lists to hold the outlier columns
@@ -319,9 +352,9 @@ for x in list(df):
         except Exception as ex:
             print(f"Outlier detection failed for {x}")
             print("")
-            exhandler(ex)
+            exhandler(ex, module=os.path.basename(__file__))
     except Exception as ex:
-        exhandler(ex)
+        exhandler(ex, module=os.path.basename(__file__))
 
 
 # Make individual plots...
@@ -335,7 +368,7 @@ try:
         #     plt.show()
         plt.close()
 except Exception as ex:
-    exhandler(ex)
+    exhandler(ex, module=os.path.basename(__file__))
 
 try:
     for outlier in far_outliers:
@@ -347,7 +380,7 @@ try:
         #     plt.show()
         plt.close()
 except Exception as ex:
-    exhandler(ex)
+    exhandler(ex, module=os.path.basename(__file__))
 
 
 # and combination plots. Notice the `plt.xticks(rotation=xx)`,
@@ -360,7 +393,7 @@ try:
     #     plt.show()
     plt.close()
 except Exception as ex:
-    exhandler(ex)
+    exhandler(ex, module=os.path.basename(__file__))
 
 try:
     df[near_outliers].boxplot(whis=3)
@@ -370,7 +403,7 @@ try:
     #     plt.show()
     plt.close()
 except Exception as ex:
-    exhandler(ex)
+    exhandler(ex, module=os.path.basename(__file__))
 
 
 print("#" * 80)

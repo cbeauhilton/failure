@@ -10,7 +10,7 @@ import warnings
 from glob import glob
 from itertools import cycle
 from pathlib import Path
-
+import shutil
 import h5py
 import jsonpickle
 import lightgbm as lgb
@@ -65,7 +65,8 @@ print("Loading", os.path.basename(__file__))
 # Load data
 data = pd.read_hdf(config.RAW_DATA_FILE_H5, key="data")
 data = data.round(2)
-y = data["diagnosis"]
+y = pd.read_hdf(config.RAW_DATA_FILE_H5, key="y")
+
 classes = np.unique(y)  # retrieve all class names
 n_force_plots = config.N_FORCE_PLOTS
 pdfheight = 8.5 * 72
@@ -102,22 +103,42 @@ for pt_num in pt_nums:
         print("Image List:")
         for i in range(len(classes)):
             print(image_list[i])
-
+        dest = config.FIGURES_DIR / "shap_images" / "force_plots"/ "processed" /f"{pt_num}_dx_{true_dx}"
+        if not os.path.exists(dest):
+            os.makedirs(dest) 
+        for file_name in image_list:
+            # full_file_name = os.path.join(src, file_name)
+            if os.path.isfile(file_name):
+                shutil.copy(file_name, dest)                                                               
+    
         # load first image to get dimensions
-        file0 = PdfFileReader(open(image_list[0], "rb"))
-        file0_sz = file0.getPage(0).mediaBox
-        file0_ht = file0_sz.getHeight()
-        file0_wd = file0_sz.getWidth()
+        hts = []
+        wds = []
+        for i, image in enumerate(image_list):
+            file_ = PdfFileReader(open(image_list[i], "rb"))
+            file_sz = file_.getPage(0).mediaBox
+            file_ht = file_sz.getHeight()
+            file_wd = file_sz.getWidth()
+            # print(file_ht, file_wd)
+            hts.append(file_ht)
+            wds.append(file_wd)
+            
+        # print(hts, wds)
+        file0_ht = max(hts)
+        file0_wd = max(wds)
         # print(file0_ht, file0_wd)
-        tx = decimal.Decimal(float(file0_wd) * (1 / 15))
-        ht_corr = 50
+
+        tx = decimal.Decimal(float(file0_wd) * (1 / 100))
+        ht_corr = 10
         # print(tx)
 
         # create blank pdf of the right size
         blank = PdfFileWriter()
-        blank.addBlankPage(file0_ht * len(classes), file0_wd)
+        blank.addBlankPage(file0_wd+50, file0_ht * len(classes) + 100)
         blank_size = blank.getPage(0).mediaBox
+        # print(blank_size)
         blank_size_ht = blank_size.getHeight()
+        blank_size_wd = blank_size.getWidth()
         word_ty = float(blank_size_ht) - (40)
         # word_ty = float(word_ty)
         # print(word_ty)
@@ -128,9 +149,9 @@ for pt_num in pt_nums:
 
         packet = io.BytesIO()
         # Create a new PDF with Reportlab
-        can = canvas.Canvas(packet, pagesize=letter)
+        can = canvas.Canvas(packet, pagesize=(blank_size_wd,blank_size_ht))
         can.setFont("Helvetica-Bold", 24)
-        can.drawString(file0_wd / 2, word_ty, f"{true_dx.upper()}")
+        can.drawCentredString(float(file0_wd / 2), word_ty, f"True diagnosis: {true_dx.upper()}")
         can.showPage()
         can.save()
 
@@ -140,31 +161,27 @@ for pt_num in pt_nums:
 
         # load blank pdf and the rest of the images
         file00 = PdfFileReader(open(blankpdf, "rb"))
-        file1 = PdfFileReader(open(image_list[1], "rb"))
-        file2 = PdfFileReader(open(image_list[2], "rb"))
-        file3 = PdfFileReader(open(image_list[3], "rb"))
-        file4 = PdfFileReader(open(image_list[4], "rb"))
-        output = PdfFileWriter()
-
-        # merge
         page = file00.getPage(0)
         page.mergePage(new_pdf.getPage(0))
-        page.mergeTranslatedPage(file0.getPage(0), ty=-ht_corr, tx=tx)
-        page.mergeTranslatedPage(file1.getPage(0), ty=trans_ht - ht_corr, tx=tx)
-        page.mergeTranslatedPage(file2.getPage(0), ty=trans_ht * 2 - ht_corr, tx=tx)
-        page.mergeTranslatedPage(file3.getPage(0), ty=trans_ht * 3 - ht_corr, tx=tx)
-        page.mergeTranslatedPage(file4.getPage(0), ty=trans_ht * 4 - ht_corr, tx=tx)
+        
+        for i, image in enumerate(image_list):
+            iter_file = PdfFileReader(open(image_list[i], "rb"))
+            page.mergeTranslatedPage(iter_file.getPage(0), ty=trans_ht * i - ht_corr, tx=tx)
+        
+        output = PdfFileWriter()
         output.addPage(page)
+
+        dest = config.FIGURES_DIR / "shap_images" / "force_plots"/ "processed"
         if pt_num in pt_nums_wrong:
-            pdf_title = f"forceplot_0_wrong_pt_{pt_num}_merged.pdf"
+            pdf_title = dest / f"forceplot_0_wrong_pt_{pt_num}_merged.pdf"
         else:
-            pdf_title = f"forceplot_0_right_pt_{pt_num}_merged.pdf"
+            pdf_title = dest / f"forceplot_0_right_pt_{pt_num}_merged.pdf"
         with open(
             pdf_title, "wb"
         ) as outputStream:
             output.write(outputStream)
     except Exception as ex:
-            exhandler(ex)
+            exhandler(ex, module=os.path.basename(__file__))
 
 
 # os.remove(blankpdf)

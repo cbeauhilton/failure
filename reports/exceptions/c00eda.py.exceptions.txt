@@ -1,0 +1,480 @@
+################################################################################
+ 
+2019-06-27 07:38:42.557517
+ 
+Error on line 258:
+ Empty 'DataFrame': no numeric data to plot
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 258, in <module>
+    df[feature].dropna().plot.kde(figsize=[12, 8])
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2875, in kde
+    return self(kind='kde', bw_method=bw_method, ind=ind, **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2742, in __call__
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1998, in plot_series
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1801, in _plot
+    plot_obj.generate()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 249, in generate
+    self._compute_plot_data()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 367, in _compute_plot_data
+    'plot'.format(numeric_data.__class__.__name__))
+TypeError: Empty 'DataFrame': no numeric data to plot
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 07:38:44.060525
+ 
+Error on line 301:
+ ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 301, in <module>
+    vals = df[x].values[~np.isnan(df[x].values)]
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 07:48:16.694677
+ 
+Error on line 258:
+ Empty 'DataFrame': no numeric data to plot
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 258, in <module>
+    df[feature].dropna().plot.kde(figsize=[12, 8])
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2875, in kde
+    return self(kind='kde', bw_method=bw_method, ind=ind, **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2742, in __call__
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1998, in plot_series
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1801, in _plot
+    plot_obj.generate()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 249, in generate
+    self._compute_plot_data()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 367, in _compute_plot_data
+    'plot'.format(numeric_data.__class__.__name__))
+TypeError: Empty 'DataFrame': no numeric data to plot
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 07:48:18.197751
+ 
+Error on line 301:
+ ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 301, in <module>
+    vals = df[x].values[~np.isnan(df[x].values)]
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 10:56:23.387260
+ 
+Error on line 258:
+ Empty 'DataFrame': no numeric data to plot
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 258, in <module>
+    df[feature].dropna().plot.kde(figsize=[12, 8])
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2875, in kde
+    return self(kind='kde', bw_method=bw_method, ind=ind, **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2742, in __call__
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1998, in plot_series
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1801, in _plot
+    plot_obj.generate()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 249, in generate
+    self._compute_plot_data()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 367, in _compute_plot_data
+    'plot'.format(numeric_data.__class__.__name__))
+TypeError: Empty 'DataFrame': no numeric data to plot
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 10:56:24.723813
+ 
+Error on line 301:
+ ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 301, in <module>
+    vals = df[x].values[~np.isnan(df[x].values)]
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 11:27:58.467909
+ 
+Error on line 258:
+ Empty 'DataFrame': no numeric data to plot
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 258, in <module>
+    df[feature].dropna().plot.kde(figsize=[12, 8])
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2875, in kde
+    return self(kind='kde', bw_method=bw_method, ind=ind, **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2742, in __call__
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1998, in plot_series
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1801, in _plot
+    plot_obj.generate()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 249, in generate
+    self._compute_plot_data()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 367, in _compute_plot_data
+    'plot'.format(numeric_data.__class__.__name__))
+TypeError: Empty 'DataFrame': no numeric data to plot
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 11:27:59.769864
+ 
+Error on line 301:
+ ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 301, in <module>
+    vals = df[x].values[~np.isnan(df[x].values)]
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 11:56:34.359818
+ 
+Error on line 258:
+ Empty 'DataFrame': no numeric data to plot
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 258, in <module>
+    df[feature].dropna().plot.kde(figsize=[12, 8])
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2875, in kde
+    return self(kind='kde', bw_method=bw_method, ind=ind, **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2742, in __call__
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1998, in plot_series
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1801, in _plot
+    plot_obj.generate()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 249, in generate
+    self._compute_plot_data()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 367, in _compute_plot_data
+    'plot'.format(numeric_data.__class__.__name__))
+TypeError: Empty 'DataFrame': no numeric data to plot
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 11:56:36.049447
+ 
+Error on line 301:
+ ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 301, in <module>
+    vals = df[x].values[~np.isnan(df[x].values)]
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 12:06:37.626178
+ 
+Error on line 269:
+ Empty 'DataFrame': no numeric data to plot
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 269, in <module>
+    df[feature].dropna().plot.kde(figsize=[12, 8])
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2875, in kde
+    return self(kind='kde', bw_method=bw_method, ind=ind, **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2742, in __call__
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1998, in plot_series
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1801, in _plot
+    plot_obj.generate()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 249, in generate
+    self._compute_plot_data()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 367, in _compute_plot_data
+    'plot'.format(numeric_data.__class__.__name__))
+TypeError: Empty 'DataFrame': no numeric data to plot
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 12:06:39.502267
+ 
+Error on line 312:
+ ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 312, in <module>
+    vals = df[x].values[~np.isnan(df[x].values)]
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 12:08:18.907942
+ 
+Error on line 272:
+ Empty 'DataFrame': no numeric data to plot
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 272, in <module>
+    df[feature].dropna().plot.kde(figsize=[12, 8])
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2875, in kde
+    return self(kind='kde', bw_method=bw_method, ind=ind, **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2742, in __call__
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1998, in plot_series
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1801, in _plot
+    plot_obj.generate()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 249, in generate
+    self._compute_plot_data()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 367, in _compute_plot_data
+    'plot'.format(numeric_data.__class__.__name__))
+TypeError: Empty 'DataFrame': no numeric data to plot
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 12:08:20.619488
+ 
+Error on line 315:
+ ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 315, in <module>
+    vals = df[x].values[~np.isnan(df[x].values)]
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 12:09:04.866744
+ 
+Error on line 284:
+ Empty 'DataFrame': no numeric data to plot
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 284, in <module>
+    df[feature].dropna().plot.kde(figsize=[12, 8])
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2875, in kde
+    return self(kind='kde', bw_method=bw_method, ind=ind, **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2742, in __call__
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1998, in plot_series
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1801, in _plot
+    plot_obj.generate()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 249, in generate
+    self._compute_plot_data()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 367, in _compute_plot_data
+    'plot'.format(numeric_data.__class__.__name__))
+TypeError: Empty 'DataFrame': no numeric data to plot
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 12:09:06.748435
+ 
+Error on line 327:
+ ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 327, in <module>
+    vals = df[x].values[~np.isnan(df[x].values)]
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 12:10:17.519199
+ 
+Error on line 290:
+ Empty 'DataFrame': no numeric data to plot
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 290, in <module>
+    df[feature].dropna().plot.kde(figsize=[12, 8])
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2875, in kde
+    return self(kind='kde', bw_method=bw_method, ind=ind, **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2742, in __call__
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1998, in plot_series
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1801, in _plot
+    plot_obj.generate()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 249, in generate
+    self._compute_plot_data()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 367, in _compute_plot_data
+    'plot'.format(numeric_data.__class__.__name__))
+TypeError: Empty 'DataFrame': no numeric data to plot
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 12:10:19.210946
+ 
+Error on line 333:
+ ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 333, in <module>
+    vals = df[x].values[~np.isnan(df[x].values)]
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 12:11:15.144501
+ 
+Error on line 290:
+ Empty 'DataFrame': no numeric data to plot
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 290, in <module>
+    df[feature].dropna().plot.kde(figsize=[12, 8])
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2875, in kde
+    return self(kind='kde', bw_method=bw_method, ind=ind, **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2742, in __call__
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1998, in plot_series
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1801, in _plot
+    plot_obj.generate()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 249, in generate
+    self._compute_plot_data()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 367, in _compute_plot_data
+    'plot'.format(numeric_data.__class__.__name__))
+TypeError: Empty 'DataFrame': no numeric data to plot
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-27 12:11:16.968487
+ 
+Error on line 333:
+ ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 333, in <module>
+    vals = df[x].values[~np.isnan(df[x].values)]
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:15:26.743300
+ 
+Error on line 286:
+ Empty 'DataFrame': no numeric data to plot
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 286, in <module>
+    df[feature].dropna().plot.kde(figsize=[12, 8])
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2875, in kde
+    return self(kind='kde', bw_method=bw_method, ind=ind, **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2742, in __call__
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1998, in plot_series
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1801, in _plot
+    plot_obj.generate()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 249, in generate
+    self._compute_plot_data()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 367, in _compute_plot_data
+    'plot'.format(numeric_data.__class__.__name__))
+TypeError: Empty 'DataFrame': no numeric data to plot
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 07:15:28.032990
+ 
+Error on line 329:
+ ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 329, in <module>
+    vals = df[x].values[~np.isnan(df[x].values)]
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:40:52.557998
+ 
+Error on line 286:
+ Empty 'DataFrame': no numeric data to plot
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 286, in <module>
+    df[feature].dropna().plot.kde(figsize=[12, 8])
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2875, in kde
+    return self(kind='kde', bw_method=bw_method, ind=ind, **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2742, in __call__
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1998, in plot_series
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1801, in _plot
+    plot_obj.generate()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 249, in generate
+    self._compute_plot_data()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 367, in _compute_plot_data
+    'plot'.format(numeric_data.__class__.__name__))
+TypeError: Empty 'DataFrame': no numeric data to plot
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-28 08:40:54.056840
+ 
+Error on line 329:
+ ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 329, in <module>
+    vals = df[x].values[~np.isnan(df[x].values)]
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+################################################################################
+ 

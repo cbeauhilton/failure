@@ -5,127 +5,64 @@
 3,abs_mono,Absolute monocyte count,AMC
 4,abs_neut,Absolute neutrophil count,ANC
 5,age,Age,Age
-6,bas_percent,Basophil percentage,Basophil percentage
-7,diagnosis,diagnosis,diagnosis
-8,eos_percent,Eosinophil percentage,Eosinophil percentage
-9,hgb,Hemoglobin,Hgb
-10,id,id,id
-11,lym_percent,Lymphocyte percentage,Lymphocyte percentage
-12,mono_percent,Monocyte percentage,Monocyte percentage
-13,neut_percent,Neutrophil percentage,Neutrophil percentage
-14,wbc,White blood cell count,WBC
-15,asxl1_negative,asxl1_negative,asxl1_negative
-16,asxl1_positive,asxl1_positive,asxl1_positive
-17,asxl1_nan,asxl1_nan,asxl1_nan
-18,bcor_negative,bcor_negative,bcor_negative
-19,bcor_vus,bcor_vus,bcor_vus
-20,bcor_nan,bcor_nan,bcor_nan
-21,cbl_negative,cbl_negative,cbl_negative
-22,cbl_positive,cbl_positive,cbl_positive
-23,cbl_vus,cbl_vus,cbl_vus
-24,cbl_nan,cbl_nan,cbl_nan
-25,cebpa_negative,cebpa_negative,cebpa_negative
-26,cebpa_positive,cebpa_positive,cebpa_positive
-27,cebpa_vus,cebpa_vus,cebpa_vus
-28,cebpa_nan,cebpa_nan,cebpa_nan
-29,dnmt3a_negative,dnmt3a_negative,dnmt3a_negative
-30,dnmt3a_positive,dnmt3a_positive,dnmt3a_positive
-31,dnmt3a_nan,dnmt3a_nan,dnmt3a_nan
-32,etv6_negative,etv6_negative,etv6_negative
-33,etv6_positive,etv6_positive,etv6_positive
-34,etv6_vus,etv6_vus,etv6_vus
-35,etv6_nan,etv6_nan,etv6_nan
-36,ezh2_negative,ezh2_negative,ezh2_negative
-37,ezh2_positive,ezh2_positive,ezh2_positive
-38,ezh2_vus,ezh2_vus,ezh2_vus
-39,ezh2_nan,ezh2_nan,ezh2_nan
-40,gata2_negative,gata2_negative,gata2_negative
-41,gata2_positive,gata2_positive,gata2_positive
-42,gata2_vus,gata2_vus,gata2_vus
-43,gata2_nan,gata2_nan,gata2_nan
-44,gender_female,gender_female,gender_female
-45,gender_male,Male,Male
-46,gender_nan,gender_nan,gender_nan
-47,idh1_negative,idh1_negative,idh1_negative
-48,idh1_positive,idh1_positive,idh1_positive
-49,idh1_nan,idh1_nan,idh1_nan
-50,idh2_negative,idh2_negative,idh2_negative
-51,idh2_positive,idh2_positive,idh2_positive
-52,idh2_vus,idh2_vus,idh2_vus
-53,idh2_nan,idh2_nan,idh2_nan
-54,jak2_negative,jak2_negative,jak2_negative
-55,jak2_positive,jak2_positive,jak2_positive
-56,jak2_vus,jak2_vus,jak2_vus
-57,jak2_nan,jak2_nan,jak2_nan
-58,kdm6a_negative,kdm6a_negative,kdm6a_negative
-59,kdm6a_nan,kdm6a_nan,kdm6a_nan
-60,kit_negative,kit_negative,kit_negative
-61,kit_positive,kit_positive,kit_positive
-62,kit_vus,kit_vus,kit_vus
-63,kit_nan,kit_nan,kit_nan
-64,kras_negative,kras_negative,kras_negative
-65,kras_positive,kras_positive,kras_positive
-66,kras_nan,kras_nan,kras_nan
-67,nf1_negative,nf1_negative,nf1_negative
-68,nf1_vus,nf1_vus,nf1_vus
-69,nf1_nan,nf1_nan,nf1_nan
-70,npm1_negative,npm1_negative,npm1_negative
-71,npm1_positive,npm1_positive,npm1_positive
-72,npm1_vus,npm1_vus,npm1_vus
-73,npm1_nan,npm1_nan,npm1_nan
-74,nras_negative,nras_negative,nras_negative
-75,nras_positive,nras_positive,nras_positive
-76,nras_nan,nras_nan,nras_nan
-77,phf6_negative,phf6_negative,phf6_negative
-78,phf6_positive,phf6_positive,phf6_positive
-79,phf6_nan,phf6_nan,phf6_nan
-80,prpf8_negative,prpf8_negative,prpf8_negative
-81,prpf8_positive,prpf8_positive,prpf8_positive
-82,prpf8_vus,prpf8_vus,prpf8_vus
-83,prpf8_nan,prpf8_nan,prpf8_nan
-84,ptpn11_negative,ptpn11_negative,ptpn11_negative
-85,ptpn11_positive,ptpn11_positive,ptpn11_positive
-86,ptpn11_nan,ptpn11_nan,ptpn11_nan
-87,rad21_negative,rad21_negative,rad21_negative
-88,rad21_positive,rad21_positive,rad21_positive
-89,rad21_vus,rad21_vus,rad21_vus
-90,rad21_nan,rad21_nan,rad21_nan
-91,runx1_negative,runx1_negative,runx1_negative
-92,runx1_positive,runx1_positive,runx1_positive
-93,runx1_vus,runx1_vus,runx1_vus
-94,runx1_nan,runx1_nan,runx1_nan
-95,sf3b1_negative,sf3b1_negative,sf3b1_negative
-96,sf3b1_positive,sf3b1_positive,sf3b1_positive
-97,sf3b1_vus,sf3b1_vus,sf3b1_vus
-98,sf3b1_nan,sf3b1_nan,sf3b1_nan
-99,smc3_negative,smc3_negative,smc3_negative
-100,smc3_vus,smc3_vus,smc3_vus
-101,smc3_nan,smc3_nan,smc3_nan
-102,srsf2_negative,srsf2_negative,srsf2_negative
-103,srsf2_positive,srsf2_positive,srsf2_positive
-104,srsf2_nan,srsf2_nan,srsf2_nan
-105,stag2_negative,stag2_negative,stag2_negative
-106,stag2_positive,stag2_positive,stag2_positive
-107,stag2_vus,stag2_vus,stag2_vus
-108,stag2_nan,stag2_nan,stag2_nan
-109,tet2_negative,tet2_negative,tet2_negative
-110,tet2_positive,tet2_positive,tet2_positive
-111,tet2_vus,tet2_vus,tet2_vus
-112,tet2_nan,tet2_nan,tet2_nan
-113,tp53_negative,tp53_negative,tp53_negative
-114,tp53_positive,tp53_positive,tp53_positive
-115,tp53_nan,tp53_nan,tp53_nan
-116,u2af1_negative,u2af1_negative,u2af1_negative
-117,u2af1_positive,u2af1_positive,u2af1_positive
-118,u2af1_vus,u2af1_vus,u2af1_vus
-119,u2af1_nan,u2af1_nan,u2af1_nan
-120,u2af2_negative,u2af2_negative,u2af2_negative
-121,u2af2_vus,u2af2_vus,u2af2_vus
-122,u2af2_nan,u2af2_nan,u2af2_nan
-123,wt1_negative,wt1_negative,wt1_negative
-124,wt1_positive,wt1_positive,wt1_positive
-125,wt1_vus,wt1_vus,wt1_vus
-126,wt1_nan,wt1_nan,wt1_nan
-127,zrsr2_negative,zrsr2_negative,zrsr2_negative
-128,zrsr2_positive,zrsr2_positive,zrsr2_positive
-129,zrsr2_nan,zrsr2_nan,zrsr2_nan
+6,dataset_id,Cohort ID,dataset_id
+7,diagnosis,Diagnosis,Dx
+8,hgb,Hemoglobin,Hgb
+9,id,id,id
+10,plt,Platelet count,Plt
+11,wbc,White blood cell count,WBC
+12,institution,institution,institution
+13,gender_female,Female,Female gender
+14,asxl1_positive,ASXL1,ASXL1
+15,bcor_missing,BCOR data not available,BCOR data not available
+16,bcor_positive,BCOR,BCOR
+17,bcor_vus,BCOR VUS,BCOR VUS
+18,cbl_positive,CBL,CBL
+19,cbl_vus,CBL VUS,CBL VUS
+20,dnmt3a_missing,DNMT3A data not available,DNMT3A data not available
+21,dnmt3a_positive,DNMT3A,DNMT3A
+22,dnmt3a_vus,DNMT3A VUS,DNMT3A VUS
+23,etv6_missing,ETV6 data not available,ETV6 data not available
+24,etv6_positive,ETV6,ETV6
+25,etv6_vus,ETV6 VUS,ETV6 VUS
+26,ezh2_positive,EZH2,EZH2
+27,ezh2_vus,EZH2 VUS,EZH2 VUS
+28,flt3_positive,FLT3,FLT3
+29,flt3_vus,FLT3 VUS,FLT3 VUS
+30,gata2_missing,GATA2 data not available,GATA2 data not available
+31,gata2_positive,GATA2,GATA2
+32,gata2_vus,GATA2 VUS,GATA2 VUS
+33,idh1_positive,IDH1,IDH1
+34,idh2_positive,IDH2,IDH2
+35,idh2_vus,IDH2 VUS,IDH2 VUS
+36,jak2_missing,JAK2 data not available,JAK2 data not available
+37,jak2_positive,JAK2,JAK2
+38,jak2_vus,JAK2 VUS,JAK2 VUS
+39,kit_missing,KIT data not available,KIT data not available
+40,kit_positive,K,K
+41,kit_vus,KIT VUS,KIT VUS
+42,kras_positive,KRA,KRA
+43,npm1_missing,NPM1 data not available,NPM1 data not available
+44,npm1_positive,NPM1,NPM1
+45,npm1_vus,NPM1 VUS,NPM1 VUS
+46,nras_missing,NRA data not available,NRA data not available
+47,nras_positive,NRA,NRA
+48,runx1_positive,RUNX1,RUNX1
+49,runx1_vus,RUNX1 VUS,RUNX1 VUS
+50,sf3b1_missing,SF3B1 data not available,SF3B1 data not available
+51,sf3b1_positive,SF3B1,SF3B1
+52,sf3b1_vus,SF3B1 VUS,SF3B1 VUS
+53,srsf2_missing,SRSF2 data not available,SRSF2 data not available
+54,srsf2_positive,SRSF2,SRSF2
+55,srsf2_vus,SRSF2 VUS,SRSF2 VUS
+56,tet2_positive,TET2,TET2
+57,tet2_vus,TET2 VUS,TET2 VUS
+58,tp53_positive,TP53,TP53
+59,tp53_vus,TP53 VUS,TP53 VUS
+60,u2af1_positive,U2AF1,U2AF1
+61,u2af1_vus,U2AF1 VUS,U2AF1 VUS
+62,zrsr2_missing,ZRSR2 data not available,ZRSR2 data not available
+63,zrsr2_positive,ZRSR2,ZRSR2
+64,zrsr2_vus,ZRSR2 VUS,ZRSR2 VUS
+65,mutation_num,Number of mutations,Number of mutations
+66,pt_num,pt_num,pt_num

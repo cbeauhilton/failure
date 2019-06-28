@@ -1,0 +1,161 @@
+ICUS_CCUS
+
+% BM Blasts
+% PB Blasts
+ANC
+ASXL1 AS
+ASXL1 DNA
+ASXL1 load
+ASXL1 result
+Age [yrs]
+BCOR AS
+BCOR DNA
+BCOR load
+BCOR result
+BM Neut %
+BM cellularity
+BMT
+Bm Bas %
+Bm Eos %
+Bm Lymph %
+Bm Mono %
+CALR AS
+CALR DNA
+CALR load
+CALR result
+CBL AS
+CBL DNA
+CBL load
+CBL result
+Complex (>=3)
+Cytogenetic
+DNMT3A AS
+DNMT3A DNA
+DNMT3A load
+DNMT3A result
+Date of AML Transformation
+Date of BMT
+Date of Death/
+Last Follow Up
+Date of MDS Diagnosis
+Date of sampling
+ECOG PS 
+ETV6 AS
+ETV6 DNA
+ETV6 load
+ETV6 result
+EZH2 AS
+EZH2 DNA
+EZH2 load
+EZH2 result
+FISH Abnormality
+FISH Testing
+FLT3 AS
+FLT3 DNA
+FLT3 load
+FLT3 result
+GATA2 AS
+GATA2 DNA
+GATA2 load
+GATA2 result
+Gender[1=XX, 2=XY]
+Hemoglobin [G7DL]
+IDH1 AS
+IDH1 DNA
+IDH1 load
+IDH1 result
+IDH2 AS
+IDH2 DNA
+IDH2 load
+IDH2 result
+JAK2 AS
+JAK2 DNA
+JAK2 load
+JAK2 result
+KIT AS
+KIT DNA
+KIT load
+KIT result
+KRAS AS
+KRAS DNA
+KRAS load
+KRAS result
+MCH
+MCHC
+MCV
+MDS Etiology
+MDS WHO 2008
+MLL_ID
+MPL AS
+MPL DNA
+MPL load
+MPL result
+MPV
+Material for Cytomorphology
+Method of Sequencing
+NPM1 AS
+NPM1 DNA
+NPM1 load
+NPM1 result
+NRAS AS
+NRAS DNA
+NRAS load
+NRAS result
+Normal
+Other
+PLT [/µL]
+Pb Baso %
+Pb Baso Abs
+Pb Eos %
+Pb Eos Abs
+Pb Lymph %
+Pb Lymph Abs
+Pb Mono %
+Pb Mono Abs
+Pb Neut %
+Pb Neut Abs
+RDW
+RUNX1 AS
+RUNX1 DNA
+RUNX1 load
+RUNX1 result
+SETBP1 AS
+SETBP1 DNA
+SETBP1 load
+SETBP1 result
+SF3B1 AS
+SF3B1 DNA
+SF3B1 load
+SF3B1 result
+SRSF2 AS
+SRSF2 DNA
+SRSF2 load
+SRSF2 result
+Splenomegaly
+TET2 AS
+TET2 DNA
+TET2 load
+TET2 result
+TFX Dependent    Defined as a red cell transfusion every eight weeks for a period of at least four months)
+TP53 AS
+TP53 DNA
+TP53 load
+TP53 result
+Transform to AML?
+Trisomy 8
+U2AF1 AS
+U2AF1 DNA
+U2AF1 load
+U2AF1 result
+WBC [/µl]
+ZRSR2 AS
+ZRSR2 DNA
+ZRSR2 load
+ZRSR2 result
+dataset_id
+dead
+del(17)
+del(20)
+del(5)
+del(7)
+del(Y)

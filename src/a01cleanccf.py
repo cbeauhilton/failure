@@ -10,6 +10,8 @@ print("Loading", os.path.basename(__file__))
 ### read in data ###
 ccf = pd.read_csv(config.RAW_CCF_FILE)
 
+ccf["dataset_id"] = "ccf"
+
 col_list = sorted(list(ccf))
 txt_file = "zzz_ccf_raw.txt"
 
@@ -73,7 +75,20 @@ for col in ["gender", "megakaryocytes", "diagnosis", "id"]:
 # print(ccf.head(10))
 
 col_list = sorted(list(ccf))
-txt_file = "zz_ccf.txt"
+txt_file = "xx_ccf.txt"
+
+final_genes = config.FINAL_GENES
+
+for col in final_genes:
+    ccf[col] = ccf[col].replace(1, "positive")
+    ccf[col] = ccf[col].replace(0, "negative")
+    ccf[col] = ccf[col].replace(np.nan, "missing")
+# print(ccf[final_genes].head(20))     
+
+# print(set(col_list) - set(final_genes))
+all_cols = sorted(list(set(col_list) & set(final_genes)))
+# print(all_cols)
+# print(len(all_cols))
 
 with open(config.DOCS_DIR/txt_file, "w") as f:
     f.write("CCF\n\n")

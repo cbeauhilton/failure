@@ -8,12 +8,13 @@ import cowsay
 # /_/             /_/
 ###############################################################################
 
-
-# import a01cleanccf
-# import a01cleancmml
-# import a01cleanmds
-# import a01cleanmpn
-# import a02combine
+def prep():
+    import a01cleanccf
+    import a01cleancmml
+    import a01cleanicus
+    import a01cleanmds
+    import a01cleanmpn
+    import a02combine
 
 
 ###############################################################################
@@ -24,12 +25,13 @@ import cowsay
 # \__/_/   \__,_/_/_/ /_/
 ###############################################################################
 
+def train():
+    import a03train
+    import a04metrics
+    import a05shap
+    import a02prettify
+    import a06forceplotmerge
 
-# import a03train
-# import a04metrics
-# import a05shap
-# import a02prettify
-# import a06forceplotmerge
 
 ###############################################################################
 #                                __
@@ -40,20 +42,23 @@ import cowsay
 #          /_/
 ###############################################################################
 
+def report():
+    import c00eda
+    import b00abstractconf
+    import b01abstractmanu
+    import b02methods
+    import b03results
+    import b04figure01
+    import b04figure02
+    import b04figure03
+    import b05table01
+    import b05table02
 
-import b00abstractconf
-import b01abstractmanu
-import b02methods
-import b03results
-import b04figure01
-import b04figure02
-import b04figure03
-import b05table01
-import b05table02
-
-# import c00eda
 
 
+prep()
+train()
+report()
 
 print("#" * 80)
 cowsay.tux("finis")

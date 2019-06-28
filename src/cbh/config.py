@@ -13,7 +13,9 @@ MODELS_DIR = PROJECT_DIR / "models/"
 
 NOTEBOOK_DIR = PROJECT_DIR / "notebooks/"
 
+REPORTS_DIR = PROJECT_DIR / "reports/"
 FIGURES_DIR = PROJECT_DIR / "reports/figures/"
+EXCEPT_DIR = PROJECT_DIR / "reports/exceptions/"
 METRIC_FIGS_DIR = FIGURES_DIR / "metrics/"
 
 TABLES_DIR = PROJECT_DIR / "reports/tables/"
@@ -27,6 +29,7 @@ RAW_AHED_MPN_FILE = RAW_DATA_DIR / "ahed_mpn.xlsx"
 RAW_CCF_FILE = RAW_DATA_DIR / "ccf.csv"
 RAW_MLL_CMML_FILE = RAW_DATA_DIR / "mll_cmml.xlsx"
 RAW_MLL_MDS_FILE = RAW_DATA_DIR / "mll_mds.xlsx"
+RAW_MLL_ICUS_CCUS_FILE = RAW_DATA_DIR / "mll_ccus_icus.xlsx"
 RAW_DATA_FILE_H5 = RAW_DATA_DIR / "data.h5"
 RAW_H5_KEY = "raw"
 
@@ -171,3 +174,30 @@ LAB_COLS = [
 ]
 
 PT_COLS = ["age", "diagnosis", "gender", "id", "splenomegaly"]
+
+
+FINAL_GENES = [
+    "asxl1",
+    "bcor",
+    "cbl",
+    "dnmt3a",
+    "etv6",
+    "ezh2",
+    "flt3",
+    "gata2",
+    "idh1",
+    "idh2",
+    "jak2",
+    "kit",
+    "kras",
+    "npm1",
+    "nras",
+    "runx1",
+    "sf3b1",
+    "srsf2",
+    "tet2",
+    "tp53",
+    "u2af1",
+    "zrsr2",
+]
+

@@ -1,6 +1,9 @@
 from cbh import config
 import os
-
+import pandas as pd
+df = pd.read_hdf(config.RAW_DATA_FILE_H5, key="data")
+y = pd.read_hdf(config.RAW_DATA_FILE_H5, key="y")
+# X = pd.read_hdf(config.RAW_DATA_FILE_H5, key="X")
 ###############################################################################
 #     __               __                                    __
 #    / /_  ____ ______/ /______ __________  __  ______  ____/ /
