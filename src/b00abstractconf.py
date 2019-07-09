@@ -130,7 +130,7 @@ def get_ordered_gene_percents(firstNpairs, dict_of_strings, percentile_dict=perc
 
 
 gene_strings = {}
-firstNpairs = 12
+firstNpairs = 3
 
 mutations_per_sample = {}
 gene_cols = [col for col in list(df) if "_positive" in col]
@@ -274,7 +274,7 @@ hgb_clause = f'and hemoglobin (Hgb)  {percentile_dict["hgb_median"]:.2f} (range,
 # \__/\____/\__,_/\____/
 ###############################################################################
 
-#
+# order: MDS, ICUS, CCUS, CMML, MDS/MPN, PV, ET, PMF 
 
 
 
@@ -291,15 +291,21 @@ hgb_clause = f'and hemoglobin (Hgb)  {percentile_dict["hgb_median"]:.2f} (range,
 background = f"""
 Background
 
-Myelodysplastic syndromes (MDS) and chronic myelomonocytic leukemia (CMML) \
+Myelodysplastic syndromes (MDS) and other myeloid neoplasms \
 are mainly diagnosed based on morphological changes in the bone marrow. \
 The diagnosis can be challenging in patients (pts) with pancytopenia with minimal dysplasia, \
 and is subject to inter-observer variability. \
-Somatic mutations can be identified in either disease but no genes, \
-in isolation or in combination, are specific for disease phenotype.
+Somatic mutations can be identified in all myeloid neoplasms \
+but no gene or set of genes are diagnostic for each disease phenotype. \
 
-We developed a geno-clinical model that uses mutational data, peripheral blood values, and clinical variables \
-to predict an MDS vs. CMML diagnosis in pts who presented with cytopenias, in the absence of bone marrow biopsy results.
+We developed a geno-clinical model that uses \
+mutational data, peripheral blood values, and clinical variables \
+to distinguish between several bone marrow disorders that include: \
+MDS, \
+idiopathic cytopenia of indeterminate significance (ICUS), clonal cytopenia of indeterminate significance (CCUS), \
+MDS/MPN overlaps including chronic myelomonocytic leukemia (CMML), \
+and myeloproliferative neoplasms such as \
+polycythemia vera (PV), essential thrombocythemia (ET), and myelofibrosis (PMF).
 
 """
 
@@ -383,13 +389,15 @@ the accuracy of the model dropped dramatically (77%, ROC-AUC .85).
 conclusions = f"""
 Conclusions
 
-We propose a novel approach using interpretable, \
-individualized modeling to predict MDS vs. CMML phenotypes \
-based on genomic and clinical data without the need for bone marrow biopsy data. \
+We propose a novel approach using interpretable, individualized modeling \
+to predict myeloid neoplasm phenotypes based on genomic and clinical data \
+without the need for bone marrow biopsy data. \
 This approach can aid clinicians and hematopathologists when encountering \
-pts with cytopenias and a diagnosis suspicious for MDS vs. CMML. \
-The model also provides feature attributions that allow for \
-quantitative understanding of the complex interplay among genotype, clinical variables, and phenotype.
+pts with cytopenias and suspicion for these disorders. \
+The model also provides feature attributions \
+that allow for quantitative understanding \
+of the complex interplay among genotypes, clinical variables, and phenotypes.
+
 
 """
 

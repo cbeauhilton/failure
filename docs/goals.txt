@@ -1,0 +1,126 @@
+# Bone marrow failure project
+
+Overall goals: 
+- classify pretty much anything that requires a BMBx, without the BMBx
+- explainable AI-supported DDx
+- ?survival for those with data available
+- characterization of genetic profiles as available (this is a big cohort, descriptive stats are useful by themselves)
+- simple web app with visualizations
+
+Technical tasks:
+- complete:
+- - finalize selection of genes - 22 available in all cohorts (ish!)
+- - finalize selection of clinical variables (but some questions still re. imputation)
+- - algorithmic imputation of select training cohort variables
+- - multiclass cross-validation training
+- - multiclass cross-validation AUC (per-class, range over CV, summary)
+- - multiclass cross-validation PR (complete-ish - need to make fig with shaded range for CV, similar to AUC)
+- - multiclass cross-validation SHAP
+- - confusion matrices
+- - SHAP summary of all possible diagnoses with justifications for each
+- - selection of top variables for parsimonious model
+- - SHAP feature dependence
+- - SHAP summaries, whole cohort and per-class
+- - EDA - missingness, percentages, TableOne(s), histograms, multimodality, outliers
+
+- to-do:
+- - web app (put in key variables, get back a force plot)
+- - multiclass cross-validation calibration curves
+- - finalize selection of dxs - which to merge, which to drop?
+cmml-1                      394
+rcmd                        341
+not_yet_mds                 330
+raeb-1                      277
+raeb-2                      271
+rcmd-rs                     187
+cmml-2                      137
+rars                        129
+pmf                         107
+et                           91
+pv                           82
+mpn                          63
+del(5q)                      57
+mpn-u                        56
+ra                           44
+mds_mpn-u                    43
+mds-u                        38
+rars-t                       35
+rcud                         24
+tmds                         20
+mds_mpn                      10
+pv-mf                         7
+mf                            7
+cml                           7
+aml                           7
+et-mf                         7
+pnh                           3
+mds                           3
+mf_aml                        2
+mf_cml                        2
+mpn_aml                       2
+mpn_cmml                      1
+mds_mf                        1
+saml                          1
+et-mds                        1
+etmf                          1
+mpd                           1
+mf,_mds_mpn                   1
+pv-mpn,_cll                   1
+mds_mpv                       1
+mpn_mds-u                     1
+cmml_cll                      1
+cimf                          1
+mf_w__myeliod_metaplasia      1
+pv_aml                        1
+mpn_or_mds                    1
+mpn_et                        1
+mds_cmml                      1
+cml_aml                       1
+
+- - determine feasability of survival analysis
+- - feature engineering with dates (feasability then implementation) **low priority, but dovetails with survival
+
+
+Writing tasks:
+- complete:
+- - initial frame for conf abstract
+- - images showcasing SHAP forceplots for right and wrong predictions
+
+- to-do:
+- - edit down conf abstract (3800 char)
+
+
+# Bone marrow image analysis
+
+Overall goals:
+- achieve reasonable accuracy for dzs of interest
+- explain which regions account for the predictions
+- explore combining image data with structured data
+- web app (upload image, get prediction with explanation)
+
+Technical tasks:
+- complete:
+- - extract patches into database
+- - train initial model
+
+- to-do:
+- - train models with larger number of samples
+- - figure out how to move patches from db to training using smarter database (e.g. LMDB or HDF)
+- - figure out preprocessing for heme-path (deal with junk areas of image - but it's not clear like it is in tumor path)
+- - apply SHAP
+- - get structured data to combine with images (do we have data already in structured form for these MRNs?)
+
+Writing tasks:
+- complete:
+- - none
+- to-do:
+- - all
+
+
+
+# Cancer readmissions
+
+
+# CCF readmissions
+- to-do: 
+- - rewrite for next journal, tone down AI hype-y stuff 

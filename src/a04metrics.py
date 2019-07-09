@@ -4,6 +4,7 @@ import os
 import random
 import traceback
 import warnings
+from inspect import signature
 from itertools import cycle
 
 import h5py
@@ -16,6 +17,7 @@ import seaborn as sns
 from imblearn.over_sampling import SMOTE
 from scipy import interp
 from sklearn import datasets, svm
+from sklearn.calibration import CalibratedClassifierCV, calibration_curve
 from sklearn.datasets import make_classification
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.exceptions import UndefinedMetricWarning
@@ -46,6 +48,12 @@ y = pd.read_hdf(config.RAW_DATA_FILE_H5, key="y")
 X = pd.read_hdf(config.RAW_DATA_FILE_H5, key="X")
 # print(list(data))
 
+metric_image_folders = ["AUC", "PR", "calibration"]
+for folder in metric_image_folders:
+    if not os.path.exists(config.METRIC_FIGS_DIR/f"{folder}"):
+        os.makedirs(config.METRIC_FIGS_DIR/f"{folder}") 
+        # print(f"Made directory: {folder}")
+
 # Define labels and features, and binarize labels for AUC/PR curves
 # print(X.head())
 # print(y.head())
@@ -61,6 +69,7 @@ n_splits = 10
 tprs = []
 aucs = []
 mean_fpr = np.linspace(0, 1, 100)
+f_scores = np.linspace(0.2, 0.8, num=4)
 # print(mean_fpr)
 misclassified_df = pd.read_csv(config.METRIC_FIGS_DIR / "misclassified_cv.csv")
 
@@ -113,8 +122,8 @@ for classname in classes:
     mean_auc = auc(mean_fpr, mean_tpr)
     std_auc = np.std(aucs)
     # perf_dict[f"{classname}"] = {}
-    perf_dict[f"{classname}"]['auc'] = mean_auc
-    perf_dict[f"{classname}"]['auc_std'] = std_auc
+    # perf_dict[f"{classname}"]['auc'] = mean_auc
+    # perf_dict[f"{classname}"]['auc_std'] = std_auc
  
     plt.plot(
         mean_fpr,
@@ -144,18 +153,83 @@ for classname in classes:
     plt.title("")
     plt.legend(loc="lower right")
     plt.savefig(
-        (config.METRIC_FIGS_DIR / f"ROC_{classname}.pdf"),
+        (config.METRIC_FIGS_DIR / f"AUC/ROC_{classname}.pdf"),
         dpi=1200,
         transparent=False,
         bbox_inches="tight",
     )
     plt.close()
+
+    for i, fold_num in enumerate(range(n_splits)):
+        ### todo: recall_micro for all of n_splits in one graph
+
+        aps = []
+        
+        for trial in range(n_splits):
+            average_precision = perf_dict[f"{trial}"][classname]["z_avg_precision"]
+            aps.append(average_precision)
+        ap_std = np.std(aps)
+        average_precision = perf_dict[f"{fold_num}"][classname]["z_avg_precision"]
+        brier_score = perf_dict[f"{fold_num}"][classname]["brier_score"]
+        labels = perf_dict[f"{fold_num}"][classname]["z_labels"]
+        # preds = np.array(perf_dict[f"{fold_num}"][classname]["z_preds"])
+        scores = np.array(perf_dict[f"{fold_num}"][classname]["z_scores"])
+        precision = np.array(perf_dict[f"{fold_num}"][classname]["z_precision"])
+        recall = np.array(perf_dict[f"{fold_num}"][classname]["z_recall"])
+        average_precision = perf_dict[f"{fold_num}"][classname]["z_avg_precision"]
+        classification_report = perf_dict[f"{fold_num}"]["z_classification_reports"]
+
+
+        step_kwargs = (
+            {"step": "post"} if "step" in signature(plt.fill_between).parameters else {}
+        )
+        # plt.title(f"Precision-Recall Curve")
+        plt.step(recall, precision, color="b", alpha=0.3, where="post")
+        plt.fill_between(recall, precision, alpha=0.1, color="b", **step_kwargs)
+        plt.xlabel("Recall")
+        plt.ylabel("Precision")
+        plt.ylim([0.0, 1.05])
+        plt.xlim([0.0, 1.0])
+        plt.legend([f"Average Precision: {average_precision:0.2f} $\pm$ {ap_std:0.2f} "],handletextpad=0, handlelength=0, loc="lower right")
+        figure_title = (
+            f"{classname}_Precision_Recall_curve_AP_{average_precision*100:.0f}_"
+        )
+    plt.savefig(
+        (config.METRIC_FIGS_DIR / f"PR/PR_combo_{classname}.pdf"),
+        dpi=1200,
+        transparent=False,
+        bbox_inches="tight",
+    )
+    plt.close()
+
+    for i, fold_num in enumerate(range(n_splits)):
+        labels = perf_dict[f"{fold_num}"][classname]["z_labels"]
+        scores = np.array(perf_dict[f"{fold_num}"][classname]["z_scores"])
+        brier_score = perf_dict[f"{fold_num}"][classname]["brier_score"]
+        gb_y, gb_x = calibration_curve(labels, scores, n_bins=100)
+        plt.plot([0, 1], [0, 1], linestyle="--")
+        plt.plot(gb_x, gb_y, marker=".", color="red")
+        plt.xlabel("Predicted probability")
+        plt.ylabel("True probability")
+        plt.legend([f"Brier Score Loss: {brier_score:.2f}"], handletextpad=0, handlelength=0,  loc="lower right")
+        plt.savefig(
+            (config.METRIC_FIGS_DIR / f"calibration/calibration_curve_{classname}.pdf"),
+            dpi=1200,
+            transparent=False,
+            bbox_inches="tight",
+        )
+        plt.close()
+
 #     plt.show()
 
-print(perf_dict)
+# print(perf_dict)
 
 with open(config.TABLES_DIR/'perf_dict.json', 'w') as f:
     json.dump(perf_dict, f)
+
+
+
+
 
 # fpr[j], tpr[j], _ = roc_curve(y_true[test][:, j], y_score[:, j])
 # roc_auc[j] = auc(fpr[j], tpr[j])
@@ -560,7 +634,7 @@ with open(config.TABLES_DIR/'perf_dict.json', 'w') as f:
 # # Nested CV with parameter optimization
 # # nested_score = cross_val_score(clf, X=X, y=y, cv=outer_cv, scoring=make_scorer(classification_report_with_accuracy_score))
 
-# # Average values in classification report for all folds in a K-fold Cross-validation
+# # Average values in classification perf_dict for all folds in a K-fold Cross-validation
 # # print(classification_report(originalclass, predictedclass))
 
 # # scores = []

@@ -11,58 +11,57 @@
 9,id,id,id
 10,plt,Platelet count,Plt
 11,wbc,White blood cell count,WBC
-12,institution,institution,institution
-13,gender_female,Female,Female gender
-14,asxl1_positive,ASXL1,ASXL1
-15,bcor_missing,BCOR data not available,BCOR data not available
-16,bcor_positive,BCOR,BCOR
-17,bcor_vus,BCOR VUS,BCOR VUS
-18,cbl_positive,CBL,CBL
-19,cbl_vus,CBL VUS,CBL VUS
-20,dnmt3a_missing,DNMT3A data not available,DNMT3A data not available
-21,dnmt3a_positive,DNMT3A,DNMT3A
-22,dnmt3a_vus,DNMT3A VUS,DNMT3A VUS
-23,etv6_missing,ETV6 data not available,ETV6 data not available
-24,etv6_positive,ETV6,ETV6
-25,etv6_vus,ETV6 VUS,ETV6 VUS
-26,ezh2_positive,EZH2,EZH2
-27,ezh2_vus,EZH2 VUS,EZH2 VUS
-28,flt3_positive,FLT3,FLT3
-29,flt3_vus,FLT3 VUS,FLT3 VUS
-30,gata2_missing,GATA2 data not available,GATA2 data not available
-31,gata2_positive,GATA2,GATA2
-32,gata2_vus,GATA2 VUS,GATA2 VUS
-33,idh1_positive,IDH1,IDH1
-34,idh2_positive,IDH2,IDH2
-35,idh2_vus,IDH2 VUS,IDH2 VUS
-36,jak2_missing,JAK2 data not available,JAK2 data not available
-37,jak2_positive,JAK2,JAK2
-38,jak2_vus,JAK2 VUS,JAK2 VUS
-39,kit_missing,KIT data not available,KIT data not available
-40,kit_positive,K,K
-41,kit_vus,KIT VUS,KIT VUS
-42,kras_positive,KRA,KRA
-43,npm1_missing,NPM1 data not available,NPM1 data not available
-44,npm1_positive,NPM1,NPM1
-45,npm1_vus,NPM1 VUS,NPM1 VUS
-46,nras_missing,NRA data not available,NRA data not available
-47,nras_positive,NRA,NRA
-48,runx1_positive,RUNX1,RUNX1
-49,runx1_vus,RUNX1 VUS,RUNX1 VUS
-50,sf3b1_missing,SF3B1 data not available,SF3B1 data not available
-51,sf3b1_positive,SF3B1,SF3B1
-52,sf3b1_vus,SF3B1 VUS,SF3B1 VUS
-53,srsf2_missing,SRSF2 data not available,SRSF2 data not available
-54,srsf2_positive,SRSF2,SRSF2
-55,srsf2_vus,SRSF2 VUS,SRSF2 VUS
-56,tet2_positive,TET2,TET2
-57,tet2_vus,TET2 VUS,TET2 VUS
-58,tp53_positive,TP53,TP53
-59,tp53_vus,TP53 VUS,TP53 VUS
-60,u2af1_positive,U2AF1,U2AF1
-61,u2af1_vus,U2AF1 VUS,U2AF1 VUS
-62,zrsr2_missing,ZRSR2 data not available,ZRSR2 data not available
-63,zrsr2_positive,ZRSR2,ZRSR2
-64,zrsr2_vus,ZRSR2 VUS,ZRSR2 VUS
-65,mutation_num,Number of mutations,Number of mutations
-66,pt_num,pt_num,pt_num
+12,gender_female,Female,Female gender
+13,asxl1_positive,ASXL1,ASXL1
+14,bcor_missing,BCOR data not available,BCOR data not available
+15,bcor_positive,BCOR,BCOR
+16,bcor_vus,BCOR VUS,BCOR VUS
+17,cbl_positive,CBL,CBL
+18,cbl_vus,CBL VUS,CBL VUS
+19,dnmt3a_missing,DNMT3A data not available,DNMT3A data not available
+20,dnmt3a_positive,DNMT3A,DNMT3A
+21,dnmt3a_vus,DNMT3A VUS,DNMT3A VUS
+22,etv6_missing,ETV6 data not available,ETV6 data not available
+23,etv6_positive,ETV6,ETV6
+24,etv6_vus,ETV6 VUS,ETV6 VUS
+25,ezh2_positive,EZH2,EZH2
+26,ezh2_vus,EZH2 VUS,EZH2 VUS
+27,flt3_positive,FLT3,FLT3
+28,flt3_vus,FLT3 VUS,FLT3 VUS
+29,gata2_missing,GATA2 data not available,GATA2 data not available
+30,gata2_positive,GATA2,GATA2
+31,gata2_vus,GATA2 VUS,GATA2 VUS
+32,idh1_positive,IDH1,IDH1
+33,idh2_positive,IDH2,IDH2
+34,idh2_vus,IDH2 VUS,IDH2 VUS
+35,jak2_missing,JAK2 data not available,JAK2 data not available
+36,jak2_positive,JAK2,JAK2
+37,jak2_vus,JAK2 VUS,JAK2 VUS
+38,kit_missing,KIT data not available,KIT data not available
+39,kit_positive,K,K
+40,kit_vus,KIT VUS,KIT VUS
+41,kras_positive,KRA,KRA
+42,npm1_missing,NPM1 data not available,NPM1 data not available
+43,npm1_positive,NPM1,NPM1
+44,npm1_vus,NPM1 VUS,NPM1 VUS
+45,nras_missing,NRA data not available,NRA data not available
+46,nras_positive,NRA,NRA
+47,runx1_positive,RUNX1,RUNX1
+48,runx1_vus,RUNX1 VUS,RUNX1 VUS
+49,sf3b1_missing,SF3B1 data not available,SF3B1 data not available
+50,sf3b1_positive,SF3B1,SF3B1
+51,sf3b1_vus,SF3B1 VUS,SF3B1 VUS
+52,srsf2_missing,SRSF2 data not available,SRSF2 data not available
+53,srsf2_positive,SRSF2,SRSF2
+54,srsf2_vus,SRSF2 VUS,SRSF2 VUS
+55,tet2_positive,TET2,TET2
+56,tet2_vus,TET2 VUS,TET2 VUS
+57,tp53_positive,TP53,TP53
+58,tp53_vus,TP53 VUS,TP53 VUS
+59,u2af1_positive,U2AF1,U2AF1
+60,u2af1_vus,U2AF1 VUS,U2AF1 VUS
+61,zrsr2_missing,ZRSR2 data not available,ZRSR2 data not available
+62,zrsr2_positive,ZRSR2,ZRSR2
+63,zrsr2_vus,ZRSR2 VUS,ZRSR2 VUS
+64,mutation_num,Number of mutations,Number of mutations
+65,pt_num,pt_num,pt_num

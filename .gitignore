@@ -3,6 +3,8 @@
 *.run.xml
 *.synctex.gz
 *.bcf
+*.zip
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

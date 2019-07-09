@@ -6,6 +6,7 @@ import traceback
 import warnings
 from itertools import cycle
 
+# import scikitplot as skplt
 import cowsay
 import h5py
 import jsonpickle
@@ -18,6 +19,7 @@ from fancyimpute import KNN, BiScaler, NuclearNormMinimization, SoftImpute
 from imblearn.over_sampling import SMOTE
 from scipy import interp
 from sklearn import datasets, svm
+from sklearn.calibration import CalibratedClassifierCV, calibration_curve
 from sklearn.datasets import make_classification
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.exceptions import UndefinedMetricWarning
@@ -28,7 +30,7 @@ from sklearn.metrics import (accuracy_score, auc, average_precision_score,
                              precision_recall_fscore_support, precision_score,
                              recall_score, roc_curve)
 from sklearn.model_selection import (
-    KFold, StratifiedKFold, cross_val_predict, cross_val_score,
+    KFold, StratifiedKFold, cross_val_predict, cross_val_score, cross_validate,
     train_test_split)
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.pipeline import Pipeline
@@ -68,9 +70,12 @@ y = pd.read_hdf(config.RAW_DATA_FILE_H5, key="y")
 X = pd.read_hdf(config.RAW_DATA_FILE_H5, key="X")
 # print(list(data))
 
-# Define labels and features, and binarize labels for AUC/PR curves
-# y = data["diagnosis"].copy()
-# X = data.drop(["diagnosis", "id"], axis=1).copy()
+metric_image_folders = ["AUC", "PR", "calibration"]
+for folder in metric_image_folders:
+    if not os.path.exists(config.METRIC_FIGS_DIR/f"{folder}"):
+        os.makedirs(config.METRIC_FIGS_DIR/f"{folder}") 
+        # print(f"Made directory: {folder}")
+
 
 # print(X.head())
 # print(y.head())
@@ -112,53 +117,68 @@ pre_scores = {}
 rec_scores = {}
 
 
-from sklearn.model_selection import cross_validate
-# from sklearn.datasets import  load_iris
-# from sklearn.svm import SVC
+def plot_precision_recall(y_true, y_probas,
+                          title='Precision-Recall Curve',
+                          plot_micro=True,
+                          classes_to_plot=None, ax=None,
+                          figsize=None, cmap='nipy_spectral',
+                          title_fontsize="large",
+                          text_fontsize="medium"):
+
+    y_true = np.array(y_true)
+    y_probas = np.array(y_probas)
+
+    classes = np.unique(y_true)
+    probas = y_probas
+
+    if classes_to_plot is None:
+        classes_to_plot = classes
+
+    binarized_y_true = label_binarize(y_true, classes=classes)
+    if len(classes) == 2:
+        binarized_y_true = np.hstack(
+            (1 - binarized_y_true, binarized_y_true))
+
+    if ax is None:
+        fig, ax = plt.subplots(1, 1, figsize=figsize)
+
+    ax.set_title(title, fontsize=title_fontsize)
+
+    indices_to_plot = np.in1d(classes, classes_to_plot)
+    for i, to_plot in enumerate(indices_to_plot):
+        if to_plot:
+            average_precision = average_precision_score(
+                binarized_y_true[:, i],
+                probas[:, i])
+            precision, recall, _ = precision_recall_curve(
+                y_true, probas[:, i], pos_label=classes[i])
+            color = plt.cm.get_cmap(cmap)(float(i) / len(classes))
+            ax.plot(recall, precision, lw=2,
+                    label='Precision-recall curve of class {0} '
+                          '(area = {1:0.3f})'.format(classes[i],
+                                                     average_precision),
+                    color=color)
+
+    if plot_micro:
+        precision, recall, _ = precision_recall_curve(
+            binarized_y_true.ravel(), probas.ravel())
+        average_precision = average_precision_score(binarized_y_true,
+                                                    probas,
+                                                    average='micro')
+        ax.plot(recall, precision,
+                label='micro-average Precision-recall curve '
+                      '(area = {0:0.3f})'.format(average_precision),
+                color='navy', linestyle=':', linewidth=4)
+
+    ax.set_xlim([0.0, 1.0])
+    ax.set_ylim([0.0, 1.05])
+    ax.set_xlabel('Recall')
+    ax.set_ylabel('Precision')
+    ax.tick_params(labelsize=text_fontsize)
+    ax.legend(loc=(0, -.38), fontsize=text_fontsize)
+    return ax
 
 
-# scoring = {'acc': 'accuracy',
-#            'prec_macro': 'precision_macro',
-#            'rec_micro': 'recall_macro'}
-# scores = cross_validate(clf, X=X, y=y, scoring=scoring,
-#                          cv=k, return_train_score=True)
-# print(scores.keys())
-# print(scores['test_acc']) 
-
-# def classification_report_with_accuracy_score(y_true, y_pred):
-#     originalclass.extend(y_true)
-#     predictedclass.extend(y_pred)
-#     report = classification_report(originalclass, predictedclass, output_dict=True)
-#     # print(report)
-#     with open(config.TABLES_DIR/'perf_dict.json', 'w') as f:
-#         json.dump(report, f)
-#     report_df = pd.DataFrame(report).transpose()
-#     report_df.to_csv(config.METRIC_FIGS_DIR / "classification_report.csv")
-#     report_df.to_csv(config.TABLES_DIR / "classification_report.csv")
-#     acc_score = accuracy_score(y_true, y_pred)
-#     ef1_score = f1_score(y_true, y_pred, average="macro")
-#     # ef1_scores[f"{k}"]
-#     pre_score = precision_score(y_true, y_pred, average="macro")
-#     rec_score = recall_score(y_true, y_pred, average="macro")
-#     return acc_score
-
-# scores = cross_val_score(clf, X=X, y=y, cv=k, \
-#                scoring=make_scorer(classification_report_with_accuracy_score))
-
-# # print(ef1_score)
-
-# # append to classification report
-# with open(config.METRIC_FIGS_DIR / "classification_report.csv",'a') as file:
-#     for i in range(n_splits):
-#         writer = csv.writer(file, delimiter=',')
-#         writer.writerow([f"Score for fold {i}",  f"{scores[i]}"])
-#     writer.writerow([f"Mean accuracy with standard deviation",  f"{np.mean(scores):.3f} +/- {np.std(scores):.3f}"])
-
-# with open(config.TABLES_DIR / "classification_report.csv",'a') as file:
-#     for i in range(n_splits):
-#         writer = csv.writer(file, delimiter=',')
-#         writer.writerow([f"Score for fold {i}",  f"{scores[i]}"])
-#     writer.writerow([f"Mean accuracy with standard deviation",  f"{np.mean(scores):.3f} +/- {np.std(scores):.3f}"])
 
 # Initialize confusion matrix with zeros ...
 conf_mats = np.zeros(shape=(len(classes), len(classes)))
@@ -185,6 +205,7 @@ for k in range(n_splits):
         report[k][classname]["z_avg_precision"] = {}
         report[k]["z_classification_reports"] = {}
 
+
 # print(report)
 
 # Fit the model for each fold
@@ -203,6 +224,32 @@ for i, (train, test) in enumerate(kf):
     # Generate dataframes
     # Using a cutoff
     actual = y.iloc[test]
+    y_test = actual
+    plot_precision_recall(y_test, y_probas = y_score, figsize=(16,12))
+    plt.savefig(
+        (config.METRIC_FIGS_DIR / "PR"/ f"PR_fold_{i}.pdf"),
+        dpi=1200,
+        transparent=False,
+        bbox_inches="tight",
+    )
+    # plt.show()
+    plt.close()
+
+    # prob_pos = clf.predict_proba(X.iloc[test])[:, 1]
+    # clf_score = brier_score_loss(y_test, prob_pos, pos_label=y.max())
+    # gb_y, gb_x = calibration_curve(y_test, prob_pos, n_bins=100)
+    # plt.plot([0, 1], [0, 1], linestyle="--")
+    # plt.plot(gb_x, gb_y, marker=".", color="red")
+    # plt.xlabel("Predicted probability")
+    # plt.ylabel("True probability")
+    # plt.legend([f"Brier Score Loss: {brier_score:.2f}"], handletextpad=0, handlelength=0,  loc="lower right")
+    # plt.savefig(
+    #     (config.METRIC_FIGS_DIR / f"calibration/calibration_curve_test.pdf"),
+    #     dpi=1200,
+    #     transparent=False,
+    #     bbox_inches="tight",
+    # )
+    # plt.close()
     successes = actual == y_pred
     predictions = pd.DataFrame(
         {
@@ -277,21 +324,30 @@ for i, (train, test) in enumerate(kf):
 
         precision[j], recall[j], _ = precision_recall_curve(y_true[test][:, j], y_score[:, j])
         average_precision[j] = average_precision_score(y_true[test][:, j], y_score[:, j])
-
+        # print(precision[j])
+        
         # Brier score losses
         brier_score = brier_score_loss(y_true[test][:, j], y_score[:, j])
         
         report[i][classes[j]]["brier_score"] = brier_score.round(10)
-        report[i][classes[j]]["z_precision"] = brier_score.round(10)
-        report[i][classes[j]]["z_recall"] = brier_score.round(10)
-        report[i][classes[j]]["z_avg_precision"] = brier_score.round(10)
-        report[i][classes[j]]["z_labels"] = y_true[test][:, j]
-        report[i][classes[j]]["z_scores"] = y_score[:, j]
+        report[i][classes[j]]["z_precision"] = precision[j].tolist()
+        report[i][classes[j]]["z_recall"] = recall[j].tolist()
+        report[i][classes[j]]["z_avg_precision"] = average_precision[j]
+        report[i][classes[j]]["z_labels"] = y_true[test][:, j].tolist()
+        report[i][classes[j]]["z_scores"] = y_score[:, j].tolist()
+        # print(y_pred)
         # report[i][classes[j]]["z_preds"] = y_pred[:, j]
 
     report[i]["z_classification_reports"] = classification_report(actual, y_pred, output_dict=True)
-    print(report)
+    precision_micro, recall_micro, _ = precision_recall_curve(y_true[test].ravel(), y_score.ravel())
+    report[i]["precision_micro"] = precision_micro.tolist()
+    report[i]['recall_micro'] = recall_micro.tolist()
+    report[i]["average_precision_micro"] = average_precision_score(y_true[test], y_score, average="micro")
+
+    # print(report)
     
+    # if i ==2:
+    #     break
     # print(report)
     # pre_score = precision_score(actual, y_pred, average='macro')
     # print(pre_score)
@@ -317,12 +373,12 @@ misclassified_df.to_csv(config.METRIC_FIGS_DIR / "misclassified_cv.csv")
 misclassified_df.to_csv(config.TABLES_DIR / "misclassified_cv.csv")
 roc_curve_data.to_csv(config.METRIC_FIGS_DIR / "roc_curve_data.csv")
 
-print(report)
+# print(report)
 with open(config.TABLES_DIR/'perf_dict.json', 'w') as f:
     json.dump(report, f)
 
 print("#" * 80)
-cowsay.daemon("training complete")
+# cowsay.daemon("training complete")
 print("#" * 80)
 
 # roc_data = pd.read_csv(config.METRIC_FIGS_DIR / "roc_curve_data.csv")
@@ -767,3 +823,47 @@ print("#" * 80)
 # )
 # print("Cross-validated scores:", scores)
 # print("CV accuracy: {:.3f}  +/- {:.3f} ".format(np.mean(scores), np.std(scores)))
+
+
+# scoring = {'acc': 'accuracy',
+#            'prec_macro': 'precision_macro',
+#            'rec_micro': 'recall_macro'}
+# scores = cross_validate(clf, X=X, y=y, scoring=scoring,
+#                          cv=k, return_train_score=True)
+# print(scores.keys())
+# print(scores['test_acc']) 
+
+# def classification_report_with_accuracy_score(y_true, y_pred):
+#     originalclass.extend(y_true)
+#     predictedclass.extend(y_pred)
+#     report = classification_report(originalclass, predictedclass, output_dict=True)
+#     # print(report)
+#     with open(config.TABLES_DIR/'perf_dict.json', 'w') as f:
+#         json.dump(report, f)
+#     report_df = pd.DataFrame(report).transpose()
+#     report_df.to_csv(config.METRIC_FIGS_DIR / "classification_report.csv")
+#     report_df.to_csv(config.TABLES_DIR / "classification_report.csv")
+#     acc_score = accuracy_score(y_true, y_pred)
+#     ef1_score = f1_score(y_true, y_pred, average="macro")
+#     # ef1_scores[f"{k}"]
+#     pre_score = precision_score(y_true, y_pred, average="macro")
+#     rec_score = recall_score(y_true, y_pred, average="macro")
+#     return acc_score
+
+# scores = cross_val_score(clf, X=X, y=y, cv=k, \
+#                scoring=make_scorer(classification_report_with_accuracy_score))
+
+# # print(ef1_score)
+
+# # append to classification report
+# with open(config.METRIC_FIGS_DIR / "classification_report.csv",'a') as file:
+#     for i in range(n_splits):
+#         writer = csv.writer(file, delimiter=',')
+#         writer.writerow([f"Score for fold {i}",  f"{scores[i]}"])
+#     writer.writerow([f"Mean accuracy with standard deviation",  f"{np.mean(scores):.3f} +/- {np.std(scores):.3f}"])
+
+# with open(config.TABLES_DIR / "classification_report.csv",'a') as file:
+#     for i in range(n_splits):
+#         writer = csv.writer(file, delimiter=',')
+#         writer.writerow([f"Score for fold {i}",  f"{scores[i]}"])
+#     writer.writerow([f"Mean accuracy with standard deviation",  f"{np.mean(scores):.3f} +/- {np.std(scores):.3f}"])

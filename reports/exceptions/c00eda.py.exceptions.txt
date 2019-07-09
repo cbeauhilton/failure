@@ -478,3 +478,83 @@ TypeError: ufunc 'isnan' not supported for the input types, and the inputs could
 
 ################################################################################
  
+################################################################################
+ 
+2019-06-29 09:10:35.013620
+ 
+Error on line 286:
+ Empty 'DataFrame': no numeric data to plot
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 286, in <module>
+    df[feature].dropna().plot.kde(figsize=[12, 8])
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2875, in kde
+    return self(kind='kde', bw_method=bw_method, ind=ind, **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2742, in __call__
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1998, in plot_series
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1801, in _plot
+    plot_obj.generate()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 249, in generate
+    self._compute_plot_data()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 367, in _compute_plot_data
+    'plot'.format(numeric_data.__class__.__name__))
+TypeError: Empty 'DataFrame': no numeric data to plot
+
+################################################################################
+ 
+################################################################################
+ 
+2019-06-29 09:10:36.273037
+ 
+Error on line 329:
+ ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 329, in <module>
+    vals = df[x].values[~np.isnan(df[x].values)]
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-09 18:46:18.640735
+ 
+Error on line 286:
+ Empty 'DataFrame': no numeric data to plot
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 286, in <module>
+    df[feature].dropna().plot.kde(figsize=[12, 8])
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2875, in kde
+    return self(kind='kde', bw_method=bw_method, ind=ind, **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 2742, in __call__
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1998, in plot_series
+    **kwds)
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 1801, in _plot
+    plot_obj.generate()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 249, in generate
+    self._compute_plot_data()
+  File "C:\Miniconda3\envs\ml01\lib\site-packages\pandas\plotting\_core.py", line 367, in _compute_plot_data
+    'plot'.format(numeric_data.__class__.__name__))
+TypeError: Empty 'DataFrame': no numeric data to plot
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-09 18:46:20.293288
+ 
+Error on line 329:
+ ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+ 
+Traceback (most recent call last):
+  File "c:\Users\hiltonc\Desktop\failure\src\c00eda.py", line 329, in <module>
+    vals = df[x].values[~np.isnan(df[x].values)]
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+################################################################################
+ 

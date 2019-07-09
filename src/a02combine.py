@@ -74,7 +74,7 @@ final_genes = config.FINAL_GENES
 
 # select only the columns that match between all sets
 all_cols = sorted(list(set(ccf) & set(cmml) & set(mds) & set(mpn) & set(icus)))
-missing_genes = (set(final_genes) - set(all_cols))
+missing_genes = set(final_genes) - set(all_cols)
 if len(missing_genes) > 0:
     print("Missing genes:", missing_genes)
 # print(len(all_cols))
@@ -99,15 +99,26 @@ data = data.apply(
     else x
 )
 
+print(data.diagnosis.value_counts(dropna=False))
 
-data.replace({"diagnosis": {"raeb-1": "mds-eb", "raeb-2": "mds-eb"}}, inplace=True)
+
+# MDS
+
 data.replace(
-    {"diagnosis": {"rars": "mds-rs", "rars-t": "mds-mpn-rs-t", "rcmd-rs": "mds-rs"}},
+    {
+        "diagnosis": {
+            "raeb-1": "mds-eb",
+            "raeb-2": "mds-eb",
+            "rars": "mds-rs",
+            "rcmd-rs": "mds-rs",
+            "rcud": "mds-sld",
+            "ra": "mds-sld",
+            "rcmd": "mds-mld",
+        }
+    },
     inplace=True,
 )
-data.replace({"diagnosis": {"cmml-1": "cmml", "cmml-2": "cmml"}}, inplace=True)
-data.replace({"diagnosis": {"rcud": "mds-sld", "ra": "mds-sld"}}, inplace=True)
-data.replace({"diagnosis": {"rcmd": "mds-mld"}}, inplace=True)
+
 data.replace(
     {
         "diagnosis": {
@@ -118,31 +129,100 @@ data.replace(
             "mds-u": "mds",
             "del(5q)": "mds",
             "tmds": "mds",
-            "mds_mpn-u" : "mds_mpn",
-            "mds-mpn-rs-t" : "mds_mpn",
-            "mpn-u": "mpn",
-            "pv-mf": "mpn",
-            "mf" : "pmf",
-            "cml": "mpn",
-            "et-mf" : "mpn"
+        }
+    },
+    inplace=True,
+)
 
+# MPNs
+data.replace(
+    {
+        "diagnosis": {
+            # 'mpn-u': 'mpn-u',
+            # "mpn": "mpn-u",
+            # 'pmf' : 'pmf',
+            "mf": "pmf",
+            "mf_w__myeliod_metaplasia": "pmf",
+            'cimf' : "pmf",
+            'etmf' : 'et-mf',
+            # "pv-mf": "?",
+            # "et-mf" : "?",
+            #  'mds_mf' :"?",
+            # 'mf,_mds_mpn'  : "?",
+            #  'et' : 'et', 
+            'mpn_et' : 'et',
+            # 'et-mds' : "?",
+            #  'pv' : 'pv',
+            # 'pv-mpn,_cll' : "?",
+            # 'mf_cml' : '?',
+            # 'cml' : '?',
+            
             
         }
     },
     inplace=True,
 )
 
-ddx = ['mds' 'cmml' 'mds_mpn-u' 'mds-mpn-rs-t' 'pmf' 'et' 'pv' 'mpn-u' 'mpn'
- 'mf_cml' 'cml' 'aml' 'mpn_et' 'mds_cmml' 'mpn_cmml' 'pv-mf' 'mds_mpn'
- 'pnh' 'mds_mpv' 'mf_aml' 'et-mf' 'et-mds' 'pv-mpn,_cll' 'mf'
- 'mf,_mds_mpn' 'saml' 'etmf' 'cmml_cll' 'cimf' 'cml_aml' 'mpn_mds-u'
- 'mds_mf' 'mpn_aml' 'mf_w__myeliod_metaplasia' 'mpn_or_mds' 'pv_aml' 'mpd'
- 'not_yet_mds']
+# MDS/MPNs
+data.replace(
+    {
+        "diagnosis": {
+            "cmml-1": "cmml",
+            "cmml-2": "cmml",
+            "rars-t": "mds-mpn-rs-t",
+            "mpn-cmml": "cmml",
+            # 'cmml_cll' : 'cmml?'
+            
+        }
+    },
+    inplace=True,
+)
+data.replace(
+    {
+        "diagnosis": {
+            # 'mds_mpn' : 'mds_mpn',
+            "mds_mpn-u": "mds_mpn",
+            "mds-mpn-rs-t": "mds_mpn",
+            "mpn_mds-u": "mds_mpn",
+            "mpn_or_mds": "mds_mpn",
+            "mds_cmml": "mds_mpn",
+            "mds_mpv": "mds_mpn",
+        }
+    },
+    inplace=True,
+)
+
+# AMLs
+# data.replace(
+#     {
+#         "diagnosis": {
+#             'aml' : 'aml',
+#             'cml_aml' : 'aml',
+#             'pv_aml' : 'aml',
+#             'mpn_aml' : 'aml',
+#             'saml' : 'aml',
+#             'mf_aml' : 'aml',
+#         }
+#     },
+#     inplace=True,
+# )
+
+
+# Other
+# 'pnh' 
+# 'mpd'
+ 
+
+print(data.diagnosis.value_counts(dropna=False))
 
 # get rid of rare diagnoses
 col = "diagnosis"
 n = 10
 data = data[data.groupby(col)[col].transform("count").ge(n)]
+
+
+print(data.diagnosis.value_counts(dropna=False))
+
 
 # print(data.diagnosis.unique())
 
@@ -208,7 +288,6 @@ for col in cats:
 cat_list.append(final_genes)
 cat_list = [item for sublist in cat_list for item in sublist]
 # print(cat_list)
-
 
 
 data["id"] = data["id"].astype("category")
@@ -310,9 +389,13 @@ calc_cols = list([col for col in data.columns if "_calc" in col])
 data = data.drop(calc_cols, axis=1)
 data = data.drop("gender_male", axis=1)
 add_gene_cols = [col for col in list(data) if "_positive" in col]
-data['mutation_num'] = data[add_gene_cols].sum(axis=1)
-data.loc[(data['diagnosis'] == 'not_yet_mds') & (data['mutation_num'] > 0) ,'diagnosis'] = 'ccus'
-data.loc[(data['diagnosis'] == 'not_yet_mds') & (data['mutation_num'] == 0) ,'diagnosis'] = 'icus'
+data["mutation_num"] = data[add_gene_cols].sum(axis=1)
+data.loc[
+    (data["diagnosis"] == "not_yet_mds") & (data["mutation_num"] > 0), "diagnosis"
+] = "ccus"
+data.loc[
+    (data["diagnosis"] == "not_yet_mds") & (data["mutation_num"] == 0), "diagnosis"
+] = "icus"
 # print(data.diagnosis.unique())
 
 data = data.reset_index(drop=True)
@@ -330,7 +413,7 @@ data.to_hdf(config.RAW_DATA_FILE_H5, key="data", mode="a", format="table")
 data.to_csv(config.INTERIM_DATA_DIR / "combo.csv")
 
 y = data["diagnosis"].copy()
-X = data.drop(["diagnosis", "id", "dataset_id",], axis=1).copy()
+X = data.drop(["diagnosis", "id", "dataset_id"], axis=1).copy()
 
 y.to_hdf(config.RAW_DATA_FILE_H5, key="y", mode="a", format="table")
 X.to_hdf(config.RAW_DATA_FILE_H5, key="X", mode="a", format="table")

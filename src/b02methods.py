@@ -199,3 +199,26 @@ with open(out_file_latex, "w") as file:
     print(out_file_latex)
     file.write(section_header)
     file.write(filedata)
+
+
+
+
+
+
+
+
+
+
+# notes from MLL
+
+# Dear Aziz,
+# I am writing to you on behalf of Manja. I selected cases for your CCUS/ICUS cohort. We had performed panel sequencing on those cases in the last two years. Therefore there is not a lot of follow-up available.
+# Inclusion criteria are:
+# -          No MDS according to morphology
+# -          Cytogenetics is available (usually 20 metaphase, a few with less)
+# -          Immunephenotyping data available
+# -          Bone Marrow available (in addition some had blood samples available)
+# -          Sequencing: 90% or more of the genes covered by 400x
+
+# As for you previous cohort: segmented neutrophils and banded neutrophils were added; for PB lymphocytes typical and atypical ones were added.
+# Constance Baer
