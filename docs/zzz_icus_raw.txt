@@ -103,7 +103,7 @@ NRAS load
 NRAS result
 Normal
 Other
-PLT [/µL]
+PLT [/ÂµL]
 Pb Baso %
 Pb Baso Abs
 Pb Eos %
@@ -147,7 +147,7 @@ U2AF1 AS
 U2AF1 DNA
 U2AF1 load
 U2AF1 result
-WBC [/µl]
+WBC [/Âµl]
 ZRSR2 AS
 ZRSR2 DNA
 ZRSR2 load

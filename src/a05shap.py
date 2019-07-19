@@ -146,8 +146,19 @@ for i, classname in enumerate(classes):
     shaps = pd.DataFrame(shaps, columns=[classes[i].upper()])
     imp_cols = pd.concat([imp_cols, shaps], axis=1)
 
-tops = np.abs(shap_values).mean(0)
-print(tops)
+# tops = pd.DataFrame((np.abs(shap_values).mean(0)))
+# # tops = pd.DataFrame((np.abs(shap_values)))
+# class_inds = np.argsort([-np.abs(shap_values[i]).mean() for i in range(len(shap_values))])
+# tops.columns = features_shap.columns.values
+# print(tops.head())
+# shaps = pd.DataFrame(shap_values, columns=features_shap.columns.values)
+# shaps = pd.DataFrame((np.abs(shap_values).mean(0).sort_values(ascending=False).index.tolist()), columns=features_shap.columns.values)
+# shaps = pd.DataFrame(shaps, columns="All")
+# imp_cols = pd.concat([imp_cols, shaps], axis=1)
+
+
+print(imp_cols.head())
+
 csv_file = config.TABLES_DIR / "shap_df.csv"
 h5_file = config.PROCESSED_DATA_DIR / "everything.h5"
 imp_cols.to_csv(csv_file)

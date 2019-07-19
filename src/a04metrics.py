@@ -81,6 +81,41 @@ roc_data = roc_data.replace("nan", np.nan)
 with open(config.TABLES_DIR/'perf_dict.json', 'r') as f:
     perf_dict = json.load(f)
 
+# report[i][classes[j]]["brier_score"] = brier_score.round(10)
+# report[i][classes[j]]["roc_auc"] = roc_auc[j].round(10)
+# report[i][classes[j]]["z_avg_precision"] = average_precision[j]
+
+
+for j in range(len(classes)):
+    # print(j)
+    roc_aucs = []
+    brier_scores = []
+    avg_precisions = []
+    perf_dict[classes[j]] = {}
+    for i in range(n_splits): 
+        # print(i) 
+        # print(classes[j])
+        roc_auc = perf_dict[f"{i}"][classes[j]]["roc_auc"]
+        roc_aucs.append(roc_auc)
+        avg_ps = perf_dict[f"{i}"][classes[j]]["z_avg_precision"]
+        avg_precisions.append(avg_ps)
+        b_s = perf_dict[f"{i}"][classes[j]]["brier_score"]
+        brier_scores.append(b_s)
+    # print(roc_aucs)
+    mean_auc = np.mean(roc_aucs)
+    std_auc = np.std(roc_aucs)
+    perf_dict[classes[j]]["mean_auc"] = mean_auc
+    perf_dict[classes[j]]["std_auc"] = std_auc
+    mean_brier = np.mean(brier_scores)
+    std_brier = np.std(brier_scores)
+    perf_dict[classes[j]]["mean_brier"] = mean_brier
+    perf_dict[classes[j]]["std_brier"] = std_brier
+    mean_pa = np.mean(avg_precisions)
+    std_pa = np.std(avg_precisions)
+    perf_dict[classes[j]]["mean_pa"] = mean_pa
+    perf_dict[classes[j]]["std_pa"] = std_pa
+    print(mean_pa, std_pa, mean_auc, std_auc, mean_brier, std_brier)
+
 for classname in classes:
     # select the columns with the appropriate classname
     df2 = roc_data.filter(regex=classname)
@@ -153,7 +188,7 @@ for classname in classes:
     plt.title("")
     plt.legend(loc="lower right")
     plt.savefig(
-        (config.METRIC_FIGS_DIR / f"AUC/ROC_{classname}.pdf"),
+        (config.METRIC_FIGS_DIR / f"AUC_ROC_{classname}.pdf"),
         dpi=1200,
         transparent=False,
         bbox_inches="tight",
@@ -195,7 +230,7 @@ for classname in classes:
             f"{classname}_Precision_Recall_curve_AP_{average_precision*100:.0f}_"
         )
     plt.savefig(
-        (config.METRIC_FIGS_DIR / f"PR/PR_combo_{classname}.pdf"),
+        (config.METRIC_FIGS_DIR / f"PR_PR_combo_{classname}.pdf"),
         dpi=1200,
         transparent=False,
         bbox_inches="tight",
@@ -228,7 +263,72 @@ with open(config.TABLES_DIR/'perf_dict.json', 'w') as f:
     json.dump(perf_dict, f)
 
 
+for classname in classes:
+    # select the columns with the appropriate classname
+    df2 = roc_data.filter(regex=classname)
+    fprs = df2.filter(regex="fpr")
+    tprss = df2.filter(regex="tpr")
+    aucss = df2.filter(regex="auc")
+    for i, fold_num in enumerate(range(n_classes)):
+        fpr = fprs.filter(regex=f"{fold_num}_{classname}")
+        fpr = fpr.dropna()
+        fpr = fpr[fpr.columns[0:3]].values.T
+        fpr = fpr[0, :]
+        # fpr = np.reshape(fpr, len(fpr))
+        # print(type(fpr))
+        # print(fpr)
 
+        tpr = tprss.filter(regex=f"{fold_num}_{classname}")
+        tpr = tpr.dropna()
+        tpr = tpr[tpr.columns[0:3]].values.T
+        tpr = tpr[0, :]
+
+        roc_auc = aucss.filter(regex=f"{fold_num}_{classname}")
+        roc_auc = roc_auc.iloc[0][0]
+        # print(type(roc_auc))
+
+        tprs.append(interp(mean_fpr, fpr, tpr))
+        # print(type(tprs))
+        tprs[-1][0] = 0.0
+
+        aucs.append(roc_auc)
+        plt.plot(
+            fpr, tpr, lw=1, alpha=0.3, #label="ROC fold %d (AUC = %0.2f)" % (i, roc_auc)
+        )
+
+    plt.plot([0, 1], [0, 1], linestyle="--", lw=2, color="r", label="Chance", alpha=0.8)
+    # print("\n")
+    # print(type(tprs))
+    mean_tpr = np.mean(tprs, axis=0)
+    mean_tpr[-1] = 1.0
+    mean_auc = auc(mean_fpr, mean_tpr)
+    std_auc = np.std(aucs)
+    # perf_dict[f"{classname}"] = {}
+    # perf_dict[f"{classname}"]['auc'] = mean_auc
+    # perf_dict[f"{classname}"]['auc_std'] = std_auc
+ 
+    plt.plot(
+        mean_fpr,
+        mean_tpr,
+        color="b",
+        label=r"Mean ROC (AUC = %0.2f $\pm$ %0.2f)" % (mean_auc, std_auc),
+        lw=2,
+        alpha=0.8,
+    )
+
+plt.xlim([-0.05, 1.05])
+plt.ylim([-0.05, 1.05])
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.title("")
+plt.legend(loc="lower right")
+plt.savefig(
+    (config.METRIC_FIGS_DIR / f"AUC_ROC_combo.pdf"),
+    dpi=1200,
+    transparent=False,
+    bbox_inches="tight",
+)
+plt.close()
 
 
 # fpr[j], tpr[j], _ = roc_curve(y_true[test][:, j], y_score[:, j])

@@ -330,6 +330,7 @@ for i, (train, test) in enumerate(kf):
         brier_score = brier_score_loss(y_true[test][:, j], y_score[:, j])
         
         report[i][classes[j]]["brier_score"] = brier_score.round(10)
+        report[i][classes[j]]["roc_auc"] = roc_auc[j].round(10)
         report[i][classes[j]]["z_precision"] = precision[j].tolist()
         report[i][classes[j]]["z_recall"] = recall[j].tolist()
         report[i][classes[j]]["z_avg_precision"] = average_precision[j]
@@ -366,6 +367,17 @@ for i, (train, test) in enumerate(kf):
         # print(fpr_save)
         # print("AUC:", roc_auc[j])
 
+# for j in range(n_classes):
+#     roc_aucs = []
+#     for i in range(n_splits):    
+#         roc_auc = report[i][classes[j]]["roc_auc"]
+#         roc_aucs.append(roc_auc)
+#     print(roc_aucs)
+
+
+# report[i][classes[j]]["brier_score"] = brier_score.round(10)
+# report[i][classes[j]]["roc_auc"] = roc_auc[j].round(10)
+# report[i][classes[j]]["z_avg_precision"] = average_precision[j]
 
 
 # Save combined dataframes
