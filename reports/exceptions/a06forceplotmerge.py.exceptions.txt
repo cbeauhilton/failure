@@ -3318,3 +3318,563 @@ TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
 
 ################################################################################
  
+################################################################################
+ 
+2019-07-20 07:22:09.978545
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.034194
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.041227
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.048417
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.056874
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.064971
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.073488
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.082996
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.091164
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.098543
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.106591
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.115319
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.123833
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.131555
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.139416
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.147016
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.155366
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.162712
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.169822
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:22:10.177282
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.837919
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.855270
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.863430
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.870302
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.878245
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.885784
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.893036
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.900091
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.906890
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.913797
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.921239
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.928560
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.936840
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.944134
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.951174
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.958336
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.965930
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.972817
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.981091
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-20 07:53:12.988046
+ 
+Error on line 105:
+ list index out of range
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/a06forceplotmerge.py", line 105, in <module>
+    print(image_list[i])
+IndexError: list index out of range
+
+################################################################################
+ 
