@@ -57,7 +57,7 @@ for i in b:
 
 count_clause_0 = f"Of {class_sizes[a]} pts included, "
 count_clause_1 = ''.join(count_clause_1)
-count_clause_2 = f"and {class_sizes[c]} had {c.upper()}."
+count_clause_2 = f"and {class_sizes[c]} had {c.upper()}. "
 # print(count_clause_0) ; print(count_clause_1) ; print(count_clause_2)
 count_sent = count_clause_0 + count_clause_1 + count_clause_2
 # print(count_sent)
@@ -263,7 +263,7 @@ amc_clause = f'absolute monocyte count (AMC) {percentile_dict["abs_mono_median"]
 alc_clause = f'absolute lymphocyte count (ALC) {percentile_dict["abs_lym_median"]:.2f}x10^9/L (range, {percentile_dict["abs_lym_min"]:.0f}-{percentile_dict["abs_lym_max"]:.0f}), '
 anc_clause = f'absolute neutrophil count (ANC) {percentile_dict["abs_neut_median"]:.2f}x10^9/L (range, {percentile_dict["abs_neut_min"]:.0f}-{percentile_dict["abs_neut_max"]:.0f}), ' 
 # ANC ALSO WEIRD, SHOULD BE CLOSER TO: 170
-hgb_clause = f'and hemoglobin (Hgb)  {percentile_dict["hgb_median"]:.2f} (range, {percentile_dict["hgb_min"]:.1f}-{percentile_dict["hgb_max"]:.1f}). '
+hgb_clause = f'and hemoglobin (Hgb) {percentile_dict["hgb_median"]:.2f} (range, {percentile_dict["hgb_min"]:.1f}-{percentile_dict["hgb_max"]:.1f}). '
 
 
 ###############################################################################

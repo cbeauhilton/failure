@@ -36,11 +36,25 @@ from cbh import config
 from cbh.colors_rando import *
 from cbh.dumb import get_xkcd_colors
 
+fig_size = plt.rcParams["figure.figsize"]
+fig_size[0] = 8
+fig_size[1] = 6
+plt.rcParams["figure.figsize"] = fig_size
+
 colorz = get_xkcd_colors()
-colors = cycle(colorz['hex'])
-# random_colors = random.sample(beau_colors, 20)
-# colors = cycle(random_colors)
-# print(colors)
+xkcd_cycle = cycle(colorz['hex'])
+colorblind9 = ['#377eb8', '#ff7f00', '#4daf4a',
+                  '#f781bf', '#a65628', '#984ea3',
+                  '#999999', '#e41a1c', '#dede00']
+
+flatui = ["#9b59b6", "#3498db", "#95a5a6", "#e74c3c", "#34495e", "#2ecc71"]
+tableau10 = ['#006BA4', '#FF800E', '#ABABAB', '#595959', '#5F9ED1', '#C85200', '#898989', '#A2C8EC', '#FFBC79', '#CFCFCF']
+colorbrewer8 = ["#d73027", "#f46d43", "#fdae61", "#fee090", "#e0f3f8", "#abd9e9", "#74add1", "#4575b4",]
+
+# colors = tableau10
+colors = colorbrewer8
+# colors = colorblind9
+
 
 # Load data
 data = pd.read_hdf(config.RAW_DATA_FILE_H5, key="data")
@@ -114,7 +128,7 @@ for j in range(len(classes)):
     std_pa = np.std(avg_precisions)
     perf_dict[classes[j]]["mean_pa"] = mean_pa
     perf_dict[classes[j]]["std_pa"] = std_pa
-    print(mean_pa, std_pa, mean_auc, std_auc, mean_brier, std_brier)
+    # print(mean_pa, std_pa, mean_auc, std_auc, mean_brier, std_brier)
 
 for classname in classes:
     # select the columns with the appropriate classname
@@ -190,7 +204,7 @@ for classname in classes:
     plt.savefig(
         (config.METRIC_FIGS_DIR / f"AUC_ROC_{classname}.pdf"),
         dpi=1200,
-        transparent=False,
+        transparent=True,
         bbox_inches="tight",
     )
     plt.close()
@@ -232,7 +246,7 @@ for classname in classes:
     plt.savefig(
         (config.METRIC_FIGS_DIR / f"PR_PR_combo_{classname}.pdf"),
         dpi=1200,
-        transparent=False,
+        transparent=True,
         bbox_inches="tight",
     )
     plt.close()
@@ -250,7 +264,7 @@ for classname in classes:
         plt.savefig(
             (config.METRIC_FIGS_DIR / f"calibration/calibration_curve_{classname}.pdf"),
             dpi=1200,
-            transparent=False,
+            transparent=True,
             bbox_inches="tight",
         )
         plt.close()
@@ -262,8 +276,9 @@ for classname in classes:
 with open(config.TABLES_DIR/'perf_dict.json', 'w') as f:
     json.dump(perf_dict, f)
 
-
-for classname in classes:
+# plt.figure(figsize=(10, 10))
+# fig.set_size_inches(18.5, 10.5)
+for classname, color in zip(classes, colors):
     # select the columns with the appropriate classname
     df2 = roc_data.filter(regex=classname)
     fprs = df2.filter(regex="fpr")
@@ -292,11 +307,10 @@ for classname in classes:
         tprs[-1][0] = 0.0
 
         aucs.append(roc_auc)
-        plt.plot(
-            fpr, tpr, lw=1, alpha=0.3, #label="ROC fold %d (AUC = %0.2f)" % (i, roc_auc)
-        )
+        # plt.plot(
+        #     fpr, tpr, lw=1, alpha=0.3, #label="ROC fold %d (AUC = %0.2f)" % (i, roc_auc)
+        # )
 
-    plt.plot([0, 1], [0, 1], linestyle="--", lw=2, color="r", label="Chance", alpha=0.8)
     # print("\n")
     # print(type(tprs))
     mean_tpr = np.mean(tprs, axis=0)
@@ -306,16 +320,17 @@ for classname in classes:
     # perf_dict[f"{classname}"] = {}
     # perf_dict[f"{classname}"]['auc'] = mean_auc
     # perf_dict[f"{classname}"]['auc_std'] = std_auc
- 
+    if classname == "mds_mpn":
+        classname = "MDS/MPN"
     plt.plot(
         mean_fpr,
         mean_tpr,
-        color="b",
-        label=r"Mean ROC (AUC = %0.2f $\pm$ %0.2f)" % (mean_auc, std_auc),
-        lw=2,
+        color=color,
+        label=f"{classname.upper()} AUC {mean_auc:0.2f} $\pm$ {std_auc:0.2f}",
+        lw=0.75,
         alpha=0.8,
     )
-
+plt.plot([0, 1], [0, 1], linestyle="--", lw=0.5, color="r", label="Chance", alpha=0.8)
 plt.xlim([-0.05, 1.05])
 plt.ylim([-0.05, 1.05])
 plt.xlabel("False Positive Rate")
@@ -325,7 +340,7 @@ plt.legend(loc="lower right")
 plt.savefig(
     (config.METRIC_FIGS_DIR / f"AUC_ROC_combo.pdf"),
     dpi=1200,
-    transparent=False,
+    transparent=True,
     bbox_inches="tight",
 )
 plt.close()

@@ -23,6 +23,8 @@ mds = pd.read_hdf(config.RAW_DATA_FILE_H5, key="mds")
 mpn = pd.read_hdf(config.RAW_DATA_FILE_H5, key="mpn")
 icus = pd.read_hdf(config.RAW_DATA_FILE_H5, key="icus")
 
+
+# MDS, ICUS, CCUS, CMML, MDS/MPN, PV, ET, PMF 
 # len_cohort = 0
 # for df in [ccf, cmml, mds, mpn, icus]:
 #     print(len(df))
@@ -65,7 +67,7 @@ df2 = pd.DataFrame({"MDS": sorted(list(mds))})
 df3 = pd.DataFrame({"MPN": sorted(list(mpn))})
 df4 = pd.DataFrame({"ICUS_CCUS": sorted(list(icus))})
 # df = pd.concat([df0, df1, df2, df3], axis=1)
-df = pd.concat([df0, df1, df2, df3, df4], axis=1)
+df = pd.concat([df2, df4, df0, df1, df3], axis=1)
 # print(df)
 
 df.to_csv(config.DOCS_DIR / "zz_combo.csv")
@@ -217,12 +219,13 @@ print(data.diagnosis.value_counts(dropna=False))
 
 # get rid of rare diagnoses
 col = "diagnosis"
-n = 10
+n = 70
 data = data[data.groupby(col)[col].transform("count").ge(n)]
 
 
 print(data.diagnosis.value_counts(dropna=False))
 
+# MDS, ICUS, CCUS, CMML, MDS/MPN, PV, ET, PMF 
 
 # print(data.diagnosis.unique())
 
@@ -257,30 +260,30 @@ cats = [
     # "wt1",
 ]
 
-genes = [
-    "asxl1",
-    "bcor",
-    "cbl",
-    "dnmt3a",
-    "etv6",
-    "ezh2",
-    "flt3",
-    "gata2",
-    "idh1",
-    "idh2",
-    "jak2",
-    "kit",
-    "kras",
-    "npm1",
-    "nras",
-    "runx1",
-    "sf3b1",
-    "srsf2",
-    "tet2",
-    "tp53",
-    "u2af1",
-    "zrsr2",
-]
+# genes = [
+#     "asxl1",
+#     "bcor",
+#     "cbl",
+#     "dnmt3a",
+#     "etv6",
+#     "ezh2",
+#     "flt3",
+#     "gata2",
+#     "idh1",
+#     "idh2",
+#     "jak2",
+#     "kit",
+#     "kras",
+#     "npm1",
+#     "nras",
+#     "runx1",
+#     "sf3b1",
+#     "srsf2",
+#     "tet2",
+#     "tp53",
+#     "u2af1",
+#     "zrsr2",
+# ]
 
 cat_list = []
 for col in cats:
@@ -302,8 +305,10 @@ data = data.drop(cat_list, axis=1)
 data = data.join(one_hot)
 
 negative_cols = [col for col in data.columns if "_negative" in col]
+missing_cols = [col for col in data.columns if "_missing" in col]
 # print(negative_cols)
 data = data.drop(negative_cols, axis=1)
+data = data.drop(missing_cols, axis=1)
 
 # drop any columns that are completely blank
 with_na = len(list(data))

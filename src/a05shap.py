@@ -61,6 +61,8 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.33, random_state=config.SEED
 )
 
+
+
 # Define classifier
 params = config.PARAMS_LGBM
 clf = lgb.LGBMClassifier(**params)
@@ -182,9 +184,13 @@ for folder in dirs:
         print(f"Made directory: {folder}")
 
 
+prettycols = pd.read_csv(config.TABLES_DIR / "prettify.csv")
+di = dict(zip(prettycols.ugly, prettycols.pretty_full))
+feature_names = X.columns.map(di)
+
 
 print(f"SHAP summary bar...")
-shap.summary_plot(shap_values, X, plot_type="bar", class_names = CLASSES, show=False)
+shap.summary_plot(shap_values, X, plot_type="bar", class_names = CLASSES, feature_names=feature_names, show=False)
 # plt.title(f"{classname.upper()}")
 plt.savefig(
     config.FIGURES_DIR / "shap_images/shap_summary"/ f"shap_summary_bar_all_classes.pdf", bbox_inches="tight"
@@ -256,6 +262,7 @@ for i, classname in enumerate(CLASSES):
                 # X_test.iloc[f"{pt_num}", :],
                 link="logit",
                 matplotlib=True,
+                feature_names=feature_names,
                 show=False,
             )
             plt.title(f"{classname.upper()}")
@@ -273,10 +280,15 @@ for i, classname in enumerate(CLASSES):
 imp_cols = pd.read_csv(config.TABLES_DIR / "shap_df.csv")
 prettycols = pd.read_csv(config.TABLES_DIR / "prettify.csv")
 di = dict(zip(prettycols.ugly, prettycols.pretty_full))
+print(di)
 pretty_imp_cols = pd.DataFrame()
 for classname in CLASSES:
     pretty_imp_cols[f'{classname}'] = imp_cols[f'{classname}'].map(di).fillna(imp_cols[f'{classname}'])
 # print(pretty_imp_cols.head())
+
+# features_shap.columns = features_shap.columns.to_series().map(
+#             di["feature_pretty"]
+#         )
 
 pretty_imp_cols.to_csv(config.TABLES_DIR / "shap_df_pretty.csv")
 
