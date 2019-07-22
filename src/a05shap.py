@@ -127,8 +127,8 @@ right_pred = combo[combo["Success"]==True]
 right_pt_nums = list(right_pred["Sample_Number"])
 wrong_pt_nums = list(wrong_pred["Sample_Number"])
 # grab a random sample of 10 from each
-pt_nums_right = random.sample(right_pt_nums, 10)
-pt_nums_wrong = random.sample(wrong_pt_nums, 10)
+pt_nums_right = random.sample(right_pt_nums, 20)
+pt_nums_wrong = random.sample(wrong_pt_nums, 20)
 
 force_plot_csv = pd.DataFrame()
 force_plot_csv['correctly_classified'] = sorted(pt_nums_right)
@@ -186,7 +186,9 @@ for folder in dirs:
 
 prettycols = pd.read_csv(config.TABLES_DIR / "prettify.csv")
 di = dict(zip(prettycols.ugly, prettycols.pretty_full))
+di2 = dict(zip(prettycols.ugly, prettycols.pretty_abbr))
 feature_names = X.columns.map(di)
+feature_names_short = X.columns.map(di2)
 
 
 print(f"SHAP summary bar...")
@@ -262,10 +264,10 @@ for i, classname in enumerate(CLASSES):
                 # X_test.iloc[f"{pt_num}", :],
                 link="logit",
                 matplotlib=True,
-                feature_names=feature_names,
+                feature_names=feature_names_short,
                 show=False,
             )
-            plt.title(f"{classname.upper()}")
+            plt.title(f"{classname.upper()}", fontsize='xx-large', backgroundcolor= 'white', y=1.08)
             plt.savefig(
                 config.FIGURES_DIR
                 / f"shap_images/force_plots/forceplot_{classname}_{i}_pt_{pt_num}.pdf",

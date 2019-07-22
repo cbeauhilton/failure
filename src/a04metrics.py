@@ -105,6 +105,8 @@ for j in range(len(classes)):
     roc_aucs = []
     brier_scores = []
     avg_precisions = []
+    precisions = []
+    recalls = []
     perf_dict[classes[j]] = {}
     for i in range(n_splits): 
         # print(i) 
@@ -115,7 +117,13 @@ for j in range(len(classes)):
         avg_precisions.append(avg_ps)
         b_s = perf_dict[f"{i}"][classes[j]]["brier_score"]
         brier_scores.append(b_s)
+        precs = perf_dict[f"{i}"]["z_classification_reports"][classes[j]]["precision"]
+        precisions.append(precs)
+        recs = perf_dict[f"{i}"]["z_classification_reports"][classes[j]]["recall"]
+        recalls.append(recs)
     # print(roc_aucs)
+    # print(precisions)
+    # print(recalls)
     mean_auc = np.mean(roc_aucs)
     std_auc = np.std(roc_aucs)
     perf_dict[classes[j]]["mean_auc"] = mean_auc
@@ -128,6 +136,14 @@ for j in range(len(classes)):
     std_pa = np.std(avg_precisions)
     perf_dict[classes[j]]["mean_pa"] = mean_pa
     perf_dict[classes[j]]["std_pa"] = std_pa
+    mean_precs = np.mean(precisions)
+    std_precs = np.std(precisions)
+    perf_dict[classes[j]]["mean_precisions"] = mean_precs
+    perf_dict[classes[j]]["std_precisions"] = std_precs
+    mean_recs = np.mean(recalls)
+    std_recs = np.std(recalls)
+    perf_dict[classes[j]]["mean_recalls"] = mean_recs
+    perf_dict[classes[j]]["std_recalls"] = std_recs
     # print(mean_pa, std_pa, mean_auc, std_auc, mean_brier, std_brier)
 
 for classname in classes:

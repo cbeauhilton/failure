@@ -5,6 +5,7 @@ import numpy as np
 import collections
 import operator
 import re
+import json
 
 df = pd.read_hdf(config.RAW_DATA_FILE_H5, key="data")
 y = pd.read_hdf(config.RAW_DATA_FILE_H5, key="y")
@@ -244,7 +245,25 @@ shap_paragraph = shap_paragraph[:-1]
 ###############################################################################
 
 # model_performance = f"{}"
+with open(config.TABLES_DIR/'perf_dict.json', 'r') as f:
+    perf_dict = json.load(f)
 
+performances = []
+for classname in classes:
+    mean_auc = perf_dict[classname]["mean_auc"]
+    std_auc = perf_dict[classname]["std_auc"]
+    mean_brier = perf_dict[classname]["mean_brier"]
+    std_brier = perf_dict[classname]["std_brier"]
+    mean_pa = perf_dict[classname]["mean_pa"]  
+    std_pa = perf_dict[classname]["std_pa"] 
+    mean_precs = perf_dict[classname]["mean_precisions"] 
+    std_precs = perf_dict[classname]["std_precisions"]  
+    mean_recs = perf_dict[classname]["mean_recalls"] 
+    std_recs = perf_dict[classname]["std_recalls"]
+    perfs = f"{classname.upper()} AUC: {mean_auc:.2f} +/- {std_auc:.2f}, precision: {mean_precs:.2f} +/- {std_precs:.2f}, recall: {mean_recs:.2f} +/- {std_precs:.2f}; "
+    performances.append(perfs)
+
+performances = ''.join(performances)
 ###############################################################################
 #                                  __        ________
 #   ___  ____ ________  __   _____/ /___  __/ __/ __/
@@ -360,12 +379,7 @@ These variables included: \
 {shap_paragraph} (Figure 1).
 
 When applying the model to the validation cohort, \
-the ROC-AUC was .98 with an accuracy of 94%, \
-with other statistical values as follows: \
-specificities CMML 93%, MDS 96%; \
-sensitivities CMML 96%, MDS 93%; \
-positive predictive values CMML 84%, MDS 98%; \
-negative predictive values CMML 98%, MDS 84%.
+performance was as follows: {performances}.
 
 Individual pt data can also be entered into the model, \
 with a probability of whether the diagnosis is MDS vs. CMML provided along with the impact of each variable on the decision, as shown in Figure 1.

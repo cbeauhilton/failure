@@ -150,6 +150,8 @@ GENE_COLS = [
     "zrsr2",
 ]
 
+print(f"Num gene cols = {len(GENE_COLS)}")
+
 LAB_COLS = [
     "abs bas",
     "abs eos",
@@ -201,3 +203,4 @@ FINAL_GENES = [
     "zrsr2",
 ]
 
+# FINAL_GENES = GENE_COLS

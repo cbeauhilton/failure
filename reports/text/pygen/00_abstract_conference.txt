@@ -1,6 +1,6 @@
-Number of characters in abstract: 4871. 
+Number of characters in abstract: 5175. 
 ASH character limit is 3800. 
-You are over by 1071 non-whitespace characters.
+You are over by 1375 non-whitespace characters.
 
 ===
 
@@ -26,7 +26,7 @@ The median total number of mutations/sample was 1 (range 0-8) for all pts, 1 (ra
 
 A set of 55 genomic/clinical variables were evaluated and several feature extraction algorithms were used to identify the variables that have the most significant impact on the algorithm's decision. These variables included: (CCUS) ABC, ANC, Number of mutations, Plt, AMC, AEC, JAK2, Hgb, Age, DNMT3A, WBC, TET2, U2AF1, ALC, ASXL1, BCOR VUS, CBL, CBL VUS, BCOR, DNMT3A VUS; (CMML) AMC, AEC, WBC, ABC, ANC, ALC, Plt, Hgb, Age, TET2, Number of mutations, ASXL1, JAK2, SF3B1, SRSF2, RUNX1, Female gender, BCOR, BCOR VUS, CBL; (ET) ALC, Plt, Hgb, WBC, Age, AMC, ABC, ANC, AEC, JAK2, Number of mutations, SRSF2, DNMT3A VUS, FLT3, EZH2 VUS, EZH2, ETV6 VUS, ETV6, BCOR, DNMT3A; (ICUS) Number of mutations, ANC, ABC, AEC, WBC, Hgb, ALC, AMC, Plt, Female gender, Age, JAK2, TET2, FLT3, EZH2 VUS, ETV6, EZH2, ETV6 VUS, BCOR, DNMT3A VUS; (MDS) ANC, Plt, AMC, Hgb, ALC, WBC, ABC, JAK2, AEC, Age, Number of mutations, SRSF2, SF3B1, ASXL1, Female gender, TET2, FLT3 VUS, BCOR, BCOR VUS, CBL; (MDS/MPN) Hgb, ALC, Plt, AMC, JAK2, ANC, Age, WBC, AEC, SF3B1, ABC, Number of mutations, ASXL1, EZH2, Female gender, DNMT3A, BCOR, U2AF1, KRA, SRSF2; (PMF) JAK2, ABC, AMC, AEC, Hgb, ALC, ANC, Plt, Age, WBC, U2AF1, ASXL1, TET2, Female gender, Number of mutations, FLT3 VUS, BCOR, BCOR VUS, CBL, CBL VUS; (PV) Hgb, ALC, JAK2, WBC, Plt, AMC, AEC, ABC, Age, ANC, Number of mutations, ASXL1, BCOR, GATA2, CBL, CBL VUS, DNMT3A, DNMT3A VUS, ETV6, ETV6 VUS (Figure 1).
 
-When applying the model to the validation cohort, the ROC-AUC was .98 with an accuracy of 94%, with other statistical values as follows: specificities CMML 93%, MDS 96%; sensitivities CMML 96%, MDS 93%; positive predictive values CMML 84%, MDS 98%; negative predictive values CMML 98%, MDS 84%.
+When applying the model to the validation cohort, performance was as follows: CCUS AUC: 0.97 +/- 0.04, precision: 0.87 +/- 0.30, recall: 0.68 +/- 0.30; CMML AUC: 0.99 +/- 0.01, precision: 0.89 +/- 0.02, recall: 0.91 +/- 0.02; ET AUC: 1.00 +/- 0.00, precision: 0.94 +/- 0.08, recall: 0.92 +/- 0.08; ICUS AUC: 0.99 +/- 0.01, precision: 0.87 +/- 0.08, recall: 0.76 +/- 0.08; MDS AUC: 0.97 +/- 0.01, precision: 0.87 +/- 0.05, recall: 0.95 +/- 0.05; MDS/MPN AUC: 0.86 +/- 0.04, precision: 0.70 +/- 0.26, recall: 0.26 +/- 0.26; PMF AUC: 0.96 +/- 0.03, precision: 0.76 +/- 0.09, recall: 0.56 +/- 0.09; PV AUC: 1.00 +/- 0.00, precision: 1.00 +/- 0.00, recall: 0.96 +/- 0.00; .
 
 Individual pt data can also be entered into the model, with a probability of whether the diagnosis is MDS vs. CMML provided along with the impact of each variable on the decision, as shown in Figure 1.
 
