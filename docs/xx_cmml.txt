@@ -10,23 +10,35 @@ allo bmt
 amc
 aml
 anc at dx
+apc
 asxl1
 bas %
 bcor
+bcorl1
 braf
+c7orf55
 cbl
+ccdc42b
+cdh23
 cdkn2a
 cebpa
+cftr
+csf1r
 cux1
 dataset_id
 date of aml
 date of bmt
 date of diagnosis or sampling
 date of last contact or death
+ddx41
+ddx54
+dhx29
 diagnosis
 dnmt3a
 ecog ps
+eed
 eos %
+erbb4
 etv6
 ezh2
 fab category
@@ -35,12 +47,18 @@ flt3
 flt3-itd
 gata2
 gender
+gli1
+gli2
+gnb1
+gpr98
 hgb
 id
 idh1
 idh2
 institution
+irf4
 jak2
+jak3
 karyo by ipss
 karyo cpss
 karyotype at diagnosis
@@ -52,6 +70,7 @@ ldh at dx
 luc7l2
 lym %
 lymphoctes at dx
+mecom
 med12
 mll
 mono %
@@ -61,6 +80,7 @@ nf1
 npm1
 nras
 number of cytopenias
+ogt
 percent bm blasts
 percent circulating blasts
 percent circulating imc
@@ -70,17 +90,23 @@ plt tx
 prpf40
 prpf40b
 prpf8
+ptch1
 pten
 ptpn11
 race
 rad21
+rnf25
 runx1
+setbp1
 sf1
 sf3b1
+simc1
 smc3
 splenomegaly
 srsf2
 stag2
+stat3
+suz12
 tet2
 tp53
 tx rbc

@@ -4,7 +4,8 @@
 *.synctex.gz
 *.bcf
 *.zip
-
+*.exceptions.txt
+.nfs*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

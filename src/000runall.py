@@ -56,8 +56,8 @@ def report():
 
 # test change
 
-# prep()
-# train()
+prep()
+train()
 report()
 
 print("#" * 80)

@@ -78,15 +78,24 @@ col_list = sorted(list(ccf))
 txt_file = "xx_ccf.txt"
 
 final_genes = config.FINAL_GENES
-
-for col in final_genes:
+all_genes = config.GENE_COLS
+for col in all_genes:
     ccf[col] = ccf[col].replace(1, "positive")
     ccf[col] = ccf[col].replace(0, "negative")
     ccf[col] = ccf[col].replace(np.nan, "missing")
 # print(ccf[final_genes].head(20))     
 
+
+# other_genes = list(set(all_genes) - set(final_genes))
+# print(other_genes)
+
+# for other_gene in all_genes:
+#     ccf[f"{other_gene}"].fillna("missing")
+#     print(ccf[other_gene])
+
+# print(ccf.columns)
 # print(set(col_list) - set(final_genes))
-all_cols = sorted(list(set(col_list) & set(final_genes)))
+# all_cols = sorted(list(set(col_list) & set(final_genes)))
 # print(all_cols)
 # print(len(all_cols))
 

@@ -326,7 +326,10 @@ mpn["wbc"] = mpn["wbc"] / 1000
 mpn["plt"] = mpn["plt"] / 1000
 
 final_genes = config.FINAL_GENES
-for col in final_genes:
+all_genes = config.GENE_COLS
+for col in all_genes:
+    if col not in mpn:
+        mpn[col] = "missing"
     mpn[col] = mpn[col].replace(1, "positive")
     mpn[col] = mpn[col].replace(0, "negative")
     mpn[col] = mpn[col].replace(np.nan, "negative")

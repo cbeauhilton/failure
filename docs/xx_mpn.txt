@@ -16,12 +16,16 @@ bcor
 bcorl1
 braf
 brcc3
+c7orf55
 calr
 cbl
+ccdc42b
 cdh23
 cdkn2a
 cebpa
+cftr
 crebbp
+csf1r
 csf3r
 csnk1a1
 ctcf
@@ -33,8 +37,10 @@ dhx29
 diagnosis
 dnmt1
 dnmt3a
+eed
 eos %
 ep300
+erbb4
 etnk1
 etv6
 ezh2
@@ -44,19 +50,27 @@ flt3
 gata1
 gata2
 gender
+gli1
+gli2
 gnas
 gnb1
+gpr98
 hgb
 id
 idh1
 idh2
+irf4
 jak2
+jak3
 kdm5a
 kdm6a
 kit
 kmt2d
 kras
 lym %
+mecom
+med12
+mll
 mono %
 mpl
 myc
@@ -66,25 +80,30 @@ notch1
 npm1
 nras
 nsd1
+ogt
 percent bm blasts
 phf6
 piga
 plt
 ppm1d
 prpf8
+ptch1
 ptpn11
 rad21
 rb1
+rnf25
 runx1
 setbp1
 sf1
 sf3a1
 sf3b1
 sh2b3
+simc1
 smc1a
 smc3
 srsf2
 stag2
+stat3
 suz12
 tet2
 tp53

@@ -118,8 +118,10 @@ mds["wbc"] = mds["wbc"] / 1000
 mds["plt"] = mds["plt"] / 1000
 
 final_genes = config.FINAL_GENES
-
-for col in final_genes:
+all_genes = config.GENE_COLS
+for col in all_genes:
+    if col not in mds:
+        mds[col] = "missing"
     mds[col] = mds[col].replace(1, "positive")
     mds[col] = mds[col].replace(0, "negative")
     mds[col] = mds[col].replace(np.nan, "missing")

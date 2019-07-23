@@ -102,8 +102,10 @@ for col in ["gender", "diagnosis", "id"]:
     cmml[col] = cmml[col].astype("category")
 
 final_genes = config.FINAL_GENES
-
-for col in final_genes:
+all_genes = config.GENE_COLS
+for col in all_genes:
+    if col not in cmml:
+        cmml[col] = "missing"
     cmml[col] = cmml[col].replace(1, "positive")
     cmml[col] = cmml[col].replace(0, "negative")
     cmml[col] = cmml[col].replace(np.nan, "negative")

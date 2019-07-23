@@ -238,8 +238,10 @@ data.columns = [col.replace("%", "percent") for col in data.columns]
 data.columns = [col.replace(" ", "_") for col in data.columns]
 
 final_genes = config.FINAL_GENES
-
-for col in final_genes:
+all_genes = config.GENE_COLS
+for col in all_genes:
+    if col not in data:
+        data[col] = "missing"
     data[col] = data[col].replace(1, "positive")
     data[col] = data[col].replace("potitive", "positive")
     data[col] = data[col].replace(0, "negative")
@@ -288,7 +290,7 @@ cats = [
 cat_list = []
 for col in cats:
     cat_list.append([col1 for col1 in data.columns if col.lower() in col1])
-cat_list.append(final_genes)
+cat_list.append(all_genes)
 cat_list = [item for sublist in cat_list for item in sublist]
 # print(cat_list)
 
