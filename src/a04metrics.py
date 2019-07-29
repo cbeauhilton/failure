@@ -55,6 +55,7 @@ colorbrewer8 = ["#d73027", "#f46d43", "#fdae61", "#fee090", "#e0f3f8", "#abd9e9"
 colors = colorbrewer8
 # colors = colorblind9
 
+print("Loading", os.path.basename(__file__))
 
 # Load data
 data = pd.read_hdf(config.RAW_DATA_FILE_H5, key="data")
@@ -218,7 +219,7 @@ for classname in classes:
     plt.title("")
     plt.legend(loc="lower right")
     plt.savefig(
-        (config.METRIC_FIGS_DIR / f"AUC_ROC_{classname}.pdf"),
+        (config.METRIC_FIGS_DIR / f"AUC/AUC_ROC_{classname}.pdf"),
         dpi=1200,
         transparent=True,
         bbox_inches="tight",
@@ -260,7 +261,7 @@ for classname in classes:
             f"{classname}_Precision_Recall_curve_AP_{average_precision*100:.0f}_"
         )
     plt.savefig(
-        (config.METRIC_FIGS_DIR / f"PR_PR_combo_{classname}.pdf"),
+        (config.METRIC_FIGS_DIR / f"PR/PR_combo_{classname}.pdf"),
         dpi=1200,
         transparent=True,
         bbox_inches="tight",
@@ -354,7 +355,7 @@ plt.ylabel("True Positive Rate")
 plt.title("")
 plt.legend(loc="lower right")
 plt.savefig(
-    (config.METRIC_FIGS_DIR / f"AUC_ROC_combo.pdf"),
+    (config.METRIC_FIGS_DIR / f"AUC/AUC_ROC_combo.pdf"),
     dpi=1200,
     transparent=True,
     bbox_inches="tight",

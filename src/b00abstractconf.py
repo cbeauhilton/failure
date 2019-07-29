@@ -20,7 +20,9 @@ y = pd.read_hdf(config.RAW_DATA_FILE_H5, key="y")
 #              /____/
 ###############################################################################
 
-df['institution'] = np.where(df['id'].str.contains("mll_", case=False, na=False), 'MLL', 'CCF')
+df["institution"] = np.where(
+    df["id"].str.contains("mll_", case=False, na=False), "MLL", "CCF"
+)
 # print(df[['institution', "id"]])
 institutions = np.unique(df["institution"])
 # print(institutions)
@@ -30,23 +32,25 @@ for place in institutions:
 
 # print(friends)
 
-classes = np.unique(y) # retrieve all class names
-CLASSES = [x.upper() for x in classes] # make uppercase version
-Classes = [x.title() for x in classes] # make titlecase version
+classes = np.unique(y)  # retrieve all class names
+CLASSES = [x.upper() for x in classes]  # make uppercase version
+Classes = [x.title() for x in classes]  # make titlecase version
 
 # Start the class_sizes dictionary with the length of the entire cohort
 class_sizes = {"cohort_size": len(df)}
 
 # append a key, value pair with the diagnosis and number of pts
 for diag in classes:
-    size = len(df.loc[df["diagnosis"]== f"{diag}"])
+    size = len(df.loc[df["diagnosis"] == f"{diag}"])
     class_sizes[f"{diag}"] = size
 
 # order the dictionary by descending number of pts
-sorted_class_sizes = collections.OrderedDict(sorted(class_sizes.items(), key=lambda t: t[1], reverse=True))
+sorted_class_sizes = collections.OrderedDict(
+    sorted(class_sizes.items(), key=lambda t: t[1], reverse=True)
+)
 
 # pull the first value (cohort size) into one variable,
-# all of the middle values into a second variable, 
+# all of the middle values into a second variable,
 # and the last value into its own variable
 a, *b, c = sorted_class_sizes
 # print(a) ; print(b) ; print(c)
@@ -57,7 +61,7 @@ for i in b:
     count_clause_1.append(sent)
 
 count_clause_0 = f"Of {class_sizes[a]} pts included, "
-count_clause_1 = ''.join(count_clause_1)
+count_clause_1 = "".join(count_clause_1)
 count_clause_2 = f"and {class_sizes[c]} had {c.upper()}. "
 # print(count_clause_0) ; print(count_clause_1) ; print(count_clause_2)
 count_sent = count_clause_0 + count_clause_1 + count_clause_2
@@ -76,13 +80,13 @@ count_sent = count_clause_0 + count_clause_1 + count_clause_2
 
 # Percentiles for all numeric columns for overall cohort:
 percentile_dict = {}
-for col in list(df.select_dtypes(include=[np.number]).columns.values):    
-    percentile_dict[f"{col}_min"] = df[f"{col}"].min() 
+for col in list(df.select_dtypes(include=[np.number]).columns.values):
+    percentile_dict[f"{col}_min"] = df[f"{col}"].min()
     percentile_dict[f"{col}_mean"] = df[f"{col}"].mean()
     percentile_dict[f"{col}_q1"] = df[f"{col}"].quantile(0.25)
     percentile_dict[f"{col}_median"] = df[f"{col}"].median()
     percentile_dict[f"{col}_q3"] = df[f"{col}"].quantile(0.75)
-    percentile_dict[f"{col}_max"]= df[f"{col}"].max()
+    percentile_dict[f"{col}_max"] = df[f"{col}"].max()
 
 
 ###############################################################################
@@ -96,18 +100,30 @@ for col in list(df.select_dtypes(include=[np.number]).columns.values):
 
 
 # Ordered gene percentages
-def get_ordered_gene_percents(firstNpairs, dict_of_strings, percentile_dict=percentile_dict, target="all_genes"):
+def get_ordered_gene_percents(
+    firstNpairs, dict_of_strings, percentile_dict=percentile_dict, target="all_genes"
+):
     # grab all of the mean gene findings
-    cohort_genes_percents = dict([(key, value) for key, value in percentile_dict.items() if "_positive_mean" in key])
+    cohort_genes_percents = dict(
+        [
+            (key, value)
+            for key, value in percentile_dict.items()
+            if "_positive_mean" in key
+        ]
+    )
     for value in cohort_genes_percents:
-        cohort_genes_percents[value] = cohort_genes_percents[value]*100
+        cohort_genes_percents[value] = cohort_genes_percents[value] * 100
 
     # sort them by percentages
-    sorted_cohort_genes_percents = collections.OrderedDict(sorted(cohort_genes_percents.items(), key=lambda t: t[1], reverse=True))
+    sorted_cohort_genes_percents = collections.OrderedDict(
+        sorted(cohort_genes_percents.items(), key=lambda t: t[1], reverse=True)
+    )
     # print(sorted_cohort_genes_percents)
 
     # grab first N pairs
-    sorted_cohort_genes_firstNpairs = list(sorted_cohort_genes_percents.items())[:firstNpairs]
+    sorted_cohort_genes_firstNpairs = list(sorted_cohort_genes_percents.items())[
+        :firstNpairs
+    ]
 
     all_genes = []
     for gene in range(len(sorted_cohort_genes_firstNpairs)):
@@ -115,14 +131,14 @@ def get_ordered_gene_percents(firstNpairs, dict_of_strings, percentile_dict=perc
         percents = [i[1] for i in sorted_cohort_genes_firstNpairs]
         name = names[gene]
         percent = percents[gene]
-        name = re.sub('_positive_mean$', '', name)
+        name = re.sub("_positive_mean$", "", name)
         name = name.upper()
         pair = f"{name} ({percent:.1f}%),"
         # print(name)
         # print(percent)
         all_genes.append(pair)
 
-    all_genes = ' '.join(all_genes)
+    all_genes = " ".join(all_genes)
     all_genes = all_genes[:-1]
     genes_percents = all_genes + "."
     # print(genes_percents)
@@ -135,26 +151,37 @@ firstNpairs = 3
 
 mutations_per_sample = {}
 gene_cols = [col for col in list(df) if "_positive" in col]
-df['mutation_num'] = df[gene_cols].sum(axis=1)
-mutations_per_sample[f'cohort_min'] = df['mutation_num'].min()
-mutations_per_sample[f'cohort_mean'] = df['mutation_num'].mean()
-mutations_per_sample[f'cohort_median'] = df['mutation_num'].median()
-mutations_per_sample[f'cohort_max'] = df['mutation_num'].max()
+# print(list(df))
+df["mutation_num"] = df[gene_cols].sum(axis=1)
+mutations_per_sample[f"cohort_min"] = df["mutation_num"].min()
+mutations_per_sample[f"cohort_mean"] = df["mutation_num"].mean()
+mutations_per_sample[f"cohort_median"] = df["mutation_num"].median()
+mutations_per_sample[f"cohort_max"] = df["mutation_num"].max()
 
 # all classes
-get_ordered_gene_percents(firstNpairs, gene_strings, percentile_dict, target="The most commonly mutated genes in all pts were: ")
+get_ordered_gene_percents(
+    firstNpairs,
+    gene_strings,
+    percentile_dict,
+    target="The most commonly mutated genes in all pts were: ",
+)
 # per class
 for classname in classes:
-    percentile_dict[f'{classname}'] = {}
-    df1 = df.loc[df["diagnosis"]== f"{classname}"]
-    df1['mutation_num'] = df1[gene_cols].sum(axis=1)
-    mutations_per_sample[f'{classname}_min'] = df1['mutation_num'].min()
-    mutations_per_sample[f'{classname}_mean'] = df1['mutation_num'].mean()
-    mutations_per_sample[f'{classname}_median'] = df1['mutation_num'].median()
-    mutations_per_sample[f'{classname}_max'] = df1['mutation_num'].max()
-    for col in list(df1.select_dtypes(include=[np.number]).columns.values):    
-        percentile_dict[f'{classname}'][f"{col}_mean"] = df1[f"{col}"].mean()
-    get_ordered_gene_percents(firstNpairs, gene_strings, percentile_dict=percentile_dict[f'{classname}'], target=f"In {classname.upper()}, they were: ")
+    percentile_dict[f"{classname}"] = {}
+    df1 = df.loc[df["diagnosis"] == f"{classname}"]
+    df1["mutation_num"] = df1[gene_cols].sum(axis=1)
+    mutations_per_sample[f"{classname}_min"] = df1["mutation_num"].min()
+    mutations_per_sample[f"{classname}_mean"] = df1["mutation_num"].mean()
+    mutations_per_sample[f"{classname}_median"] = df1["mutation_num"].median()
+    mutations_per_sample[f"{classname}_max"] = df1["mutation_num"].max()
+    for col in list(df1.select_dtypes(include=[np.number]).columns.values):
+        percentile_dict[f"{classname}"][f"{col}_mean"] = df1[f"{col}"].mean()
+    get_ordered_gene_percents(
+        firstNpairs,
+        gene_strings,
+        percentile_dict=percentile_dict[f"{classname}"],
+        target=f"In {classname.upper()}, they were: ",
+    )
 
 # print(mutations_per_sample)
 # print(percentile_dict)
@@ -162,11 +189,11 @@ for classname in classes:
 # print(gene_strings)
 gene_percent_paragraph = []
 
-for k,v in gene_strings.items():
+for k, v in gene_strings.items():
     sent = k + v
-    gene_percent_paragraph.append(''.join(sent))
+    gene_percent_paragraph.append("".join(sent))
 
-gene_percent_paragraph = ' '.join(gene_percent_paragraph)
+gene_percent_paragraph = " ".join(gene_percent_paragraph)
 # print(gene_percent_paragraph)
 
 
@@ -180,7 +207,7 @@ gene_percent_paragraph = ' '.join(gene_percent_paragraph)
 
 mutation_num_sent = []
 
-mutation_num_clause_0 = f"The median total number of mutations/sample was {mutations_per_sample['cohort_median']:.0f} (range {mutations_per_sample['cohort_min']}-{mutations_per_sample['cohort_max']}) for all pts" 
+mutation_num_clause_0 = f"The median total number of mutations/sample was {mutations_per_sample['cohort_median']:.0f} (range {mutations_per_sample['cohort_min']}-{mutations_per_sample['cohort_max']}) for all pts"
 mutation_num_sent.append(mutation_num_clause_0)
 
 for classname in classes:
@@ -192,7 +219,7 @@ for classname in classes:
 
 a, *b, c = mutation_num_sent
 # print(b)
-mutation_num_sent = a + ', ' + ', '.join(b) + " and " + c + '.'
+mutation_num_sent = a + ", " + ", ".join(b) + " and " + c + "."
 # print(mutation_num_sent)
 
 ###############################################################################
@@ -216,21 +243,25 @@ for classname in classes:
     classname = classname.upper()
     shap_dict[f"{classname}_abbr"] = list(shap_vars[f"{classname}_abbr"][:nShaps])
     shap_dict[f"{classname}_full"] = list(shap_vars[f"{classname}"][:nShaps])
-    
+
     shap_class_clause_1 = f"({classname}) "
-    shap_class_clause_2 = shap_dict[f'{classname}_abbr']
-    shap_class_clause_2 = ', '.join(shap_class_clause_2)
-    shap_dict[f"{classname}_clause"] = shap_class_clause_1 + shap_class_clause_2 + shap_class_clause_3
+    shap_class_clause_2 = shap_dict[f"{classname}_abbr"]
+    shap_class_clause_2 = ", ".join(shap_class_clause_2)
+    shap_dict[f"{classname}_clause"] = (
+        shap_class_clause_1 + shap_class_clause_2 + shap_class_clause_3
+    )
     # print(shap_dict[f"{classname}_clause"])
 
 
-shap_clauses = dict([(key, value) for key, value in shap_dict.items() if "_clause" in key])
+shap_clauses = dict(
+    [(key, value) for key, value in shap_dict.items() if "_clause" in key]
+)
 shap_paragraph = []
-for k,v in shap_clauses.items():
+for k, v in shap_clauses.items():
     sent = v
-    shap_paragraph.append(''.join(sent))
+    shap_paragraph.append("".join(sent))
 
-shap_paragraph = ' '.join(shap_paragraph)
+shap_paragraph = " ".join(shap_paragraph)
 shap_paragraph = shap_paragraph[:-1]
 # shap_paragraph = shap_paragraph + '.'
 # print(shap_paragraph)
@@ -245,7 +276,7 @@ shap_paragraph = shap_paragraph[:-1]
 ###############################################################################
 
 # model_performance = f"{}"
-with open(config.TABLES_DIR/'perf_dict.json', 'r') as f:
+with open(config.TABLES_DIR / "perf_dict.json", "r") as f:
     perf_dict = json.load(f)
 
 performances = []
@@ -254,16 +285,16 @@ for classname in classes:
     std_auc = perf_dict[classname]["std_auc"]
     mean_brier = perf_dict[classname]["mean_brier"]
     std_brier = perf_dict[classname]["std_brier"]
-    mean_pa = perf_dict[classname]["mean_pa"]  
-    std_pa = perf_dict[classname]["std_pa"] 
-    mean_precs = perf_dict[classname]["mean_precisions"] 
-    std_precs = perf_dict[classname]["std_precisions"]  
-    mean_recs = perf_dict[classname]["mean_recalls"] 
+    mean_pa = perf_dict[classname]["mean_pa"]
+    std_pa = perf_dict[classname]["std_pa"]
+    mean_precs = perf_dict[classname]["mean_precisions"]
+    std_precs = perf_dict[classname]["std_precisions"]
+    mean_recs = perf_dict[classname]["mean_recalls"]
     std_recs = perf_dict[classname]["std_recalls"]
     perfs = f"{classname.upper()} AUC: {mean_auc:.2f} +/- {std_auc:.2f}, precision: {mean_precs:.2f} +/- {std_precs:.2f}, recall: {mean_recs:.2f} +/- {std_precs:.2f}; "
     performances.append(perfs)
 
-performances = ''.join(performances)
+performances = "".join(performances)
 ###############################################################################
 #                                  __        ________
 #   ___  ____ ________  __   _____/ /___  __/ __/ __/
@@ -280,7 +311,7 @@ wbc_clause = f'The median white blood cell count (WBC) was {percentile_dict["wbc
 #  WBC IS WEIRD, SHOULD BE CLOSER TO: 176
 amc_clause = f'absolute monocyte count (AMC) {percentile_dict["abs_mono_median"]:.2f}x10^9/L (range, {percentile_dict["abs_mono_min"]:.0f}-{percentile_dict["abs_mono_max"]:.0f}), '
 alc_clause = f'absolute lymphocyte count (ALC) {percentile_dict["abs_lym_median"]:.2f}x10^9/L (range, {percentile_dict["abs_lym_min"]:.0f}-{percentile_dict["abs_lym_max"]:.0f}), '
-anc_clause = f'absolute neutrophil count (ANC) {percentile_dict["abs_neut_median"]:.2f}x10^9/L (range, {percentile_dict["abs_neut_min"]:.0f}-{percentile_dict["abs_neut_max"]:.0f}), ' 
+anc_clause = f'absolute neutrophil count (ANC) {percentile_dict["abs_neut_median"]:.2f}x10^9/L (range, {percentile_dict["abs_neut_min"]:.0f}-{percentile_dict["abs_neut_max"]:.0f}), '
 # ANC ALSO WEIRD, SHOULD BE CLOSER TO: 170
 hgb_clause = f'and hemoglobin (Hgb) {percentile_dict["hgb_median"]:.2f} (range, {percentile_dict["hgb_min"]:.1f}-{percentile_dict["hgb_max"]:.1f}). '
 
@@ -293,8 +324,7 @@ hgb_clause = f'and hemoglobin (Hgb) {percentile_dict["hgb_median"]:.2f} (range, 
 # \__/\____/\__,_/\____/
 ###############################################################################
 
-# order: MDS, ICUS, CCUS, CMML, MDS/MPN, PV, ET, PMF 
-
+# order: MDS, ICUS, CCUS, CMML, MDS/MPN, PV, ET, PMF
 
 
 ###############################################################################
@@ -334,8 +364,8 @@ polycythemia vera (PV), essential thrombocythemia (ET), and myelofibrosis (PMF).
 #   / __ `__ \/ _ \/ __/ __ \/ __ \/ __  / ___/
 #  / / / / / /  __/ /_/ / / / /_/ / /_/ (__  )
 # /_/ /_/ /_/\___/\__/_/ /_/\____/\__,_/____/
-###############################################################################  
-# {CLASSES[0]} 
+###############################################################################
+# {CLASSES[0]}
 methods = f"""
 Methods
 
@@ -362,6 +392,67 @@ the area under the curve of the receiver operator characteristic (ROC-AUC) and c
 # /_/   \___/____/\__,_/_/\__/____/
 ###############################################################################
 
+vus_cols = [col for col in list(df) if "_vus" in col]
+drop_list = ["pt_num", "institution", "dataset_id", "diagnosis", "id"]
+var_df = df.drop(gene_cols, axis=1)
+var_df = var_df.drop(vus_cols, axis=1)
+var_df = var_df.drop(drop_list, axis=1)
+old_gene_list = [
+    "apc",
+    "bcorl1",
+    "c7orf55",
+    "ccdc42b",
+    "cdh23",
+    "cebpa",
+    "cftr",
+    "csf1r",
+    "cux1",
+    "ddx41",
+    "ddx54",
+    "dhx29",
+    "eed",
+    "erbb4",
+    "gli1",
+    "gli2",
+    "gnb1",
+    "gpr98",
+    "irf4",
+    "jak3",
+    "kdm6a",
+    "mecom",
+    "med12",
+    "mll",
+    "nf1",
+    "ogt",
+    "phf6",
+    "prpf8",
+    "ptch1",
+    "ptpn11",
+    "rad21",
+    "rnf25",
+    "setbp1",
+    "simc1",
+    "smc3",
+    "stag2",
+    "stat3",
+    "suz12",
+    "u2af2",
+    "wt1",
+]
+
+# print(len(old_gene_list))
+try:
+    var_df = var_df.drop(old_gene_list, axis=1)
+except:
+    pass
+# var_df = var_df.drop(old_gene_list, axis=1)
+# print(list(var_df))
+
+# print(len(list(var_df)))
+# print(list(var_df))
+# print(len(list(var_df))+60)
+# mergedlist = list(set(list(var_df) + gene_cols))
+# print(mergedlist)
 results = f"""
 Results
 
@@ -372,7 +463,7 @@ Results
 {mutation_num_sent}
 
 
-A set of {len(list(df))} genomic/clinical variables were evaluated \
+A set of {len(list(var_df))+60} genomic/clinical variables were evaluated \
 and several feature extraction algorithms were used to identify the \
 variables that have the most significant impact on the algorithm's decision. \
 These variables included: \
@@ -385,10 +476,9 @@ Individual pt data can also be entered into the model, \
 with a probability of whether the diagnosis is MDS vs. CMML provided along with the impact of each variable on the decision, as shown in Figure 1.
 
 When the analysis was restricted to mutations only, \
-the accuracy of the model dropped dramatically (77%, ROC-AUC .85).
+the accuracy of the model dropped dramatically to 61%.
 
 """
-
 
 
 ###############################################################################
@@ -416,7 +506,6 @@ of the complex interplay among genotypes, clinical variables, and phenotypes.
 """
 
 
-
 ###############################################################################
 #    _________ __   _____
 #   / ___/ __ `/ | / / _ \
@@ -425,13 +514,11 @@ of the complex interplay among genotypes, clinical variables, and phenotypes.
 ###############################################################################
 
 
-
-
 abstract = background + methods + results + conclusions
 
-abstract = re.sub('MDS_MPN', 'MDS/MPN', abstract)
+abstract = re.sub("MDS_MPN", "MDS/MPN", abstract)
 
-chars_no_spaces = len(''.join(abstract.split()))
+chars_no_spaces = len("".join(abstract.split()))
 curr_char = f"Number of characters in abstract: {chars_no_spaces}. \n"
 ASH_limit = "ASH character limit is 3800. \n"
 
@@ -484,14 +571,14 @@ with open(out_text_file, "r") as file:
 filedata = filedata.replace("%", "\%")
 
 # convert superscripts
-# grabs literal caret symbol ^, 
-# \s* means "any number of whitespaces including zero," 
-# (\d*) grabs any number of digits and stores them, 
+# grabs literal caret symbol ^,
+# \s* means "any number of whitespaces including zero,"
+# (\d*) grabs any number of digits and stores them,
 # then the \1 inserts those numbers into the right place.
-filedata = re.sub(r'\^\s*(\d*)' , r'\\textsuperscript{\1}',filedata)
+filedata = re.sub(r"\^\s*(\d*)", r"\\textsuperscript{\1}", filedata)
 
 # remove everything up to the three equal signs
-filedata = re.sub(r'(.|\n)*===\n*', "", filedata)
+filedata = re.sub(r"(.|\n)*===\n*", "", filedata)
 # print(filedata)
 filedata = filedata.replace("Background", "\subsection{Background}%")
 filedata = filedata.replace("Methods", "\subsection{Methods}%")
@@ -503,12 +590,6 @@ with open(out_file_latex, "w") as file:
     print(out_file_latex)
     file.write(section_header)
     file.write(filedata)
-
-
-
-
-
-
 
 
 ### Plt is missing ###
@@ -539,4 +620,5 @@ with open(out_file_latex, "w") as file:
 # AMC, ALC, TET2, ANC, ASXL1, SF3B1, Hgb, \
 # number of mutations/sample, AEC, age, Plt, splenomegaly, \
 # RUNX1, NRAS, CBL, U2AF1, STAG2, DNMT3A, \
-# TP53, EZH2, SRSF2, and ZRSR2 
+# TP53, EZH2, SRSF2, and ZRSR2
+

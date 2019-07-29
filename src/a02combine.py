@@ -101,7 +101,7 @@ data = data.apply(
     else x
 )
 
-print(data.diagnosis.value_counts(dropna=False))
+# print(data.diagnosis.value_counts(dropna=False))
 
 
 # MDS
@@ -215,7 +215,7 @@ data.replace(
 # 'mpd'
  
 
-print(data.diagnosis.value_counts(dropna=False))
+# print(data.diagnosis.value_counts(dropna=False))
 
 # get rid of rare diagnoses
 col = "diagnosis"
@@ -238,9 +238,10 @@ data.columns = [col.replace("%", "percent") for col in data.columns]
 data.columns = [col.replace(" ", "_") for col in data.columns]
 
 final_genes = config.FINAL_GENES
-all_genes = config.GENE_COLS
-for col in all_genes:
+final_genes = config.GENE_COLS
+for col in final_genes:
     if col not in data:
+        # print(col)
         data[col] = "missing"
     data[col] = data[col].replace(1, "positive")
     data[col] = data[col].replace("potitive", "positive")
@@ -290,7 +291,7 @@ cats = [
 cat_list = []
 for col in cats:
     cat_list.append([col1 for col1 in data.columns if col.lower() in col1])
-cat_list.append(all_genes)
+cat_list.append(final_genes)
 cat_list = [item for sublist in cat_list for item in sublist]
 # print(cat_list)
 
@@ -308,6 +309,8 @@ data = data.join(one_hot)
 
 negative_cols = [col for col in data.columns if "_negative" in col]
 missing_cols = [col for col in data.columns if "_missing" in col]
+# print(len(missing_cols))
+# print(missing_cols)
 # print(negative_cols)
 data = data.drop(negative_cols, axis=1)
 data = data.drop(missing_cols, axis=1)
@@ -405,8 +408,13 @@ data.loc[
 ] = "icus"
 # print(data.diagnosis.unique())
 
+data = data.copy()
+
+# for MDS vs ICUS and CCUS
+# data = data[data['diagnosis'].isin(["mds", "ccus", "icus"])]
+
 data = data.reset_index(drop=True)
-# who needs all dem decimals
+#
 
 
 # Grab indices to make new identifiers

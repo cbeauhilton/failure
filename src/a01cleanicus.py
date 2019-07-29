@@ -256,6 +256,10 @@ high_nan = list(icus.loc[:, icus.isnull().mean() > missing_percent])
 #     except:
 #         print(f"Could not impute for column {col} ")
 
+all_genes = config.GENE_COLS
+for col in all_genes:
+    if col not in icus:
+        icus[col] = "missing"
 
 col_list = sorted(list(icus))
 # print(col_list)

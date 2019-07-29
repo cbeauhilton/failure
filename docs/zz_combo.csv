@@ -6,82 +6,82 @@
 4,abs neut,abs neut,abs neut,abs neut,abs neut
 5,afs,age,age,age,age
 6,age,anc,apc,allo bmt,apc
-7,aml,asxl1,asxl1,amc,asxl1
-8,apc,bas %,bas %,aml,asxl2
-9,asxl1,bcor,bcor,anc at dx,atm
-10,bas %,calr,bcorl1,apc,atrx
-11,bcor,cbl,c7orf55,asxl1,bas %
-12,bcorl1,dataset_id,cbl,bas %,bcor
-13,bmbper,diagnosis,ccdc42b,bcor,bcorl1
-14,bmt,dnmt3a,cdh23,bcorl1,braf
-15,c7orf55,eos %,cebpa,braf,brcc3
-16,cbl,etv6,cftr,c7orf55,c7orf55
-17,ccdc42b,ezh2,csf1r,cbl,calr
-18,cdh23,flt3,cux1,ccdc42b,cbl
-19,cebpa,gata2,dataset_id,cdh23,ccdc42b
-20,cftr,gender,ddx41,cdkn2a,cdh23
-21,complex,hgb,ddx54,cebpa,cdkn2a
-22,csf1r,id,dhx29,cftr,cebpa
-23,cux1,idh1,diagnosis,csf1r,cftr
-24,cytoipssr,idh2,dnmt3a,cux1,crebbp
-25,dataset_id,jak2,eed,dataset_id,csf1r
-26,ddx41,kit,eos %,date of aml,csf3r
-27,ddx54,kras,erbb4,date of bmt,csnk1a1
-28,dead,lym %,etv6,date of diagnosis or sampling,ctcf
-29,del(17),mono %,ezh2,date of last contact or death,cux1
-30,del(20),mpl,flt3,ddx41,dataset_id
-31,del(5),neut %,gata2,ddx54,ddx41
-32,del(7),npm1,gender,dhx29,ddx54
-33,del(y),nras,gli1,diagnosis,dhx29
-34,dhx29,plt,gli2,dnmt3a,diagnosis
-35,diagnosis,runx1,gnb1,ecog ps,dnmt1
-36,dnmt3a,setbp1,gpr98,eed,dnmt3a
-37,eed,sf3b1,hgb,eos %,eed
-38,eos %,srsf2,id,erbb4,eos %
-39,erbb4,tet2,idh1,etv6,ep300
-40,etv6,tp53,idh2,ezh2,erbb4
-41,ezh2,u2af1,irf4,fab category,etnk1
-42,flt3,wbc,jak2,ferritin over 1000,etv6
-43,gata2,zrsr2,jak3,flt3,ezh2
-44,gender,,kdm6a,flt3-itd,fancl
-45,gli1,,kit,gata2,fbxw7
-46,gli2,,kras,gender,flt3
-47,gnb1,,lym %,gli1,gata1
-48,gpr98,,mch,gli2,gata2
-49,hgb,,mchc,gnb1,gender
-50,id,,mcv,gpr98,gli1
-51,idh1,,mecom,hgb,gli2
-52,idh2,,med12,id,gnas
-53,irf4,,megakaryocytes,idh1,gnb1
-54,jak2,,mll,idh2,gpr98
-55,jak3,,mono %,institution,hgb
-56,kdm6a,,mpv,irf4,id
-57,kit,,neut %,jak2,idh1
-58,kras,,nf1,jak3,idh2
-59,luc7l2,,npm1,karyo by ipss,irf4
-60,lym %,,nras,karyo cpss,jak2
-61,mds etiology,,ogt,karyotype at diagnosis,jak3
-62,mecom,,percent bm blasts,kdm5a,kdm5a
-63,med12,,phf6,kdm6a,kdm6a
-64,mll,,plt,kit,kit
-65,mono %,,prpf8,kras,kmt2d
-66,mpl,,ptch1,ldh at dx,kras
-67,neut %,,ptpn11,luc7l2,lym %
-68,nf1,,rad21,lym %,mecom
-69,normal,,rdw,lymphoctes at dx,med12
-70,notch1,,rnf25,mecom,mll
-71,npm1,,runx1,med12,mono %
-72,nras,,setbp1,mll,mpl
-73,ogt,,sf3b1,mono %,myc
-74,os,,simc1,monocytes at dx,neut %
-75,phf6,,smc3,neut %,nf1
-76,plt,,splenomegaly,nf1,notch1
-77,prpf40b,,srsf2,npm1,npm1
-78,prpf8,,stag2,nras,nras
-79,ptch1,,stat3,number of cytopenias,nsd1
-80,ptpn11,,suz12,ogt,ogt
-81,rad21,,tet2,percent bm blasts,percent bm blasts
-82,rnf25,,tp53,percent circulating blasts,phf6
+7,aml,apc,asxl1,amc,asxl1
+8,apc,asxl1,bas %,aml,asxl2
+9,asxl1,bas %,bcor,anc at dx,atm
+10,bas %,bcor,bcorl1,apc,atrx
+11,bcor,bcorl1,c7orf55,asxl1,bas %
+12,bcorl1,c7orf55,cbl,bas %,bcor
+13,bmbper,calr,ccdc42b,bcor,bcorl1
+14,bmt,cbl,cdh23,bcorl1,braf
+15,c7orf55,ccdc42b,cebpa,braf,brcc3
+16,cbl,cdh23,cftr,c7orf55,c7orf55
+17,ccdc42b,cebpa,csf1r,cbl,calr
+18,cdh23,cftr,cux1,ccdc42b,cbl
+19,cebpa,csf1r,dataset_id,cdh23,ccdc42b
+20,cftr,cux1,ddx41,cdkn2a,cdh23
+21,complex,dataset_id,ddx54,cebpa,cdkn2a
+22,csf1r,ddx41,dhx29,cftr,cebpa
+23,cux1,ddx54,diagnosis,csf1r,cftr
+24,cytoipssr,dhx29,dnmt3a,cux1,crebbp
+25,dataset_id,diagnosis,eed,dataset_id,csf1r
+26,ddx41,dnmt3a,eos %,date of aml,csf3r
+27,ddx54,eed,erbb4,date of bmt,csnk1a1
+28,dead,eos %,etv6,date of diagnosis or sampling,ctcf
+29,del(17),erbb4,ezh2,date of last contact or death,cux1
+30,del(20),etv6,flt3,ddx41,dataset_id
+31,del(5),ezh2,gata2,ddx54,ddx41
+32,del(7),flt3,gender,dhx29,ddx54
+33,del(y),gata2,gli1,diagnosis,dhx29
+34,dhx29,gender,gli2,dnmt3a,diagnosis
+35,diagnosis,gli1,gnb1,ecog ps,dnmt1
+36,dnmt3a,gli2,gpr98,eed,dnmt3a
+37,eed,gnb1,hgb,eos %,eed
+38,eos %,gpr98,id,erbb4,eos %
+39,erbb4,hgb,idh1,etv6,ep300
+40,etv6,id,idh2,ezh2,erbb4
+41,ezh2,idh1,irf4,fab category,etnk1
+42,flt3,idh2,jak2,ferritin over 1000,etv6
+43,gata2,irf4,jak3,flt3,ezh2
+44,gender,jak2,kdm6a,flt3-itd,fancl
+45,gli1,jak3,kit,gata2,fbxw7
+46,gli2,kdm6a,kras,gender,flt3
+47,gnb1,kit,lym %,gli1,gata1
+48,gpr98,kras,mch,gli2,gata2
+49,hgb,lym %,mchc,gnb1,gender
+50,id,mecom,mcv,gpr98,gli1
+51,idh1,med12,mecom,hgb,gli2
+52,idh2,mll,med12,id,gnas
+53,irf4,mono %,megakaryocytes,idh1,gnb1
+54,jak2,mpl,mll,idh2,gpr98
+55,jak3,neut %,mono %,institution,hgb
+56,kdm6a,nf1,mpv,irf4,id
+57,kit,npm1,neut %,jak2,idh1
+58,kras,nras,nf1,jak3,idh2
+59,luc7l2,ogt,npm1,karyo by ipss,irf4
+60,lym %,phf6,nras,karyo cpss,jak2
+61,mds etiology,plt,ogt,karyotype at diagnosis,jak3
+62,mecom,prpf8,percent bm blasts,kdm5a,kdm5a
+63,med12,ptch1,phf6,kdm6a,kdm6a
+64,mll,ptpn11,plt,kit,kit
+65,mono %,rad21,prpf8,kras,kmt2d
+66,mpl,rnf25,ptch1,ldh at dx,kras
+67,neut %,runx1,ptpn11,luc7l2,lym %
+68,nf1,setbp1,rad21,lym %,mecom
+69,normal,sf3b1,rdw,lymphoctes at dx,med12
+70,notch1,simc1,rnf25,mecom,mll
+71,npm1,smc3,runx1,med12,mono %
+72,nras,srsf2,setbp1,mll,mpl
+73,ogt,stag2,sf3b1,mono %,myc
+74,os,stat3,simc1,monocytes at dx,neut %
+75,phf6,suz12,smc3,neut %,nf1
+76,plt,tet2,splenomegaly,nf1,notch1
+77,prpf40b,tp53,srsf2,npm1,npm1
+78,prpf8,u2af1,stag2,nras,nras
+79,ptch1,u2af2,stat3,number of cytopenias,nsd1
+80,ptpn11,wbc,suz12,ogt,ogt
+81,rad21,wt1,tet2,percent bm blasts,percent bm blasts
+82,rnf25,zrsr2,tp53,percent circulating blasts,phf6
 83,runx1,,u2af1,percent circulating imc,piga
 84,setbp1,,u2af2,phf6,plt
 85,sf3b1,,wbc,plt,ppm1d

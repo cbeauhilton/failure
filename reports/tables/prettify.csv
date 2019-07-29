@@ -12,44 +12,98 @@
 10,plt,Platelet count,Plt
 11,wbc,White blood cell count,WBC
 12,gender_female,Female,Female gender
-13,asxl1_positive,ASXL1,ASXL1
-14,bcor_positive,BCOR,BCOR
-15,bcor_vus,BCOR VUS,BCOR VUS
-16,cbl_positive,CBL,CBL
-17,cbl_vus,CBL VUS,CBL VUS
-18,dnmt3a_positive,DNMT3A,DNMT3A
-19,dnmt3a_vus,DNMT3A VUS,DNMT3A VUS
-20,etv6_positive,ETV6,ETV6
-21,etv6_vus,ETV6 VUS,ETV6 VUS
-22,ezh2_positive,EZH2,EZH2
-23,ezh2_vus,EZH2 VUS,EZH2 VUS
-24,flt3_positive,FLT3,FLT3
-25,flt3_vus,FLT3 VUS,FLT3 VUS
-26,gata2_positive,GATA2,GATA2
-27,gata2_vus,GATA2 VUS,GATA2 VUS
-28,idh1_positive,IDH1,IDH1
-29,idh2_positive,IDH2,IDH2
-30,idh2_vus,IDH2 VUS,IDH2 VUS
-31,jak2_positive,JAK2,JAK2
-32,jak2_vus,JAK2 VUS,JAK2 VUS
-33,kit_positive,K,K
-34,kit_vus,KIT VUS,KIT VUS
-35,kras_positive,KRA,KRA
-36,npm1_positive,NPM1,NPM1
-37,npm1_vus,NPM1 VUS,NPM1 VUS
-38,nras_positive,NRA,NRA
-39,runx1_positive,RUNX1,RUNX1
-40,runx1_vus,RUNX1 VUS,RUNX1 VUS
-41,sf3b1_positive,SF3B1,SF3B1
-42,sf3b1_vus,SF3B1 VUS,SF3B1 VUS
-43,srsf2_positive,SRSF2,SRSF2
-44,tet2_positive,TET2,TET2
-45,tet2_vus,TET2 VUS,TET2 VUS
-46,tp53_positive,TP53,TP53
-47,tp53_vus,TP53 VUS,TP53 VUS
-48,u2af1_positive,U2AF1,U2AF1
-49,u2af1_vus,U2AF1 VUS,U2AF1 VUS
-50,zrsr2_positive,ZRSR2,ZRSR2
-51,zrsr2_vus,ZRSR2 VUS,ZRSR2 VUS
-52,mutation_num,Number of mutations,Number of mutations
-53,pt_num,pt_num,pt_num
+13,apc_positive,APC,APC
+14,apc_vus,APC VUS,APC VUS
+15,asxl1_positive,ASXL1,ASXL1
+16,bcor_positive,BCOR,BCOR
+17,bcor_vus,BCOR VUS,BCOR VUS
+18,bcorl1_positive,BCORL1,BCORL1
+19,bcorl1_vus,BCORL1 VUS,BCORL1 VUS
+20,c7orf55_positive,C7ORF55,C7ORF55
+21,cbl_positive,CBL,CBL
+22,cbl_vus,CBL VUS,CBL VUS
+23,ccdc42b_positive,CCDC42B,CCDC42B
+24,cdh23_positive,CDH23,CDH23
+25,cdh23_vus,CDH23 VUS,CDH23 VUS
+26,cebpa_positive,CEBPA,CEBPA
+27,cebpa_vus,CEBPA VUS,CEBPA VUS
+28,cftr_positive,CFTR,CFTR
+29,csf1r_positive,CSF1R,CSF1R
+30,cux1_positive,CUX1,CUX1
+31,cux1_vus,CUX1 VUS,CUX1 VUS
+32,ddx41_positive,DDX41,DDX41
+33,ddx41_vus,DDX41 VUS,DDX41 VUS
+34,ddx54_positive,DDX54,DDX54
+35,ddx54_vus,DDX54 VUS,DDX54 VUS
+36,dhx29_positive,DHX29,DHX29
+37,dhx29_vus,DHX29 VUS,DHX29 VUS
+38,dnmt3a_positive,DNMT3A,DNMT3A
+39,dnmt3a_vus,DNMT3A VUS,DNMT3A VUS
+40,eed_positive,EED,EED
+41,erbb4_positive,ERBB4,ERBB4
+42,etv6_positive,ETV6,ETV6
+43,etv6_vus,ETV6 VUS,ETV6 VUS
+44,ezh2_positive,EZH2,EZH2
+45,ezh2_vus,EZH2 VUS,EZH2 VUS
+46,flt3_positive,FLT3,FLT3
+47,flt3_vus,FLT3 VUS,FLT3 VUS
+48,gata2_positive,GATA2,GATA2
+49,gata2_vus,GATA2 VUS,GATA2 VUS
+50,gli1_positive,GLI1,GLI1
+51,gnb1_positive,GNB1,GNB1
+52,gpr98_positive,GPR98,GPR98
+53,idh1_positive,IDH1,IDH1
+54,idh2_positive,IDH2,IDH2
+55,idh2_vus,IDH2 VUS,IDH2 VUS
+56,irf4_positive,IRF4,IRF4
+57,jak2_positive,JAK2,JAK2
+58,jak2_vus,JAK2 VUS,JAK2 VUS
+59,jak3_positive,JAK3,JAK3
+60,kdm6a_positive,KDM6A,KDM6A
+61,kit_positive,K,K
+62,kit_vus,KIT VUS,KIT VUS
+63,kras_positive,KRA,KRA
+64,mecom_positive,MECOM,MECOM
+65,med12_positive,MED12,MED12
+66,mll_positive,MLL,MLL
+67,nf1_positive,NF1,NF1
+68,nf1_vus,NF1 VUS,NF1 VUS
+69,npm1_positive,NPM1,NPM1
+70,npm1_vus,NPM1 VUS,NPM1 VUS
+71,nras_positive,NRA,NRA
+72,phf6_positive,PHF6,PHF6
+73,prpf8_positive,PRPF8,PRPF8
+74,prpf8_vus,PRPF8 VUS,PRPF8 VUS
+75,ptch1_positive,PTCH1,PTCH1
+76,ptpn11_positive,PTPN11,PTPN11
+77,rad21_positive,RAD21,RAD21
+78,rad21_vus,RAD21 VUS,RAD21 VUS
+79,rnf25_positive,RNF25,RNF25
+80,runx1_positive,RUNX1,RUNX1
+81,runx1_vus,RUNX1 VUS,RUNX1 VUS
+82,setbp1_positive,SETBP1,SETBP1
+83,setbp1_vus,SETBP1 VUS,SETBP1 VUS
+84,sf3b1_positive,SF3B1,SF3B1
+85,sf3b1_vus,SF3B1 VUS,SF3B1 VUS
+86,simc1_positive,SIMC1,SIMC1
+87,smc3_positive,SMC3,SMC3
+88,smc3_vus,SMC3 VUS,SMC3 VUS
+89,srsf2_positive,SRSF2,SRSF2
+90,stag2_positive,STAG2,STAG2
+91,stag2_vus,STAG2 VUS,STAG2 VUS
+92,stat3_positive,STAT3,STAT3
+93,suz12_positive,SUZ12,SUZ12
+94,tet2_positive,TET2,TET2
+95,tet2_vus,TET2 VUS,TET2 VUS
+96,tp53_positive,TP53,TP53
+97,tp53_vus,TP53 VUS,TP53 VUS
+98,u2af1_positive,U2AF1,U2AF1
+99,u2af1_vus,U2AF1 VUS,U2AF1 VUS
+100,u2af2_positive,U2AF2,U2AF2
+101,u2af2_vus,U2AF2 VUS,U2AF2 VUS
+102,wt1_positive,WT1,WT1
+103,wt1_vus,WT1 VUS,WT1 VUS
+104,zrsr2_positive,ZRSR2,ZRSR2
+105,zrsr2_vus,ZRSR2 VUS,ZRSR2 VUS
+106,mutation_num,Number of mutations,Number of mutations
+107,pt_num,pt_num,pt_num
