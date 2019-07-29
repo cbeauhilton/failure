@@ -1374,3 +1374,115 @@ TypeError: ufunc 'isnan' not supported for the input types, and the inputs could
 
 ################################################################################
  
+################################################################################
+ 
+2019-07-29 09:29:10.128421
+ 
+Error on line 286:
+ singular matrix
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/c00eda.py", line 286, in <module>
+    df[feature].dropna().plot.kde(figsize=[12, 8])
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 2872, in kde
+    return self(kind='kde', bw_method=bw_method, ind=ind, **kwds)
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 2739, in __call__
+    **kwds)
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 1995, in plot_series
+    **kwds)
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 1798, in _plot
+    plot_obj.generate()
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 251, in generate
+    self._make_plot()
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 1363, in _make_plot
+    stacking_id=stacking_id, **kwds)
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 1467, in _plot
+    gkde = gaussian_kde(y, bw_method=bw_method)
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/scipy/stats/kde.py", line 208, in __init__
+    self.set_bandwidth(bw_method=bw_method)
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/scipy/stats/kde.py", line 540, in set_bandwidth
+    self._compute_covariance()
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/scipy/stats/kde.py", line 552, in _compute_covariance
+    self._data_inv_cov = linalg.inv(self._data_covariance)
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/scipy/linalg/basic.py", line 974, in inv
+    raise LinAlgError("singular matrix")
+numpy.linalg.linalg.LinAlgError: singular matrix
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-29 09:29:12.905179
+ 
+Error on line 286:
+ Empty 'DataFrame': no numeric data to plot
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/c00eda.py", line 286, in <module>
+    df[feature].dropna().plot.kde(figsize=[12, 8])
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 2872, in kde
+    return self(kind='kde', bw_method=bw_method, ind=ind, **kwds)
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 2739, in __call__
+    **kwds)
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 1995, in plot_series
+    **kwds)
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 1798, in _plot
+    plot_obj.generate()
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 249, in generate
+    self._compute_plot_data()
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 364, in _compute_plot_data
+    'plot'.format(numeric_data.__class__.__name__))
+TypeError: Empty 'DataFrame': no numeric data to plot
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-29 09:29:13.404285
+ 
+Error on line 297:
+ singular matrix
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/c00eda.py", line 297, in <module>
+    df[multimodal].dropna().plot.kde(figsize=[12, 8])
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 3308, in kde
+    return self(kind='kde', bw_method=bw_method, ind=ind, **kwds)
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 2939, in __call__
+    sort_columns=sort_columns, **kwds)
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 1970, in plot_frame
+    **kwds)
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 1798, in _plot
+    plot_obj.generate()
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 251, in generate
+    self._make_plot()
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 1363, in _make_plot
+    stacking_id=stacking_id, **kwds)
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/pandas/plotting/_core.py", line 1467, in _plot
+    gkde = gaussian_kde(y, bw_method=bw_method)
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/scipy/stats/kde.py", line 208, in __init__
+    self.set_bandwidth(bw_method=bw_method)
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/scipy/stats/kde.py", line 540, in set_bandwidth
+    self._compute_covariance()
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/scipy/stats/kde.py", line 552, in _compute_covariance
+    self._data_inv_cov = linalg.inv(self._data_covariance)
+  File "/home/hiltonc/miniconda3/envs/ML01/lib/python3.7/site-packages/scipy/linalg/basic.py", line 974, in inv
+    raise LinAlgError("singular matrix")
+numpy.linalg.linalg.LinAlgError: singular matrix
+
+################################################################################
+ 
+################################################################################
+ 
+2019-07-29 09:29:13.426943
+ 
+Error on line 329:
+ ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+ 
+Traceback (most recent call last):
+  File "/home/hiltonc/failure/src/c00eda.py", line 329, in <module>
+    vals = df[x].values[~np.isnan(df[x].values)]
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+################################################################################
+ 
