@@ -102,7 +102,13 @@ groupbys = list(groupby_df)
 groupbys = list(set(groupbys) & set(columns))
 
 categorical = list(df.select_dtypes(include="category"))
+genes = config.GENE_COLS
+mystring = "_positive"
+gene_cols = [gene + mystring for gene in genes]
+categorical = categorical + gene_cols + ['gender_female']
+# print(categorical)
 categorical = list(set(categorical) & set(columns))
+print(categorical)
 
 nonnormal = []
 alpha = 0.05

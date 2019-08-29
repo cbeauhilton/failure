@@ -411,7 +411,7 @@ data.loc[
 data = data.copy()
 
 # for MDS vs ICUS and CCUS
-data = data[data['diagnosis'].isin(["mds", "ccus", "icus"])]
+# data = data[data['diagnosis'].isin(["mds", "ccus", "icus"])]
 
 data = data.reset_index(drop=True)
 #

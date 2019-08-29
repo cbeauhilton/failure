@@ -3,19 +3,29 @@
     <tr>
       <th></th>
       <th></th>
-      <th colspan="4" halign="left">Grouped by diagnosis</th>
+      <th colspan="9" halign="left">Grouped by diagnosis</th>
     </tr>
     <tr>
       <th></th>
       <th></th>
       <th>isnull</th>
       <th>ccus</th>
+      <th>cmml</th>
+      <th>et</th>
       <th>icus</th>
       <th>mds</th>
+      <th>mds_mpn</th>
+      <th>pmf</th>
+      <th>pv</th>
     </tr>
     <tr>
       <th>variable</th>
       <th>level</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -28,582 +38,1703 @@
       <th></th>
       <td></td>
       <td>107</td>
+      <td>478</td>
+      <td>90</td>
       <td>223</td>
       <td>1306</td>
+      <td>89</td>
+      <td>99</td>
+      <td>79</td>
     </tr>
     <tr>
       <th>abs_bas, median [Q1,Q3]</th>
       <th></th>
-      <td>255</td>
+      <td>476</td>
+      <td>0.0 [0.0,0.1]</td>
+      <td>0.0 [0.0,0.1]</td>
       <td>0.0 [0.0,0.1]</td>
       <td>0.0 [0.0,0.1]</td>
       <td>0.0 [0.0,0.0]</td>
+      <td>0.0 [0.0,0.1]</td>
+      <td>0.1 [0.0,0.5]</td>
+      <td>0.1 [0.0,0.3]</td>
     </tr>
     <tr>
       <th>abs_eos, median [Q1,Q3]</th>
       <th></th>
-      <td>254</td>
+      <td>477</td>
+      <td>0.1 [0.0,0.2]</td>
+      <td>0.0 [0.0,0.2]</td>
+      <td>0.2 [0.0,0.2]</td>
       <td>0.1 [0.0,0.2]</td>
       <td>0.1 [0.0,0.2]</td>
-      <td>0.1 [0.0,0.2]</td>
+      <td>0.1 [0.0,0.4]</td>
+      <td>0.1 [0.0,0.3]</td>
+      <td>0.2 [0.1,0.4]</td>
     </tr>
     <tr>
       <th>abs_lym, median [Q1,Q3]</th>
       <th></th>
-      <td>252</td>
+      <td>471</td>
       <td>1.2 [1.0,1.8]</td>
+      <td>2.2 [1.3,3.4]</td>
+      <td>1.3 [0.0,1.9]</td>
       <td>1.2 [0.9,1.7]</td>
       <td>0.5 [0.2,1.1]</td>
+      <td>0.9 [0.3,1.5]</td>
+      <td>1.5 [1.0,2.6]</td>
+      <td>1.6 [0.9,2.2]</td>
     </tr>
     <tr>
       <th>abs_mono, median [Q1,Q3]</th>
       <th></th>
-      <td>253</td>
+      <td>472</td>
       <td>0.2 [0.2,0.5]</td>
+      <td>3.7 [1.9,8.0]</td>
+      <td>0.3 [0.0,0.5]</td>
       <td>0.3 [0.1,0.5]</td>
       <td>0.1 [0.0,0.3]</td>
+      <td>0.2 [0.1,0.7]</td>
+      <td>0.4 [0.2,0.9]</td>
+      <td>0.5 [0.3,0.7]</td>
     </tr>
     <tr>
       <th>abs_neut, median [Q1,Q3]</th>
       <th></th>
-      <td>249</td>
+      <td>467</td>
       <td>2.5 [1.2,3.7]</td>
+      <td>6.4 [2.9,13.2]</td>
+      <td>3.5 [0.0,4.8]</td>
       <td>2.2 [1.5,3.8]</td>
       <td>0.0 [0.0,0.9]</td>
+      <td>0.8 [0.0,5.6]</td>
+      <td>7.8 [2.8,15.3]</td>
+      <td>7.9 [6.2,12.0]</td>
     </tr>
     <tr>
       <th>age, median [Q1,Q3]</th>
       <th></th>
       <td>0</td>
       <td>75.8 [67.7,79.8]</td>
+      <td>73.2 [67.1,78.9]</td>
+      <td>61.6 [49.8,71.9]</td>
       <td>66.3 [54.6,76.5]</td>
       <td>71.2 [63.5,77.2]</td>
+      <td>72.0 [63.5,77.0]</td>
+      <td>66.1 [59.6,74.6]</td>
+      <td>66.8 [57.2,73.6]</td>
     </tr>
     <tr>
       <th>hgb, median [Q1,Q3]</th>
       <th></th>
-      <td>4</td>
+      <td>36</td>
       <td>11.1 [10.0,12.8]</td>
+      <td>11.2 [9.6,12.8]</td>
+      <td>14.3 [12.9,15.0]</td>
       <td>11.5 [9.9,13.6]</td>
       <td>10.0 [8.9,11.2]</td>
+      <td>9.6 [8.5,10.8]</td>
+      <td>10.1 [8.4,11.5]</td>
+      <td>19.4 [18.9,20.4]</td>
     </tr>
     <tr>
       <th>plt, median [Q1,Q3]</th>
       <th></th>
-      <td>5</td>
+      <td>35</td>
       <td>110.0 [75.0,163.0]</td>
+      <td>95.0 [56.0,168.0]</td>
+      <td>706.5 [645.5,842.8]</td>
       <td>130.0 [79.5,223.0]</td>
       <td>0.3 [0.1,56.0]</td>
+      <td>37.0 [0.6,247.0]</td>
+      <td>173.0 [80.0,332.5]</td>
+      <td>380.0 [281.0,528.0]</td>
     </tr>
     <tr>
       <th>wbc, median [Q1,Q3]</th>
       <th></th>
       <td>0</td>
       <td>4.2 [2.7,6.0]</td>
+      <td>14.8 [7.0,26.2]</td>
+      <td>6.6 [5.5,7.4]</td>
       <td>4.5 [3.4,6.5]</td>
       <td>0.0 [0.0,2.6]</td>
+      <td>2.7 [0.0,8.7]</td>
+      <td>11.6 [5.2,22.9]</td>
+      <td>11.9 [9.7,15.8]</td>
     </tr>
     <tr>
-      <th>gender_female, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">gender_female, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,1.0]</td>
-      <td>0.0 [0.0,1.0]</td>
-      <td>0.0 [0.0,1.0]</td>
+      <td>70 (65.4)</td>
+      <td>318 (66.5)</td>
+      <td>37 (41.1)</td>
+      <td>119 (53.4)</td>
+      <td>803 (61.5)</td>
+      <td>56 (62.9)</td>
+      <td>65 (65.7)</td>
+      <td>57 (72.2)</td>
     </tr>
     <tr>
-      <th>apc_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td>37 (34.6)</td>
+      <td>160 (33.5)</td>
+      <td>53 (58.9)</td>
+      <td>104 (46.6)</td>
+      <td>503 (38.5)</td>
+      <td>33 (37.1)</td>
+      <td>34 (34.3)</td>
+      <td>22 (27.8)</td>
     </tr>
     <tr>
-      <th>asxl1_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">apc_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>477 (99.8)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1291 (98.9)</td>
+      <td>88 (98.9)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>bcor_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>1 (0.2)</td>
+      <td></td>
+      <td></td>
+      <td>15 (1.1)</td>
+      <td>1 (1.1)</td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <th>bcorl1_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">asxl1_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>82 (76.6)</td>
+      <td>273 (57.1)</td>
+      <td>84 (93.3)</td>
+      <td>223 (100.0)</td>
+      <td>1035 (79.2)</td>
+      <td>78 (87.6)</td>
+      <td>56 (56.6)</td>
+      <td>75 (94.9)</td>
     </tr>
     <tr>
-      <th>c7orf55_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td>25 (23.4)</td>
+      <td>205 (42.9)</td>
+      <td>6 (6.7)</td>
+      <td></td>
+      <td>271 (20.8)</td>
+      <td>11 (12.4)</td>
+      <td>43 (43.4)</td>
+      <td>4 (5.1)</td>
     </tr>
     <tr>
-      <th>cbl_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">bcor_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>106 (99.1)</td>
+      <td>468 (97.9)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1242 (95.1)</td>
+      <td>84 (94.4)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>ccdc42b_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td>1 (0.9)</td>
+      <td>10 (2.1)</td>
+      <td></td>
+      <td></td>
+      <td>64 (4.9)</td>
+      <td>5 (5.6)</td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <th>cdh23_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">bcorl1_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>477 (99.8)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1277 (97.8)</td>
+      <td>88 (98.9)</td>
+      <td>99 (100.0)</td>
+      <td>78 (98.7)</td>
     </tr>
     <tr>
-      <th>cebpa_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>1 (0.2)</td>
+      <td></td>
+      <td></td>
+      <td>29 (2.2)</td>
+      <td>1 (1.1)</td>
+      <td></td>
+      <td>1 (1.3)</td>
     </tr>
     <tr>
-      <th>cftr_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">c7orf55_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>478 (100.0)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1299 (99.5)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>csf1r_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>7 (0.5)</td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <th>cux1_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">cbl_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>104 (97.2)</td>
+      <td>399 (83.5)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1253 (95.9)</td>
+      <td>84 (94.4)</td>
+      <td>97 (98.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>ddx41_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td>3 (2.8)</td>
+      <td>79 (16.5)</td>
+      <td></td>
+      <td></td>
+      <td>53 (4.1)</td>
+      <td>5 (5.6)</td>
+      <td>2 (2.0)</td>
+      <td></td>
     </tr>
     <tr>
-      <th>ddx54_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">ccdc42b_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>478 (100.0)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1305 (99.9)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>dhx29_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1 (0.1)</td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <th>dnmt3a_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">cdh23_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>478 (100.0)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1303 (99.8)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>eed_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>3 (0.2)</td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <th>erbb4_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">cebpa_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>475 (99.4)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1292 (98.9)</td>
+      <td>85 (95.5)</td>
+      <td>98 (99.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>etv6_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>3 (0.6)</td>
+      <td></td>
+      <td></td>
+      <td>14 (1.1)</td>
+      <td>4 (4.5)</td>
+      <td>1 (1.0)</td>
+      <td></td>
     </tr>
     <tr>
-      <th>ezh2_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">cftr_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>477 (99.8)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1304 (99.8)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>flt3_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>1 (0.2)</td>
+      <td></td>
+      <td></td>
+      <td>2 (0.2)</td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <th>gata2_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">csf1r_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>478 (100.0)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1304 (99.8)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>gli1_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>2 (0.2)</td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <th>gnb1_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">cux1_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>464 (97.1)</td>
+      <td>88 (97.8)</td>
+      <td>223 (100.0)</td>
+      <td>1291 (98.9)</td>
+      <td>87 (97.8)</td>
+      <td>95 (96.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>gpr98_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>14 (2.9)</td>
+      <td>2 (2.2)</td>
+      <td></td>
+      <td>15 (1.1)</td>
+      <td>2 (2.2)</td>
+      <td>4 (4.0)</td>
+      <td></td>
     </tr>
     <tr>
-      <th>idh1_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">ddx41_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>478 (100.0)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1296 (99.2)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>idh2_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>10 (0.8)</td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <th>irf4_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">ddx54_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>477 (99.8)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1294 (99.1)</td>
+      <td>89 (100.0)</td>
+      <td>98 (99.0)</td>
+      <td>78 (98.7)</td>
     </tr>
     <tr>
-      <th>jak2_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>1 (0.2)</td>
+      <td></td>
+      <td></td>
+      <td>12 (0.9)</td>
+      <td></td>
+      <td>1 (1.0)</td>
+      <td>1 (1.3)</td>
     </tr>
     <tr>
-      <th>jak3_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">dhx29_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>476 (99.6)</td>
+      <td>89 (98.9)</td>
+      <td>223 (100.0)</td>
+      <td>1297 (99.3)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>kdm6a_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>2 (0.4)</td>
+      <td>1 (1.1)</td>
+      <td></td>
+      <td>9 (0.7)</td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <th>kit_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">dnmt3a_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>82 (76.6)</td>
+      <td>463 (96.9)</td>
+      <td>83 (92.2)</td>
+      <td>223 (100.0)</td>
+      <td>1152 (88.2)</td>
+      <td>84 (94.4)</td>
+      <td>88 (88.9)</td>
+      <td>73 (92.4)</td>
     </tr>
     <tr>
-      <th>kras_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td>25 (23.4)</td>
+      <td>15 (3.1)</td>
+      <td>7 (7.8)</td>
+      <td></td>
+      <td>154 (11.8)</td>
+      <td>5 (5.6)</td>
+      <td>11 (11.1)</td>
+      <td>6 (7.6)</td>
     </tr>
     <tr>
-      <th>mecom_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">eed_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>478 (100.0)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1302 (99.7)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>med12_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>4 (0.3)</td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <th>mll_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">erbb4_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>476 (99.6)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1301 (99.6)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>nf1_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>2 (0.4)</td>
+      <td></td>
+      <td></td>
+      <td>5 (0.4)</td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <th>npm1_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">etv6_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>106 (99.1)</td>
+      <td>472 (98.7)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1269 (97.2)</td>
+      <td>87 (97.8)</td>
+      <td>97 (98.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>nras_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td>1 (0.9)</td>
+      <td>6 (1.3)</td>
+      <td></td>
+      <td></td>
+      <td>37 (2.8)</td>
+      <td>2 (2.2)</td>
+      <td>2 (2.0)</td>
+      <td></td>
     </tr>
     <tr>
-      <th>phf6_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">ezh2_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>106 (99.1)</td>
+      <td>437 (91.4)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1245 (95.3)</td>
+      <td>81 (91.0)</td>
+      <td>93 (93.9)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>prpf8_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td>1 (0.9)</td>
+      <td>41 (8.6)</td>
+      <td></td>
+      <td></td>
+      <td>61 (4.7)</td>
+      <td>8 (9.0)</td>
+      <td>6 (6.1)</td>
+      <td></td>
     </tr>
     <tr>
-      <th>ptch1_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">flt3_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>477 (99.8)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1292 (98.9)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>ptpn11_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>1 (0.2)</td>
+      <td></td>
+      <td></td>
+      <td>14 (1.1)</td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <th>rad21_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">gata2_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>473 (99.0)</td>
+      <td>89 (98.9)</td>
+      <td>223 (100.0)</td>
+      <td>1292 (98.9)</td>
+      <td>86 (96.6)</td>
+      <td>96 (97.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>rnf25_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>5 (1.0)</td>
+      <td>1 (1.1)</td>
+      <td></td>
+      <td>14 (1.1)</td>
+      <td>3 (3.4)</td>
+      <td>3 (3.0)</td>
+      <td></td>
     </tr>
     <tr>
-      <th>runx1_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">gli1_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>478 (100.0)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1305 (99.9)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>setbp1_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1 (0.1)</td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <th>sf3b1_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">gnb1_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>478 (100.0)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1302 (99.7)</td>
+      <td>88 (98.9)</td>
+      <td>98 (99.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>simc1_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>4 (0.3)</td>
+      <td>1 (1.1)</td>
+      <td>1 (1.0)</td>
+      <td></td>
     </tr>
     <tr>
-      <th>smc3_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">gpr98_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>473 (99.0)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1280 (98.0)</td>
+      <td>87 (97.8)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>srsf2_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>5 (1.0)</td>
+      <td></td>
+      <td></td>
+      <td>26 (2.0)</td>
+      <td>2 (2.2)</td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <th>stag2_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">idh1_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>105 (98.1)</td>
+      <td>473 (99.0)</td>
+      <td>89 (98.9)</td>
+      <td>223 (100.0)</td>
+      <td>1268 (97.1)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>78 (98.7)</td>
     </tr>
     <tr>
-      <th>stat3_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td>2 (1.9)</td>
+      <td>5 (1.0)</td>
+      <td>1 (1.1)</td>
+      <td></td>
+      <td>38 (2.9)</td>
+      <td></td>
+      <td></td>
+      <td>1 (1.3)</td>
     </tr>
     <tr>
-      <th>suz12_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">idh2_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>104 (97.2)</td>
+      <td>467 (97.7)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1258 (96.3)</td>
+      <td>87 (97.8)</td>
+      <td>97 (98.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>tet2_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,1.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,1.0]</td>
+      <th>1</th>
+      <td></td>
+      <td>3 (2.8)</td>
+      <td>11 (2.3)</td>
+      <td></td>
+      <td></td>
+      <td>48 (3.7)</td>
+      <td>2 (2.2)</td>
+      <td>2 (2.0)</td>
+      <td></td>
     </tr>
     <tr>
-      <th>tp53_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">irf4_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>478 (100.0)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1305 (99.9)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
     </tr>
     <tr>
-      <th>u2af1_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1 (0.1)</td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <th>u2af2_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">jak2_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>106 (99.1)</td>
+      <td>448 (93.7)</td>
+      <td>50 (55.6)</td>
+      <td>223 (100.0)</td>
+      <td>1275 (97.6)</td>
+      <td>56 (62.9)</td>
+      <td>33 (33.3)</td>
+      <td>5 (6.3)</td>
     </tr>
     <tr>
-      <th>wt1_positive, median [Q1,Q3]</th>
-      <th></th>
-      <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <th>1</th>
+      <td></td>
+      <td>1 (0.9)</td>
+      <td>30 (6.3)</td>
+      <td>40 (44.4)</td>
+      <td></td>
+      <td>31 (2.4)</td>
+      <td>33 (37.1)</td>
+      <td>66 (66.7)</td>
+      <td>74 (93.7)</td>
     </tr>
     <tr>
-      <th>zrsr2_positive, median [Q1,Q3]</th>
-      <th></th>
+      <th rowspan="2" valign="top">jak3_positive, median [Q1,Q3]</th>
+      <th>0</th>
       <td>0</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
-      <td>0.0 [0.0,0.0]</td>
+      <td>107 (100.0)</td>
+      <td>478 (100.0)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1305 (99.9)</td>
+      <td>88 (98.9)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1 (0.1)</td>
+      <td>1 (1.1)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">kdm6a_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>476 (99.6)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1286 (98.5)</td>
+      <td>87 (97.8)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>2 (0.4)</td>
+      <td></td>
+      <td></td>
+      <td>20 (1.5)</td>
+      <td>2 (2.2)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">kit_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>475 (99.4)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1294 (99.1)</td>
+      <td>88 (98.9)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>3 (0.6)</td>
+      <td></td>
+      <td></td>
+      <td>12 (0.9)</td>
+      <td>1 (1.1)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">kras_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>106 (99.1)</td>
+      <td>423 (88.5)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1276 (97.7)</td>
+      <td>87 (97.8)</td>
+      <td>98 (99.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td>1 (0.9)</td>
+      <td>55 (11.5)</td>
+      <td></td>
+      <td></td>
+      <td>30 (2.3)</td>
+      <td>2 (2.2)</td>
+      <td>1 (1.0)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">mecom_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>478 (100.0)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1297 (99.3)</td>
+      <td>88 (98.9)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>9 (0.7)</td>
+      <td>1 (1.1)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">med12_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>477 (99.8)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1302 (99.7)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>1 (0.2)</td>
+      <td></td>
+      <td></td>
+      <td>4 (0.3)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">mll_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>478 (100.0)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1299 (99.5)</td>
+      <td>88 (98.9)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>7 (0.5)</td>
+      <td>1 (1.1)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">nf1_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>461 (96.4)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1265 (96.9)</td>
+      <td>86 (96.6)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>17 (3.6)</td>
+      <td></td>
+      <td></td>
+      <td>41 (3.1)</td>
+      <td>3 (3.4)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">npm1_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>476 (99.6)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1280 (98.0)</td>
+      <td>86 (96.6)</td>
+      <td>98 (99.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>2 (0.4)</td>
+      <td></td>
+      <td></td>
+      <td>26 (2.0)</td>
+      <td>3 (3.4)</td>
+      <td>1 (1.0)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">nras_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>424 (88.7)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1260 (96.5)</td>
+      <td>87 (97.8)</td>
+      <td>96 (97.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>54 (11.3)</td>
+      <td></td>
+      <td></td>
+      <td>46 (3.5)</td>
+      <td>2 (2.2)</td>
+      <td>3 (3.0)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">phf6_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>470 (98.3)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1271 (97.3)</td>
+      <td>88 (98.9)</td>
+      <td>96 (97.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>8 (1.7)</td>
+      <td></td>
+      <td></td>
+      <td>35 (2.7)</td>
+      <td>1 (1.1)</td>
+      <td>3 (3.0)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">prpf8_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>474 (99.2)</td>
+      <td>89 (98.9)</td>
+      <td>223 (100.0)</td>
+      <td>1288 (98.6)</td>
+      <td>86 (96.6)</td>
+      <td>96 (97.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>4 (0.8)</td>
+      <td>1 (1.1)</td>
+      <td></td>
+      <td>18 (1.4)</td>
+      <td>3 (3.4)</td>
+      <td>3 (3.0)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">ptch1_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>477 (99.8)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1306 (100.0)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>1 (0.2)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">ptpn11_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>469 (98.1)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1287 (98.5)</td>
+      <td>89 (100.0)</td>
+      <td>98 (99.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>9 (1.9)</td>
+      <td></td>
+      <td></td>
+      <td>19 (1.5)</td>
+      <td></td>
+      <td>1 (1.0)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">rad21_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>476 (99.6)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1284 (98.3)</td>
+      <td>89 (100.0)</td>
+      <td>98 (99.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>2 (0.4)</td>
+      <td></td>
+      <td></td>
+      <td>22 (1.7)</td>
+      <td></td>
+      <td>1 (1.0)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">rnf25_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>478 (100.0)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1305 (99.9)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1 (0.1)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">runx1_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>101 (94.4)</td>
+      <td>396 (82.8)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1178 (90.2)</td>
+      <td>86 (96.6)</td>
+      <td>96 (97.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td>6 (5.6)</td>
+      <td>82 (17.2)</td>
+      <td></td>
+      <td></td>
+      <td>128 (9.8)</td>
+      <td>3 (3.4)</td>
+      <td>3 (3.0)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">setbp1_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>106 (99.1)</td>
+      <td>474 (99.2)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1289 (98.7)</td>
+      <td>85 (95.5)</td>
+      <td>98 (99.0)</td>
+      <td>78 (98.7)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td>1 (0.9)</td>
+      <td>4 (0.8)</td>
+      <td></td>
+      <td></td>
+      <td>17 (1.3)</td>
+      <td>4 (4.5)</td>
+      <td>1 (1.0)</td>
+      <td>1 (1.3)</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">sf3b1_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>102 (95.3)</td>
+      <td>457 (95.6)</td>
+      <td>88 (97.8)</td>
+      <td>223 (100.0)</td>
+      <td>998 (76.4)</td>
+      <td>54 (60.7)</td>
+      <td>94 (94.9)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td>5 (4.7)</td>
+      <td>21 (4.4)</td>
+      <td>2 (2.2)</td>
+      <td></td>
+      <td>308 (23.6)</td>
+      <td>35 (39.3)</td>
+      <td>5 (5.1)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">simc1_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>476 (99.6)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1302 (99.7)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>2 (0.4)</td>
+      <td></td>
+      <td></td>
+      <td>4 (0.3)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">smc3_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>469 (98.1)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1277 (97.8)</td>
+      <td>83 (93.3)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>9 (1.9)</td>
+      <td></td>
+      <td></td>
+      <td>29 (2.2)</td>
+      <td>6 (6.7)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">srsf2_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>81 (75.7)</td>
+      <td>360 (75.3)</td>
+      <td>87 (96.7)</td>
+      <td>223 (100.0)</td>
+      <td>1138 (87.1)</td>
+      <td>86 (96.6)</td>
+      <td>82 (82.8)</td>
+      <td>77 (97.5)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td>26 (24.3)</td>
+      <td>118 (24.7)</td>
+      <td>3 (3.3)</td>
+      <td></td>
+      <td>168 (12.9)</td>
+      <td>3 (3.4)</td>
+      <td>17 (17.2)</td>
+      <td>2 (2.5)</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">stag2_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>467 (97.7)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1194 (91.4)</td>
+      <td>87 (97.8)</td>
+      <td>98 (99.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>11 (2.3)</td>
+      <td></td>
+      <td></td>
+      <td>112 (8.6)</td>
+      <td>2 (2.2)</td>
+      <td>1 (1.0)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">stat3_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>477 (99.8)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1305 (99.9)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>1 (0.2)</td>
+      <td></td>
+      <td></td>
+      <td>1 (0.1)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">suz12_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>476 (99.6)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1289 (98.7)</td>
+      <td>89 (100.0)</td>
+      <td>98 (99.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>2 (0.4)</td>
+      <td></td>
+      <td></td>
+      <td>17 (1.3)</td>
+      <td></td>
+      <td>1 (1.0)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">tet2_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>58 (54.2)</td>
+      <td>234 (49.0)</td>
+      <td>78 (86.7)</td>
+      <td>223 (100.0)</td>
+      <td>965 (73.9)</td>
+      <td>71 (79.8)</td>
+      <td>87 (87.9)</td>
+      <td>62 (78.5)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td>49 (45.8)</td>
+      <td>244 (51.0)</td>
+      <td>12 (13.3)</td>
+      <td></td>
+      <td>341 (26.1)</td>
+      <td>18 (20.2)</td>
+      <td>12 (12.1)</td>
+      <td>17 (21.5)</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">tp53_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>104 (97.2)</td>
+      <td>472 (98.7)</td>
+      <td>89 (98.9)</td>
+      <td>223 (100.0)</td>
+      <td>1218 (93.3)</td>
+      <td>86 (96.6)</td>
+      <td>94 (94.9)</td>
+      <td>78 (98.7)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td>3 (2.8)</td>
+      <td>6 (1.3)</td>
+      <td>1 (1.1)</td>
+      <td></td>
+      <td>88 (6.7)</td>
+      <td>3 (3.4)</td>
+      <td>5 (5.1)</td>
+      <td>1 (1.3)</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">u2af1_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>98 (91.6)</td>
+      <td>455 (95.2)</td>
+      <td>89 (98.9)</td>
+      <td>223 (100.0)</td>
+      <td>1205 (92.3)</td>
+      <td>84 (94.4)</td>
+      <td>88 (88.9)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td>9 (8.4)</td>
+      <td>23 (4.8)</td>
+      <td>1 (1.1)</td>
+      <td></td>
+      <td>101 (7.7)</td>
+      <td>5 (5.6)</td>
+      <td>11 (11.1)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">u2af2_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>475 (99.4)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1297 (99.3)</td>
+      <td>89 (100.0)</td>
+      <td>99 (100.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>3 (0.6)</td>
+      <td></td>
+      <td></td>
+      <td>9 (0.7)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">wt1_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>107 (100.0)</td>
+      <td>476 (99.6)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1300 (99.5)</td>
+      <td>89 (100.0)</td>
+      <td>98 (99.0)</td>
+      <td>79 (100.0)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>2 (0.4)</td>
+      <td></td>
+      <td></td>
+      <td>6 (0.5)</td>
+      <td></td>
+      <td>1 (1.0)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">zrsr2_positive, median [Q1,Q3]</th>
+      <th>0</th>
+      <td>0</td>
+      <td>103 (96.3)</td>
+      <td>467 (97.7)</td>
+      <td>90 (100.0)</td>
+      <td>223 (100.0)</td>
+      <td>1215 (93.0)</td>
+      <td>87 (97.8)</td>
+      <td>96 (97.0)</td>
+      <td>78 (98.7)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td>4 (3.7)</td>
+      <td>11 (2.3)</td>
+      <td></td>
+      <td></td>
+      <td>91 (7.0)</td>
+      <td>2 (2.2)</td>
+      <td>3 (3.0)</td>
+      <td>1 (1.3)</td>
     </tr>
     <tr>
       <th>mutation_num, median [Q1,Q3]</th>
       <th></th>
       <td>0</td>
       <td>1.0 [1.0,2.0]</td>
+      <td>2.0 [1.0,3.0]</td>
+      <td>1.0 [0.0,1.0]</td>
       <td>0.0 [0.0,0.0]</td>
       <td>2.0 [1.0,3.0]</td>
+      <td>2.0 [1.0,3.0]</td>
+      <td>2.0 [1.0,3.0]</td>
+      <td>1.0 [1.0,2.0]</td>
     </tr>
     <tr>
-      <th rowspan="3" valign="top">diagnosis, n (%)</th>
+      <th rowspan="8" valign="top">diagnosis, n (%)</th>
       <th>ccus</th>
       <td>0</td>
       <td>107 (100.0)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>cmml</th>
+      <td></td>
+      <td></td>
+      <td>478 (100.0)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>et</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>90 (100.0)</td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
@@ -611,7 +1742,12 @@
       <th>icus</th>
       <td></td>
       <td></td>
+      <td></td>
+      <td></td>
       <td>223 (100.0)</td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td></td>
     </tr>
     <tr>
@@ -619,7 +1755,48 @@
       <td></td>
       <td></td>
       <td></td>
+      <td></td>
+      <td></td>
       <td>1306 (100.0)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>mds_mpn</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>89 (100.0)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>pmf</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>99 (100.0)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>pv</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>79 (100.0)</td>
     </tr>
   </tbody>
 </table>

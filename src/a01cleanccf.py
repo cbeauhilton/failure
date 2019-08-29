@@ -36,6 +36,7 @@ ccf = ccf.applymap(lambda s: s.lower() if type(s) == str else s)
 ccf = ccf[ccf.columns.drop(list(ccf.filter(regex="poiesis")))]
 ccf = ccf[ccf.columns.drop(list(ccf.filter(regex="vaf")))]
 # print(list(ccf))
+# print(ccf.id)
 ccf.rename(
     {"who category": "diagnosis", "male=0": "gender"}, axis="columns", inplace=True
 )

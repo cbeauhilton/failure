@@ -10,7 +10,7 @@ eric padron <eric.padron@moffitt.org>;
 michael savona <michael.savona@vanderbilt.edu>;
 aaron t. gerds <gerdsa@ccf.org>;
 sudipto mukherjee <mukhers2@ccf.org>;
-brianna conforti <>;
+brianna smith <brianna.n.smith@vumc.org>; 
 yasunobu nagata <nagatay@ccf.org>;
 cassandra m. hirsch <>;
 rami komrokji <rami.komrokji@moffitt.org>;
