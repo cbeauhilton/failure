@@ -33,7 +33,11 @@ RAW_MLL_ICUS_CCUS_FILE = RAW_DATA_DIR / "mll_ccus_icus.xlsx"
 RAW_DATA_FILE_H5 = RAW_DATA_DIR / "data.h5"
 RAW_H5_KEY = "raw"
 
+MODEL_PICKLE = MODELS_DIR / "failure_model.pickle"
+MODEL_SHAP_H5 = MODELS_DIR / "failure_model_shap.h5"
 
+DEPLOY_MODEL_PICKLE = MODELS_DIR / "deploy_failure_model.pickle"
+DEPLOY_MODEL_SHAP_H5 = MODELS_DIR / "deploy_failure_model_shap.h5"
 # PROCESSED_FINAL = CLEAN_PHASE_10
 # PROCESSED_FINAL_DESCRIPTIVE = CLEAN_PHASE_11_TABLEONE
 

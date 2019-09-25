@@ -1,13 +1,10 @@
-import csv
 import os
+import pickle
 import random
 import shutil
-import sys
 import time
-import traceback
 import warnings
 from itertools import cycle
-from pathlib import Path
 
 import h5py
 import jsonpickle
@@ -15,26 +12,9 @@ import lightgbm as lgb
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import seaborn as sns
 import shap
-from fancyimpute import KNN, BiScaler, NuclearNormMinimization, SoftImpute
-from imblearn.over_sampling import SMOTE
-from PyPDF2 import PdfFileReader, PdfFileWriter
-from scipy import interp
-from sklearn import datasets, svm
-from sklearn.datasets import make_classification
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.exceptions import UndefinedMetricWarning
-from sklearn.metrics import (accuracy_score, auc, average_precision_score,
-                             classification_report, confusion_matrix,
-                             make_scorer, precision_recall_curve, roc_curve)
-from sklearn.model_selection import (
-    KFold, StratifiedKFold, cross_val_predict, cross_val_score,
-    train_test_split)
-from sklearn.multiclass import OneVsRestClassifier
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler, label_binarize
-from sklearn.utils.multiclass import type_of_target
+from sklearn.model_selection import train_test_split
 
 from cbh import config
 from cbh.dumb import get_xkcd_colors
@@ -62,7 +42,6 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 
-
 # Define classifier
 params = config.PARAMS_LGBM
 clf = lgb.LGBMClassifier(**params)
@@ -79,14 +58,59 @@ model = clf.fit(
     early_stopping_rounds=early_stopping_rounds,
     verbose=False
 )
+
+
+
 evals_result = model._evals_result
 explainer = shap.TreeExplainer(clf)
 features_shap = X.copy()
-# features_shap = X.sample(n=len(X), random_state=config.SEED, replace=False)
 shap_values = explainer.shap_values(features_shap)
-# print(shap_values)
+shap_expected = explainer.expected_value
 
 
+print("Dumping model pickle...")
+save_model_file = config.MODEL_PICKLE
+pickle.dump(clf, open(save_model_file, "wb"))
+
+print("Dumping SHAP to h5...")
+
+f = h5py.File(config.MODEL_SHAP_H5, 'w', libver='latest')
+dset = f.create_dataset('shap_values', data=shap_values, compression='gzip', compression_opts=9)
+
+dset.attrs['Description'] = '''
+SHAP values as a numpy array. 
+'''
+
+d = {"shap_expected": shap_expected}
+for k, v in d.items():
+    f.create_dataset(str(k), data=v)
+
+f.close()
+
+f = h5py.File(config.MODEL_SHAP_H5, 'a', libver='latest')
+f.attrs["shap_expected"] = shap_expected
+f.attrs["classes"] = list(classes)
+f.close()
+# h5_classes = np.array(classes)
+# dt = h5py.string_dtype(encoding='ascii')
+# f.create_dataset("classes", data=h5_classes, dtype=dt)
+
+
+
+# def shap_save_to_disk(h5_file, target, shap_expected, shap_values, features_shap):
+#     print("Saving SHAP to .h5 file...")
+#     shap_val_df = pd.DataFrame(shap_values)
+#     shap_feat_df = pd.DataFrame(features_shap)
+#     # define what goes in the first row with "d"
+#     d = [[target, shap_expected]]
+#     exp_df = pd.DataFrame(
+#         d, columns=("target", "shap_exp_val")
+#     )
+#     shap_val_df.to_hdf(h5_file, key="shap_values")
+#     shap_feat_df.to_hdf(h5_file, key="features_shap")
+#     exp_df.to_hdf(h5_file, key="shap_expected_value")
+
+# shap_save_to_disk(h5_file=config.MODELS_DIR/"shap.h5", target="diagnosis", shap_expected=shap_expected, shap_values=shap_values, features_shap=features_shap)
 
 y_score = model.predict_proba(X_test)
 # print(y_score)
@@ -190,6 +214,13 @@ di2 = dict(zip(prettycols.ugly, prettycols.pretty_abbr))
 feature_names = X.columns.map(di)
 feature_names_short = X.columns.map(di2)
 
+save_feature_names_short = feature_names_short.to_list()
+save_feature_names = feature_names.to_list()
+f = h5py.File(config.MODEL_SHAP_H5, 'a', libver='latest')
+
+f.attrs["feature_names_short"] = save_feature_names_short
+f.attrs["feature_names"] = save_feature_names
+f.close()
 
 print(f"SHAP summary bar...")
 shap.summary_plot(shap_values, X, plot_type="bar", class_names = CLASSES, feature_names=feature_names, show=False)
@@ -257,6 +288,7 @@ for i, classname in enumerate(CLASSES):
                     # print(f"{pt_num} works")
             except:
                 print(f"Exception at pt_num: {pt_num}")
+            print(X_test.loc[X_test['pt_num'] == pt_num])
             shap.force_plot(
                 explainer.expected_value[i],
                 shap_values[i][pt_num, :],

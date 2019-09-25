@@ -1,4 +1,7 @@
 *.docx
+*.pyx
+*.h5
+*.pickle
 
 *.run.xml
 *.synctex.gz
