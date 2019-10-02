@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 import shap
 
-from cbh import (
+from cbh import ( 
     config,
 )  # a convenience file I maintain to define all the filepaths and other things
 
@@ -16,24 +16,29 @@ from cbh import (
 def shap_reload(filename):
     f = h5py.File(filename, "r", libver="latest")
 
-    shap_values_object = f["shap_values"]
-    shap_values = shap_values_object[()]
-
     shap_expected_list = list(f.attrs["shap_expected"])
     classes = list(f.attrs["classes"])
     feature_names_short = list(f.attrs["feature_names_short"])
     feature_names = list(f.attrs["feature_names"])
-    columns_in_order = list(f.attrs["columns_in_order"])
 
     return (
         shap_expected_list,
-        shap_values,
         classes,
         feature_names_short,
         feature_names,
-        columns_in_order,
     )
 
+def shap_reload_optional(filename):
+    f = h5py.File(filename, "r", libver="latest")
+
+    shap_values_object = f["shap_values"]
+    shap_values = shap_values_object[()] # this would be for cohort-level explanations, not personalized. 
+    columns_in_order = list(f.attrs["columns_in_order"]) # sanity check for order of inputs to the model
+
+    return (
+        shap_values,
+        columns_in_order,
+    )
 
 def model_reload(filename):
     loaded_model = pickle.load(open(filename, "rb"))
@@ -75,11 +80,15 @@ def make_pt_shap_plots(
         plt.close()
         print(f"Generated figure for the prediction of {classname.upper()}.")
 
+# TODO?
+def cohort_level_explanations():
+    pass
+
 
 filename_shap = config.DEPLOY_MODEL_SHAP_H5
 filename_model = config.DEPLOY_MODEL_PICKLE
 
-shap_expected_list, shap_values, classes, feature_names_short, feature_names, columns_in_order = shap_reload(
+shap_expected_list, classes, feature_names_short, feature_names = shap_reload(
     filename=filename_shap
 )
 
@@ -87,7 +96,7 @@ model = model_reload(filename_model)
 explainer = shap.TreeExplainer(model)
 
 # Generate dictionary for sample on which we want a prediction
-# should all be in the same order as the dataset
+# should all be in the same order as the dataset so the model doesn't freak out
 # (can check with 'columns_in_order' if you'd like)
 new_sample_dict = {key: np.nan for key in feature_names}
 
@@ -155,5 +164,3 @@ make_pt_shap_plots(
 )
 
 # Then would load all predictions to the webapp.
-
-print("")
