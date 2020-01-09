@@ -1,0 +1,56 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%               __
+%    ________  / /___  ______
+%   / ___/ _ \/ __/ / / / __ \
+%  (__  )  __/ /_/ /_/ / /_/ /
+% /____/\___/\__/\__,_/ .___/
+%                    /_/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[twoside]{article}
+% \documentclass[twoside,draft]{article} % draft puts in the pics as empty frames, builds much faster
+\usepackage{mystyle}
+\begin{document}
+\renewcommand\Authfont{\color{NEJMAuthorText}}
+\renewcommand\Affilfont{\color{black}}
+\newgeometry{lmargin=6cm, bottom=3cm, rmargin=3.5cm}  
+\tableofcontents
+\listoffigures
+\listoftables
+\newpage
+\maketitle%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%          __             __
+%    _____/ /_____ ______/ /_
+%   / ___/ __/ __ `/ ___/ __/
+%  (__  ) /_/ /_/ / /  / /_
+% /____/\__/\__,_/_/   \__/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\input{sections/00_abstract_manuscript}
+\newpage
+\newgeometry{outer=3.5cm, inner=3.5cm, tmargin=2cm, bmargin=3cm}
+\twocolumn
+\input{sections/01_intro}
+\input{sections/02_methods}
+\input{sections/03_results}
+\input{sections/04_discussion}
+\input{sections/05_refs}%
+\input{sections/06_figs}%
+\input{sections/07_tables}%
+% \input{sections/08_supplement}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   __
+%   ___  ____  ____/ /
+%  / _ \/ __ \/ __  /
+% /  __/ / / / /_/ /
+% \___/_/ /_/\__,_/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}%
