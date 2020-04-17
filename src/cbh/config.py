@@ -4,9 +4,10 @@ import os
 # print("Loading", os.path.basename(__file__))
 
 ########################### directories ###########################
-PROJECT_DIR = Path(r"/home/beau/sci/failure/")
+PROJECT_DIR = Path(r"/home/beau/repos/failure/")
 RAW_DATA_DIR = PROJECT_DIR / "data/raw/"
 INTERIM_DATA_DIR = PROJECT_DIR / "data/interim/"
+CSV_DIR = INTERIM_DATA_DIR / "raw_converted_to_csv/"
 EXTERNAL_DATA_DIR = PROJECT_DIR / "data/external/"
 PROCESSED_DATA_DIR = PROJECT_DIR / "data/processed/"
 MODELS_DIR = PROJECT_DIR / "models/"

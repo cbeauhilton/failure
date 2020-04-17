@@ -1,0 +1,5 @@
+bookdown::gitbook: default
+bookdown::word_document2:
+  toc: true
+bookdown::pdf_book: default
+bookdown::html_document2: default

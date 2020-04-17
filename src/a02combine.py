@@ -144,21 +144,19 @@ data.replace(
             # 'pmf' : 'pmf',
             "mf": "pmf",
             "mf_w__myeliod_metaplasia": "pmf",
-            'cimf' : "pmf",
-            'etmf' : 'et-mf',
+            "cimf": "pmf",
+            "etmf": "et-mf",
             # "pv-mf": "?",
             # "et-mf" : "?",
             #  'mds_mf' :"?",
             # 'mf,_mds_mpn'  : "?",
             #  'et' : 'et',
-            'mpn_et' : 'et',
+            "mpn_et": "et",
             # 'et-mds' : "?",
             #  'pv' : 'pv',
             # 'pv-mpn,_cll' : "?",
             # 'mf_cml' : '?',
             # 'cml' : '?',
-
-
         }
     },
     inplace=True,
@@ -173,7 +171,6 @@ data.replace(
             "rars-t": "mds-mpn-rs-t",
             "mpn-cmml": "cmml",
             # 'cmml_cll' : 'cmml?'
-
         }
     },
     inplace=True,

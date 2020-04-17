@@ -2,6 +2,7 @@ import os
 
 import numpy as np
 import pandas as pd
+from pandas_profiling import ProfileReport
 
 from cbh import config
 
@@ -21,12 +22,11 @@ with open(config.DOCS_DIR/txt_file, "w") as f:
         f.write("%s\n" % item)
 
 #  print(list(ccf))
-ccf_list = list(ccf)
-list_df = pd.DataFrame(ccf_list)
-print(list_df.head())
+#  ccf_list = list(ccf)
+#  list_df = pd.DataFrame(ccf_list)
+#  print(list_df.head())
 #  list_df.to_csv("/home/beau/dl/ccf.csv")
 
-# print("")
 ### column names ###
 ccf.rename(index=str, columns={"GENDER": "gender"}, inplace=True)
 
@@ -38,8 +38,6 @@ ccf.columns = ccf.columns.str.strip().str.lower().str.replace("  ", " ")
 ccf = ccf.applymap(lambda s: s.lower() if type(s) == str else s)
 
 
-ccf = ccf[ccf.columns.drop(list(ccf.filter(regex="poiesis")))]
-ccf = ccf[ccf.columns.drop(list(ccf.filter(regex="vaf")))]
 # print(list(ccf))
 # print(ccf.id)
 ccf.rename(
@@ -50,6 +48,27 @@ ccf["splenomegaly"].replace({"yes": 1, "no": 0}, inplace=True)
 
 ccf["gender"].replace({0: "male", 1: "female"}, inplace=True)
 
+for col in ["gender", "megakaryocytes", "diagnosis", "id"]:
+    ccf[col] = ccf[col].astype("category")
+
+# print(ccf.head(10))
+
+col_list = sorted(list(ccf))
+txt_file = "xx_ccf.txt"
+
+all_genes = config.GENE_COLS
+for col in all_genes:
+    ccf[col] = ccf[col].replace(1, "positive")
+    ccf[col] = ccf[col].replace(0, "negative")
+    ccf[col] = ccf[col].replace(np.nan, "missing")
+
+ccf.to_csv(config.CSV_DIR/ "ccf.csv")
+
+profile = ccf.profile_report(title='Pandas Profiling Report')
+profile.to_file(output_file=config.FIGURES_DIR/ "ccf.html")
+
+ccf = ccf[ccf.columns.drop(list(ccf.filter(regex="poiesis")))]
+ccf = ccf[ccf.columns.drop(list(ccf.filter(regex="vaf")))]
 ccf = ccf[
     ccf.columns.drop(
         list(
@@ -71,24 +90,6 @@ ccf = ccf[
         )
     )
 ]
-
-
-
-for col in ["gender", "megakaryocytes", "diagnosis", "id"]:
-    ccf[col] = ccf[col].astype("category")
-
-
-# print(ccf.head(10))
-
-col_list = sorted(list(ccf))
-txt_file = "xx_ccf.txt"
-
-final_genes = config.FINAL_GENES
-all_genes = config.GENE_COLS
-for col in all_genes:
-    ccf[col] = ccf[col].replace(1, "positive")
-    ccf[col] = ccf[col].replace(0, "negative")
-    ccf[col] = ccf[col].replace(np.nan, "missing")
 
 with open(config.DOCS_DIR/txt_file, "w") as f:
     f.write("CCF\n\n")

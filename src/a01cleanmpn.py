@@ -60,6 +60,9 @@ for df in dataframes:
     df.columns = df.columns.str.strip().str.lower().str.replace("  ", " ")
     df = df.applymap(lambda s: s.lower() if type(s) == str else s)
 
+from pandas_profiling import ProfileReport
+profile = mpn.profile_report(title='Pandas Profiling Report')
+profile.to_file(output_file=config.REPORTS_DIR/ "profiles/mpn.html")
 
 # print(mpn.head())
 mpn.drop(list(mpn.filter(regex="vaf")), axis=1, inplace=True)

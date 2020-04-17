@@ -46,6 +46,9 @@ mds.loc[mds["cytogenetic"].str.contains("X,-X", case=False), "gender"] = "female
 
 # print(mds.shape)
 
+from pandas_profiling import ProfileReport
+profile = mds.profile_report(title='Pandas Profiling Report')
+profile.to_file(output_file=config.REPORTS_DIR/ "profiles/mds.html")
 
 # #drop redundancies and other unwanted columns
 # print(mds.shape)

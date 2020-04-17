@@ -23,15 +23,29 @@ from sklearn.calibration import CalibratedClassifierCV, calibration_curve
 from sklearn.datasets import make_classification
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.exceptions import UndefinedMetricWarning
-from sklearn.metrics import (accuracy_score, auc, average_precision_score,
-                             brier_score_loss, classification_report,
-                             confusion_matrix, f1_score, make_scorer,
-                             precision_recall_curve,
-                             precision_recall_fscore_support, precision_score,
-                             recall_score, roc_curve)
+from sklearn.metrics import (
+    accuracy_score,
+    auc,
+    average_precision_score,
+    brier_score_loss,
+    classification_report,
+    confusion_matrix,
+    f1_score,
+    make_scorer,
+    precision_recall_curve,
+    precision_recall_fscore_support,
+    precision_score,
+    recall_score,
+    roc_curve,
+)
 from sklearn.model_selection import (
-    KFold, StratifiedKFold, cross_val_predict, cross_val_score, cross_validate,
-    train_test_split)
+    KFold,
+    StratifiedKFold,
+    cross_val_predict,
+    cross_val_score,
+    cross_validate,
+    train_test_split,
+)
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler, label_binarize
@@ -42,7 +56,7 @@ from cbh.dumb import get_xkcd_colors
 from cbh.fancyimpute import SoftImputeDf
 
 colorz = get_xkcd_colors()
-colors = cycle(colorz['hex'])
+colors = cycle(colorz["hex"])
 
 # print(colorz['hex'])
 # print(colorz['names'])
@@ -72,8 +86,8 @@ X = pd.read_hdf(config.RAW_DATA_FILE_H5, key="X")
 
 metric_image_folders = ["AUC", "PR", "calibration"]
 for folder in metric_image_folders:
-    if not os.path.exists(config.METRIC_FIGS_DIR/f"{folder}"):
-        os.makedirs(config.METRIC_FIGS_DIR/f"{folder}") 
+    if not os.path.exists(config.METRIC_FIGS_DIR / f"{folder}"):
+        os.makedirs(config.METRIC_FIGS_DIR / f"{folder}")
         # print(f"Made directory: {folder}")
 
 
@@ -117,13 +131,18 @@ pre_scores = {}
 rec_scores = {}
 
 
-def plot_precision_recall(y_true, y_probas,
-                          title='Precision-Recall Curve',
-                          plot_micro=True,
-                          classes_to_plot=None, ax=None,
-                          figsize=None, cmap='nipy_spectral',
-                          title_fontsize="large",
-                          text_fontsize="medium"):
+def plot_precision_recall(
+    y_true,
+    y_probas,
+    title="Precision-Recall Curve",
+    plot_micro=True,
+    classes_to_plot=None,
+    ax=None,
+    figsize=None,
+    cmap="nipy_spectral",
+    title_fontsize="large",
+    text_fontsize="medium",
+):
 
     y_true = np.array(y_true)
     y_probas = np.array(y_probas)
@@ -136,8 +155,7 @@ def plot_precision_recall(y_true, y_probas,
 
     binarized_y_true = label_binarize(y_true, classes=classes)
     if len(classes) == 2:
-        binarized_y_true = np.hstack(
-            (1 - binarized_y_true, binarized_y_true))
+        binarized_y_true = np.hstack((1 - binarized_y_true, binarized_y_true))
 
     if ax is None:
         fig, ax = plt.subplots(1, 1, figsize=figsize)
@@ -148,36 +166,45 @@ def plot_precision_recall(y_true, y_probas,
     for i, to_plot in enumerate(indices_to_plot):
         if to_plot:
             average_precision = average_precision_score(
-                binarized_y_true[:, i],
-                probas[:, i])
+                binarized_y_true[:, i], probas[:, i]
+            )
             precision, recall, _ = precision_recall_curve(
-                y_true, probas[:, i], pos_label=classes[i])
+                y_true, probas[:, i], pos_label=classes[i]
+            )
             color = plt.cm.get_cmap(cmap)(float(i) / len(classes))
-            ax.plot(recall, precision, lw=2,
-                    label='Precision-recall curve of class {0} '
-                          '(area = {1:0.3f})'.format(classes[i],
-                                                     average_precision),
-                    color=color)
+            ax.plot(
+                recall,
+                precision,
+                lw=2,
+                label="Precision-recall curve of class {0} "
+                "(area = {1:0.3f})".format(classes[i], average_precision),
+                color=color,
+            )
 
     if plot_micro:
         precision, recall, _ = precision_recall_curve(
-            binarized_y_true.ravel(), probas.ravel())
-        average_precision = average_precision_score(binarized_y_true,
-                                                    probas,
-                                                    average='micro')
-        ax.plot(recall, precision,
-                label='micro-average Precision-recall curve '
-                      '(area = {0:0.3f})'.format(average_precision),
-                color='navy', linestyle=':', linewidth=4)
+            binarized_y_true.ravel(), probas.ravel()
+        )
+        average_precision = average_precision_score(
+            binarized_y_true, probas, average="micro"
+        )
+        ax.plot(
+            recall,
+            precision,
+            label="micro-average Precision-recall curve "
+            "(area = {0:0.3f})".format(average_precision),
+            color="navy",
+            linestyle=":",
+            linewidth=4,
+        )
 
     ax.set_xlim([0.0, 1.0])
     ax.set_ylim([0.0, 1.05])
-    ax.set_xlabel('Recall')
-    ax.set_ylabel('Precision')
+    ax.set_xlabel("Recall")
+    ax.set_ylabel("Precision")
     ax.tick_params(labelsize=text_fontsize)
-    ax.legend(loc=(0, -.38), fontsize=text_fontsize)
+    ax.legend(loc=(0, -0.38), fontsize=text_fontsize)
     return ax
-
 
 
 # Initialize confusion matrix with zeros ...
@@ -225,9 +252,9 @@ for i, (train, test) in enumerate(kf):
     # Using a cutoff
     actual = y.iloc[test]
     y_test = actual
-    plot_precision_recall(y_test, y_probas = y_score, figsize=(16,12))
+    plot_precision_recall(y_test, y_probas=y_score, figsize=(16, 12))
     plt.savefig(
-        (config.METRIC_FIGS_DIR / "PR"/ f"PR_fold_{i}.pdf"),
+        (config.METRIC_FIGS_DIR / "PR" / f"PR_fold_{i}.pdf"),
         dpi=1200,
         transparent=False,
         bbox_inches="tight",
@@ -281,9 +308,8 @@ for i, (train, test) in enumerate(kf):
     b = sum(conf_mats)
     # print("Number of predictions remaining:", len(y) - sum(b))
 
-
     # Plot final confusion matrix on last iteration
-    if i == (n_splits-1):
+    if i == (n_splits - 1):
         fig, ax = plt.subplots(figsize=(10, 10))
         sns.heatmap(
             conf_mats,
@@ -304,7 +330,6 @@ for i, (train, test) in enumerate(kf):
         )
         plt.close()
 
-
     # Compute metrics for each class PER FOLD
     for j in range(n_classes):
         # print(classes[j])
@@ -319,16 +344,20 @@ for i, (train, test) in enumerate(kf):
         fpr_df = pd.DataFrame(fpr_save)
         tpr_df = pd.DataFrame(tpr_save)
         auc_df = pd.DataFrame(auc_save)
-        new = pd.concat([fpr_df, tpr_df, auc_df], axis=1) 
+        new = pd.concat([fpr_df, tpr_df, auc_df], axis=1)
         roc_curve_data = pd.concat([roc_curve_data, new], axis=1)
 
-        precision[j], recall[j], _ = precision_recall_curve(y_true[test][:, j], y_score[:, j])
-        average_precision[j] = average_precision_score(y_true[test][:, j], y_score[:, j])
+        precision[j], recall[j], _ = precision_recall_curve(
+            y_true[test][:, j], y_score[:, j]
+        )
+        average_precision[j] = average_precision_score(
+            y_true[test][:, j], y_score[:, j]
+        )
         # print(precision[j])
-        
+
         # Brier score losses
         brier_score = brier_score_loss(y_true[test][:, j], y_score[:, j])
-        
+
         report[i][classes[j]]["brier_score"] = brier_score.round(10)
         report[i][classes[j]]["roc_auc"] = roc_auc[j].round(10)
         report[i][classes[j]]["z_precision"] = precision[j].tolist()
@@ -339,37 +368,43 @@ for i, (train, test) in enumerate(kf):
         # print(y_pred)
         # report[i][classes[j]]["z_preds"] = y_pred[:, j]
 
-    report[i]["z_classification_reports"] = classification_report(actual, y_pred, output_dict=True)
-    precision_micro, recall_micro, _ = precision_recall_curve(y_true[test].ravel(), y_score.ravel())
+    report[i]["z_classification_reports"] = classification_report(
+        actual, y_pred, output_dict=True
+    )
+    precision_micro, recall_micro, _ = precision_recall_curve(
+        y_true[test].ravel(), y_score.ravel()
+    )
     report[i]["precision_micro"] = precision_micro.tolist()
-    report[i]['recall_micro'] = recall_micro.tolist()
-    report[i]["average_precision_micro"] = average_precision_score(y_true[test], y_score, average="micro")
+    report[i]["recall_micro"] = recall_micro.tolist()
+    report[i]["average_precision_micro"] = average_precision_score(
+        y_true[test], y_score, average="micro"
+    )
 
     # print(report)
-    
+
     # if i ==2:
     #     break
     # print(report)
     # pre_score = precision_score(actual, y_pred, average='macro')
     # print(pre_score)
-        # Classification report
-        # print(precision_recall_fscore_support(y_true[test], y_pred, average='macro'))
-        # print(f1_score(actual, y_pred, average="macro"))
-        # print(precision_score(actual, y_pred, average="macro"))
-        # print(recall_score(actual, y_pred, average="macro"))  
+    # Classification report
+    # print(precision_recall_fscore_support(y_true[test], y_pred, average='macro'))
+    # print(f1_score(actual, y_pred, average="macro"))
+    # print(precision_score(actual, y_pred, average="macro"))
+    # print(recall_score(actual, y_pred, average="macro"))
 
-        # print(perf_dict)
-        # print(brier_score)
-        # roc_curve_data = roc_curve_data.reset_index(drop=True)
-        # print(roc_curve_data.head(100))
-        # print(fpr_df.head(100))
-        # print(auc_df)
-        # print(fpr_save)
-        # print("AUC:", roc_auc[j])
+    # print(perf_dict)
+    # print(brier_score)
+    # roc_curve_data = roc_curve_data.reset_index(drop=True)
+    # print(roc_curve_data.head(100))
+    # print(fpr_df.head(100))
+    # print(auc_df)
+    # print(fpr_save)
+    # print("AUC:", roc_auc[j])
 
 # for j in range(n_classes):
 #     roc_aucs = []
-#     for i in range(n_splits):    
+#     for i in range(n_splits):
 #         roc_auc = report[i][classes[j]]["roc_auc"]
 #         roc_aucs.append(roc_auc)
 #     print(roc_aucs)
@@ -386,7 +421,7 @@ misclassified_df.to_csv(config.TABLES_DIR / "misclassified_cv.csv")
 roc_curve_data.to_csv(config.METRIC_FIGS_DIR / "roc_curve_data.csv")
 
 # print(report)
-with open(config.TABLES_DIR/'perf_dict.json', 'w') as f:
+with open(config.TABLES_DIR / "perf_dict.json", "w") as f:
     json.dump(report, f)
 
 print("#" * 80)
@@ -497,10 +532,10 @@ print("#" * 80)
 #     To retrieve pickled model, use something like:
 #     `pkl_model = metricsgen.save_model_to_pickle()`
 
-#     then: 
+#     then:
 
 #     `with open(pkl_model, "rb") as fin:
-#             gbm_model = pickle.load(fin)` 
+#             gbm_model = pickle.load(fin)`
 #     """
 
 #     print("Dumping model with pickle...")
@@ -799,11 +834,11 @@ print("#" * 80)
 #     verbose=params["verbose"],
 # )
 
-#Make our customer score
+# Make our customer score
 # def classification_report_with_accuracy_score(y_true, y_pred):
-    # originalclass.extend(y_true)
-    # predictedclass.extend(y_pred)
-    # return accuracy_score(y_true, y_pred) # return accuracy score
+# originalclass.extend(y_true)
+# predictedclass.extend(y_pred)
+# return accuracy_score(y_true, y_pred) # return accuracy score
 
 # inner_cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=config.SEED)
 # outer_cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=config.SEED)
@@ -814,8 +849,8 @@ print("#" * 80)
 # Nested CV with parameter optimization
 # nested_score = cross_val_score(clf, X=X, y=y, cv=outer_cv, scoring=make_scorer(classification_report_with_accuracy_score))
 
-# Average values in classification report for all folds in a K-fold Cross-validation  
-# print(classification_report(originalclass, predictedclass)) 
+# Average values in classification report for all folds in a K-fold Cross-validation
+# print(classification_report(originalclass, predictedclass))
 
 # scores = []
 # for k, (train, test) in enumerate(kf):
@@ -843,7 +878,7 @@ print("#" * 80)
 # scores = cross_validate(clf, X=X, y=y, scoring=scoring,
 #                          cv=k, return_train_score=True)
 # print(scores.keys())
-# print(scores['test_acc']) 
+# print(scores['test_acc'])
 
 # def classification_report_with_accuracy_score(y_true, y_pred):
 #     originalclass.extend(y_true)

@@ -51,6 +51,10 @@ cmml.rename(
 cmml.replace({"gender": {1: "male", 2: "female"}}, inplace=True)
 
 
+from pandas_profiling import ProfileReport
+profile = cmml.profile_report(title='Pandas Profiling Report')
+profile.to_file(output_file=config.REPORTS_DIR/ "profiles/cmml.html")
+
 # print(cmml.head())
 
 

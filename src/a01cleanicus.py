@@ -150,6 +150,10 @@ icus.drop(icus.columns[decode_list], axis=1, inplace=True)
 
 # print(list(icus))
 
+from pandas_profiling import ProfileReport
+profile = icus.profile_report(title='Pandas Profiling Report')
+profile.to_file(output_file=config.REPORTS_DIR/ "profiles/icus.html")
+
 keep_cols = [
     "id",
     "age",

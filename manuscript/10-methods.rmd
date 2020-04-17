@@ -1,0 +1,67 @@
+# Methods
+
+Methods
+
+Hello, and thank you. @knitr2015
+
+```{r, echo=FALSE}
+set.seed(123)
+mat = matrix(nrow = 100, ncol = 100)
+diag(mat) = 0
+mat[lower.tri(mat)] = 0
+mat[upper.tri(mat)] = rnorm(99*50, sd = 0.1)
+ind = sample(99*50, 30)
+mat[upper.tri(mat)][ind] = runif(30, min = -1, max = 1)
+rownames(mat) = paste0("R", 1:100)
+colnames(mat) = rownames(mat)
+n = nrow(mat)
+rn = rownames(mat)
+
+
+group_size = c(12, 8, 7, 16, 6, 2, 16, 13, 20)
+gl = lapply(1:9, function(i) {
+    rownames(mat)[sum(group_size[seq_len(i-1)]) + 1:group_size[i]]
+})
+names(gl) = paste0("G", 1:9)
+gl[1:2]
+
+gd = structure(rep(names(gl), times = sapply(gl, length)), names = unlist(gl))
+group_color = structure(circlize::rand_color(9), names = names(gl))
+n_group = length(gl)
+
+library(ComplexHeatmap)
+library(circlize)
+col_fun = colorRamp2(c(-1, 0, 1), c("darkgreen", "white", "red"), transparency = 0.5)
+Heatmap(mat, name = "corr", col = col_fun, cluster_rows = FALSE, cluster_columns = FALSE,
+    show_row_names = FALSE, show_column_names = FALSE,
+    top_annotation = HeatmapAnnotation(group = gd, col = list(group = group_color), show_legend = FALSE)) +
+rowAnnotation(group = gd, col = list(group = group_color), width = unit(0.5, "cm"))
+```
+
+Goop @ComplexHeatmap2016
+
+
+```{r, echo=FALSE}
+chordDiagram(mat, col = col_fun(mat), grid.col = NA, grid.border = "black",
+    annotationTrack = "grid", link.largest.ontop = TRUE,
+    preAllocateTracks = list(
+        list(track.height = 0.02)
+    )
+)
+
+circos.trackPlotRegion(track.index = 2, panel.fun = function(x, y) {
+    xlim = get.cell.meta.data("xlim")
+    ylim = get.cell.meta.data("ylim")
+    sector.index = get.cell.meta.data("sector.index")
+    circos.text(mean(xlim), mean(ylim), sector.index, col = "black", cex = 0.6,
+        facing = "clockwise", niceFacing = TRUE)
+}, bg.border = NA)
+
+for(nm in names(gl)) {
+    r = gl[[nm]]
+    highlight.sector(sector.index = r, track.index = 1, col = group_color[nm],
+        text = nm, text.vjust = -1, niceFacing = TRUE)
+}
+```
+
+Goop @circlize2014 

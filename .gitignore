@@ -15,6 +15,10 @@
 .nfs*
 
 /data
+/_book
+/_bookdown_files
+/exhaust
+/images
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

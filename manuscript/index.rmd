@@ -1,0 +1,22 @@
+---
+title: "Title TBD"
+author: "C. Beau Hilton, et al."
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: ["/home/beau/repos/life/dox/acad.bib", "packages.bib"]
+csl: nejm.csl
+link-citations: yes
+---
+# Setup
+
+```{r, echo=FALSE, include=FALSE}
+knitr::read_chunk("setup.r")
+```
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown', 'circlize', 'ComplexHeatmap'
+), 'packages.bib')
+```
+
